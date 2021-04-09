@@ -125,7 +125,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/xampp/htdocs/EspritClub" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -149,7 +149,8 @@
       <workItem from="1617811021196" duration="8273000" />
       <workItem from="1617877229127" duration="8572000" />
       <workItem from="1617888656732" duration="172000" />
-      <workItem from="1617888871276" duration="127000" />
+      <workItem from="1617888871276" duration="2676000" />
+      <workItem from="1617951365320" duration="1724000" />
     </task>
     <servers />
   </component>
