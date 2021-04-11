@@ -869,6 +869,6 @@ class __TwigTemplate_c7021c5da2119e8e3a0e5b70468539e3cdc18aa48c815909dde865c54fb
             </div>
         </div>
     </div>
-{%  endblock %}", "home/index.html.twig", "D:\\Esprit\\Ahmed\\Semestre2\\Symfony\\Gest_Complexes\\templates\\home\\index.html.twig");
+{%  endblock %}", "home/index.html.twig", "C:\\xampp\\htdocs\\Gestion_Complexes_Web\\templates\\home\\index.html.twig");
     }
 }

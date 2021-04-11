@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Invitation
@@ -22,16 +23,23 @@ class Invitation
     private $id;
 
     /**
-     * @var string
+     * @var string|null
      *
-     * @ORM\Column(name="type", type="string", length=200, nullable=false)
+     * @ORM\Column(name="type", type="string", length=200, nullable=true)
+     * @Assert\NotNull(message="Type REQUIRED")
+    *  @Assert\EqualTo("request",message="le Type doit etre 'request'or'demande'")
+     * @Assert\EqualTo("request",message="Type required")
+
      */
     private $type;
 
     /**
-     * @var int
+     * @var \Equipe
      *
-     * @ORM\Column(name="equipe", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Equipe")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="equipe", referencedColumnName="id")
+     * })
      */
     private $equipe;
 
@@ -51,6 +59,88 @@ class Invitation
      * })
      */
     private $utilisateur;
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getType(): ?string
+    {
+        return $this->type;
+
+
+    }
+
+    /**
+     * @param string $type
+     */
+    public function setType(string $type): void
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * @return \Equipe
+     */
+    public function getEquipe(): \Equipe
+    {
+        return $this->equipe;
+    }
+
+    /**
+     * @param \Equipe $equipe
+     */
+    public function setEquipe(\Equipe $equipe): void
+    {
+        $this->equipe = $equipe;
+    }
+
+    /**
+     * @return int
+     */
+    public function getValide(): int
+    {
+        return $this->valide;
+    }
+
+    /**
+     * @param int $valide
+     */
+    public function setValide(int $valide): void
+    {
+        $this->valide = $valide;
+    }
+
+    /**
+     * @return \Utilisateur
+     */
+    public function getUtilisateur(): \Utilisateur
+    {
+        return $this->utilisateur;
+    }
+
+    /**
+     * @param \Utilisateur $utilisateur
+     */
+    public function setUtilisateur(\Utilisateur $utilisateur): void
+    {
+        $this->utilisateur = $utilisateur;
+    }
 
 
 }

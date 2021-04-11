@@ -335,6 +335,6 @@ class __TwigTemplate_ba1ef0cc04942ff167f9a7748baf2b097f297ba891f9804509cde8b7a77
         </div>
     </div>
 {% endblock %}
-", "blog/index.html.twig", "D:\\Esprit\\Ahmed\\Semestre2\\Symfony\\Gest_Complexes\\templates\\blog\\index.html.twig");
+", "blog/index.html.twig", "C:\\xampp\\htdocs\\Gestion_Complexes_Web\\templates\\blog\\index.html.twig");
     }
 }

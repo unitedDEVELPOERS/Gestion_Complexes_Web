@@ -19,9 +19,16 @@ return [
         ],
         '/blog' => [[['_route' => 'blog', '_controller' => 'App\\Controller\\BlogController::index'], null, null, null, false, false, null]],
         '/club' => [[['_route' => 'club', '_controller' => 'App\\Controller\\ClubController::index'], null, null, null, false, false, null]],
+        '/equipe' => [[['_route' => 'equipe', '_controller' => 'App\\Controller\\EquipeController::index'], null, null, null, false, false, null]],
+        '/AfficheEquipe' => [[['_route' => 'AfficheEquipe', '_controller' => 'App\\Controller\\EquipeController::Affiche'], null, null, null, false, false, null]],
+        '/equipe/Add' => [[['_route' => 'app_equipe_add', '_controller' => 'App\\Controller\\EquipeController::Add'], null, null, null, false, false, null]],
         '/home' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
+        '/invitation' => [[['_route' => 'invitation', '_controller' => 'App\\Controller\\InvitationController::index'], null, null, null, false, false, null]],
+        '/AfficheInvitation' => [[['_route' => 'AfficheInvitation', '_controller' => 'App\\Controller\\InvitationController::Affiche'], null, null, null, false, false, null]],
+        '/invitation/Add' => [[['_route' => 'app_invitation_add', '_controller' => 'App\\Controller\\InvitationController::Add'], null, null, null, false, false, null]],
         '/joueurs' => [[['_route' => 'joueurs', '_controller' => 'App\\Controller\\JoueursController::index'], null, null, null, false, false, null]],
         '/matches' => [[['_route' => 'matches', '_controller' => 'App\\Controller\\MatchesController::index'], null, null, null, false, false, null]],
+        '/terrain' => [[['_route' => 'terrain', '_controller' => 'App\\Controller\\TerrainController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -40,6 +47,14 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
+                .'|/Supp(?'
+                    .'|/([^/]++)(*:186)'
+                    .'|Invitation/([^/]++)(*:213)'
+                .')'
+                .'|/update(?'
+                    .'|/([^/]++)(*:241)'
+                    .'|invitation/([^/]++)(*:268)'
+                .')'
             .')/?$}sD',
     ],
     [ // $dynamicRoutes
@@ -49,8 +64,12 @@ return [
         116 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        159 => [
-            [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
+        159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        186 => [[['_route' => 'deleteequipe', '_controller' => 'App\\Controller\\EquipeController::Delete'], ['id'], null, null, false, true, null]],
+        213 => [[['_route' => 'deleteinvitation', '_controller' => 'App\\Controller\\InvitationController::Delete'], ['id'], null, null, false, true, null]],
+        241 => [[['_route' => 'updateequipe', '_controller' => 'App\\Controller\\EquipeController::update'], ['id'], null, null, false, true, null]],
+        268 => [
+            [['_route' => 'updateinvitation', '_controller' => 'App\\Controller\\InvitationController::update'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

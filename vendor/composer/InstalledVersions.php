@@ -25,24 +25,24 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'caf431390c0a7acb1aaa6206943f35fd350e5c25',
     'name' => '__root__',
   ),
   'versions' => 
   array (
     '__root__' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'caf431390c0a7acb1aaa6206943f35fd350e5c25',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -701,12 +701,12 @@ private static $installed = array (
     ),
     'symfony/maker-bundle' => 
     array (
-      'pretty_version' => 'v1.29.1',
-      'version' => '1.29.1.0',
+      'pretty_version' => 'v1.30.2',
+      'version' => '1.30.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => '313b5669a5370bf36cd34fa8f5b5bbbfa5fb8aa8',
+      'reference' => 'a395a85aa4ded6c1fa3da118d60329b64b6c2acd',
     ),
     'symfony/mime' => 
     array (

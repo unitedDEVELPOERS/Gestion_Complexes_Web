@@ -1,0 +1,51 @@
+<?php //%255BApp%255CEntity%255CInvitation%2524type%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\NotNull'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\NotNull')),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\EqualTo'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\EqualTo')),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\EqualTo'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'type',
+            ],
+            'length' => [
+                200,
+            ],
+            'nullable' => [
+                true,
+            ],
+            'message' => [
+                1 => 'Type REQUIRED',
+                'le Type doit etre \'request\'or\'demande\'',
+                'Type required',
+            ],
+            'groups' => [
+                1 => [
+                    'Default',
+                ],
+                [
+                    'Default',
+                ],
+                [
+                    'Default',
+                ],
+            ],
+            'value' => [
+                2 => 'request',
+                'request',
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+        $o[3],
+    ],
+    []
+); }];

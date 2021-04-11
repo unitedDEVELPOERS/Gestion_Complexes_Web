@@ -91,7 +91,7 @@ class __TwigTemplate_8d0689364a5a89e05f805ede5e77c5c8ffc6230e5e4daf5ade6d48e8e15
         <div class=\"container\">
             <div class=\"row align-items-center\">
                 <div class=\"col-lg-5 mx-auto text-center\">
-                    <h1 class=\"text-white\">Players</h1>
+                    <h1 class=\"text-white\">Joueurs</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, molestias repudiandae pariatur.</p>
                 </div>
             </div>
@@ -269,7 +269,7 @@ class __TwigTemplate_8d0689364a5a89e05f805ede5e77c5c8ffc6230e5e4daf5ade6d48e8e15
         <div class=\"container\">
             <div class=\"row align-items-center\">
                 <div class=\"col-lg-5 mx-auto text-center\">
-                    <h1 class=\"text-white\">Players</h1>
+                    <h1 class=\"text-white\">Joueurs</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, molestias repudiandae pariatur.</p>
                 </div>
             </div>
@@ -412,6 +412,6 @@ class __TwigTemplate_8d0689364a5a89e05f805ede5e77c5c8ffc6230e5e4daf5ade6d48e8e15
             </div>
         </div>
     </div>
-{% endblock  %}", "joueurs/index.html.twig", "D:\\Esprit\\Ahmed\\Semestre2\\Symfony\\Gest_Complexes\\templates\\joueurs\\index.html.twig");
+{% endblock  %}", "joueurs/index.html.twig", "C:\\xampp\\htdocs\\Gestion_Complexes_Web\\templates\\joueurs\\index.html.twig");
     }
 }
