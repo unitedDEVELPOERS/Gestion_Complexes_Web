@@ -133,7 +133,7 @@ class __TwigTemplate_fc32cef805b7609123f7e105a07ac9b54f968de1424dcee010c99e9f48a
         echo "\" class=\"nav-link\">Accueil</a></li>
                             <li><a href=\"";
         // line 46
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/matches"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/terrains"), "html", null, true);
         echo "\" class=\"nav-link\">Terrains</a></li>
                             <li><a href=\"";
         // line 47
@@ -419,7 +419,7 @@ class __TwigTemplate_fc32cef805b7609123f7e105a07ac9b54f968de1424dcee010c99e9f48a
                     <nav class=\"site-navigation position-relative text-right\" role=\"navigation\">
                         <ul class=\"site-menu main-menu js-clone-nav mr-auto d-none d-lg-block\">
                             <li class=\"active\"><a href=\"{{ asset('/home') }}\" class=\"nav-link\">Accueil</a></li>
-                            <li><a href=\"{{ asset('/matches') }}\" class=\"nav-link\">Terrains</a></li>
+                            <li><a href=\"{{ asset('/terrains') }}\" class=\"nav-link\">Terrains</a></li>
                             <li><a href=\"{{ asset('/matches') }}\" class=\"nav-link\">Réservations</a></li>
                             <li><a href=\"{{ asset('/matches') }}\" class=\"nav-link\">Matchessss</a></li>
                             <li><a href=\"{{ asset('/joueurs') }}\" class=\"nav-link\">Joueurs</a></li>

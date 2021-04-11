@@ -122,5 +122,178 @@ class Utilisateur
      */
     private $equipe;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    public function getRole(): ?string
+    {
+        return $this->role;
+    }
+
+    public function setRole(?string $role): self
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(?string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getPrenom(): ?string
+    {
+        return $this->prenom;
+    }
+
+    public function setPrenom(?string $prenom): self
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    public function getCategorie(): ?int
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(?int $categorie): self
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getRaisonSociale(): ?string
+    {
+        return $this->raisonSociale;
+    }
+
+    public function setRaisonSociale(?string $raisonSociale): self
+    {
+        $this->raisonSociale = $raisonSociale;
+
+        return $this;
+    }
+
+    public function getMatriculeFiscale(): ?string
+    {
+        return $this->matriculeFiscale;
+    }
+
+    public function setMatriculeFiscale(?string $matriculeFiscale): self
+    {
+        $this->matriculeFiscale = $matriculeFiscale;
+
+        return $this;
+    }
+
+    public function getVerifie(): ?bool
+    {
+        return $this->verifie;
+    }
+
+    public function setVerifie(?bool $verifie): self
+    {
+        $this->verifie = $verifie;
+
+        return $this;
+    }
+
+    public function getSoldePoint(): ?int
+    {
+        return $this->soldePoint;
+    }
+
+    public function setSoldePoint(?int $soldePoint): self
+    {
+        $this->soldePoint = $soldePoint;
+
+        return $this;
+    }
+
+    public function getPosition(): ?string
+    {
+        return $this->position;
+    }
+
+    public function setPosition(?string $position): self
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+    public function getTelephone(): ?string
+    {
+        return $this->telephone;
+    }
+
+    public function setTelephone(?string $telephone): self
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    public function getPositionEquipe(): ?int
+    {
+        return $this->positionEquipe;
+    }
+
+    public function setPositionEquipe(int $positionEquipe): self
+    {
+        $this->positionEquipe = $positionEquipe;
+
+        return $this;
+    }
+
+    public function getEquipe(): ?Equipe
+    {
+        return $this->equipe;
+    }
+
+    public function setEquipe(?Equipe $equipe): self
+    {
+        $this->equipe = $equipe;
+
+        return $this;
+    }
+
 
 }

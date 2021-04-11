@@ -45,5 +45,46 @@ class Penalite
      */
     private $complexe;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getDesignation(): ?string
+    {
+        return $this->designation;
+    }
+
+    public function setDesignation(string $designation): self
+    {
+        $this->designation = $designation;
+
+        return $this;
+    }
+
+    public function getNbrePointsRetires(): ?int
+    {
+        return $this->nbrePointsRetires;
+    }
+
+    public function setNbrePointsRetires(int $nbrePointsRetires): self
+    {
+        $this->nbrePointsRetires = $nbrePointsRetires;
+
+        return $this;
+    }
+
+    public function getComplexe(): ?Utilisateur
+    {
+        return $this->complexe;
+    }
+
+    public function setComplexe(?Utilisateur $complexe): self
+    {
+        $this->complexe = $complexe;
+
+        return $this;
+    }
+
 
 }

@@ -52,5 +52,58 @@ class Invitation
      */
     private $utilisateur;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    public function getEquipe(): ?int
+    {
+        return $this->equipe;
+    }
+
+    public function setEquipe(int $equipe): self
+    {
+        $this->equipe = $equipe;
+
+        return $this;
+    }
+
+    public function getValide(): ?int
+    {
+        return $this->valide;
+    }
+
+    public function setValide(int $valide): self
+    {
+        $this->valide = $valide;
+
+        return $this;
+    }
+
+    public function getUtilisateur(): ?Utilisateur
+    {
+        return $this->utilisateur;
+    }
+
+    public function setUtilisateur(?Utilisateur $utilisateur): self
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
 
 }

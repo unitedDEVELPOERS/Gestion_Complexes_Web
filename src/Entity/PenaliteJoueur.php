@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PenaliteJoueur
  *
- * @ORM\Table(name="penalite_joueur", indexes={@ORM\Index(name="matche", columns={"matche"}), @ORM\Index(name="penalite", columns={"penalite"}), @ORM\Index(name="arbitre", columns={"arbitre"}), @ORM\Index(name="joueur", columns={"joueur"})})
+ * @ORM\Table(name="penalite_joueur", indexes={@ORM\Index(name="arbitre", columns={"arbitre"}), @ORM\Index(name="joueur", columns={"joueur"}), @ORM\Index(name="matche", columns={"matche"}), @ORM\Index(name="penalite", columns={"penalite"})})
  * @ORM\Entity
  */
 class PenaliteJoueur
@@ -67,6 +67,71 @@ class PenaliteJoueur
      * })
      */
     private $penalite;
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getHeure(): ?\DateTimeInterface
+    {
+        return $this->heure;
+    }
+
+    public function setHeure(\DateTimeInterface $heure): self
+    {
+        $this->heure = $heure;
+
+        return $this;
+    }
+
+    public function getArbitre(): ?Utilisateur
+    {
+        return $this->arbitre;
+    }
+
+    public function setArbitre(?Utilisateur $arbitre): self
+    {
+        $this->arbitre = $arbitre;
+
+        return $this;
+    }
+
+    public function getJoueur(): ?Utilisateur
+    {
+        return $this->joueur;
+    }
+
+    public function setJoueur(?Utilisateur $joueur): self
+    {
+        $this->joueur = $joueur;
+
+        return $this;
+    }
+
+    public function getMatche(): ?Matche
+    {
+        return $this->matche;
+    }
+
+    public function setMatche(?Matche $matche): self
+    {
+        $this->matche = $matche;
+
+        return $this;
+    }
+
+    public function getPenalite(): ?Penalite
+    {
+        return $this->penalite;
+    }
+
+    public function setPenalite(?Penalite $penalite): self
+    {
+        $this->penalite = $penalite;
+
+        return $this;
+    }
 
 
 }

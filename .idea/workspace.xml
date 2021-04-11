@@ -130,6 +130,15 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Esprit\Ahmed\Semestre2\Symfony\Gest_Complexes\templates\terrain" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Esprit\Ahmed\Semestre2\Symfony\Gest_Complexes\templates\Admin\terrain" />
+      <recent name="D:\Esprit\Ahmed\Semestre2\Symfony\Gest_Complexes\templates\front_office" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -150,7 +159,10 @@
       <workItem from="1617877229127" duration="8572000" />
       <workItem from="1617888656732" duration="172000" />
       <workItem from="1617888871276" duration="2676000" />
-      <workItem from="1617951365320" duration="1724000" />
+      <workItem from="1617951365320" duration="26928000" />
+      <workItem from="1618040488959" duration="31101000" />
+      <workItem from="1618135383416" duration="5802000" />
+      <workItem from="1618148068725" duration="3480000" />
     </task>
     <servers />
   </component>

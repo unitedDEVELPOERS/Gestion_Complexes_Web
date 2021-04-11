@@ -28,5 +28,22 @@ class Categorie
      */
     private $designation;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getDesignation(): ?string
+    {
+        return $this->designation;
+    }
+
+    public function setDesignation(string $designation): self
+    {
+        $this->designation = $designation;
+
+        return $this;
+    }
+
 
 }

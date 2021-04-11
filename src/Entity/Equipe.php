@@ -52,5 +52,58 @@ class Equipe
      */
     private $capitain;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(?string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getNbreJoueur(): ?int
+    {
+        return $this->nbreJoueur;
+    }
+
+    public function setNbreJoueur(int $nbreJoueur): self
+    {
+        $this->nbreJoueur = $nbreJoueur;
+
+        return $this;
+    }
+
+    public function getLogo(): ?string
+    {
+        return $this->logo;
+    }
+
+    public function setLogo(string $logo): self
+    {
+        $this->logo = $logo;
+
+        return $this;
+    }
+
+    public function getCapitain(): ?Utilisateur
+    {
+        return $this->capitain;
+    }
+
+    public function setCapitain(?Utilisateur $capitain): self
+    {
+        $this->capitain = $capitain;
+
+        return $this;
+    }
+
 
 }
