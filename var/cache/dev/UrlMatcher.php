@@ -18,10 +18,17 @@ return [
             [['_route' => 'contact', '_controller' => 'App\\Controller\\ContactController::index'], null, null, null, false, false, null],
         ],
         '/blog' => [[['_route' => 'blog', '_controller' => 'App\\Controller\\BlogController::index'], null, null, null, false, false, null]],
+        '/categorie' => [[['_route' => 'categorie', '_controller' => 'App\\Controller\\CategorieController::index'], null, null, null, false, false, null]],
+        '/AfficheCategorie' => [[['_route' => 'AfficheCategorie', '_controller' => 'App\\Controller\\CategorieController::Affiche'], null, null, null, false, false, null]],
+        '/Categorie/Add' => [[['_route' => 'adc', '_controller' => 'App\\Controller\\CategorieController::Add'], null, null, null, false, false, null]],
         '/club' => [[['_route' => 'club', '_controller' => 'App\\Controller\\ClubController::index'], null, null, null, false, false, null]],
         '/home' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/joueurs' => [[['_route' => 'joueurs', '_controller' => 'App\\Controller\\JoueursController::index'], null, null, null, false, false, null]],
         '/matches' => [[['_route' => 'matches', '_controller' => 'App\\Controller\\MatchesController::index'], null, null, null, false, false, null]],
+        '/terrain' => [[['_route' => 'terrain', '_controller' => 'App\\Controller\\TerrainController::index'], null, null, null, false, false, null]],
+        '/utilisateur' => [[['_route' => 'utilisateur', '_controller' => 'App\\Controller\\UtilisateurController::index'], null, null, null, false, false, null]],
+        '/AfficheUtilisateur' => [[['_route' => 'AfficheUtilisateur', '_controller' => 'App\\Controller\\UtilisateurController::Affiche'], null, null, null, false, false, null]],
+        '/utilisateur/Add' => [[['_route' => 'ad', '_controller' => 'App\\Controller\\UtilisateurController::Add'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -40,6 +47,14 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
+                .'|/Supp(?'
+                    .'|Categorie/([^/]++)(*:195)'
+                    .'|Utilisateur/([^/]++)(*:223)'
+                .')'
+                .'|/Update(?'
+                    .'|Categorie/([^/]++)(*:260)'
+                    .'|Utilisateur/([^/]++)(*:288)'
+                .')'
             .')/?$}sD',
     ],
     [ // $dynamicRoutes
@@ -49,8 +64,12 @@ return [
         116 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        159 => [
-            [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
+        159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        195 => [[['_route' => 'df', '_controller' => 'App\\Controller\\CategorieController::Delete'], ['id'], null, null, false, true, null]],
+        223 => [[['_route' => 'd', '_controller' => 'App\\Controller\\UtilisateurController::Delete'], ['id'], null, null, false, true, null]],
+        260 => [[['_route' => 'af', '_controller' => 'App\\Controller\\CategorieController::update'], ['id'], null, null, false, true, null]],
+        288 => [
+            [['_route' => 'a', '_controller' => 'App\\Controller\\UtilisateurController::update'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

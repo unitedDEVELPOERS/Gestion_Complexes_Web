@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Affiche Utilisateur </h1>
+<button>
+    <a href="{{ path('ad') }}" >Ajouter</a>
+</button>
+<table border="1">
+    <tr>
+    <th> ID</th>
+    <th>EMAIL </th>
+        <th> NOM</th>
+        <th>PRENOM </th>
+        <th> ROLE</th>
+        <th>CATEGORIE </th>
+        <th> SOLDE DE POINT</th>
+        <th>POSITION </th>
+        <th>TELEPHONE </th>
+        <td> Update</td>
+    <td> Delete</td>
+    </tr>
+    <tr {% for u in Utilisateur %}>
+    <td>{{ u.id }}</td>
+    <td>{{ u.email }}</td>
+        <td>{{ u.nom }}</td>
+        <td>{{ u.prenom }}</td>
+        <td>{{ u.role }}</td>
+        <td>{{ u.categorie }}</td>
+        <td>{{ u.soldePoint }}</td>
+        <td>{{ u.position }}</td>
+        <td>{{ u.telephone }}</td>
+        <td><a href="{{ path('a',{'id':u.id}) }}"> Update</a> </td>
+       <td><a href="{{ path('d',{'id':u.id}) }}"> Delete</a> </td>
+    </tr {% endfor %}>
+
+
+</table>
+</body>
+</html>
