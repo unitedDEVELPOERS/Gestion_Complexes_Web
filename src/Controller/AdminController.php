@@ -17,4 +17,14 @@ class AdminController extends AbstractController
             'controller_name' => 'AdminController',
         ]);
     }
+
+    /**
+     * @Route("/admint", name="admint")
+     */
+    public function terrains(): Response
+    {
+        return $this->render('admin/terrain/listeTerrains.html.twig', [
+            'controller_name' => 'AdminController',
+        ]);
+    }
 }

@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
-require __DIR__.'/ContainerEhTRwTD/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerMItGlYU/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -38,13 +38,24 @@ $classes[] = 'App\Controller\BaseController';
 $classes[] = 'App\Controller\BlogController';
 $classes[] = 'App\Controller\ClubController';
 $classes[] = 'App\Controller\ContactController';
+$classes[] = 'App\Controller\EquipeController';
 $classes[] = 'App\Controller\FrontOfficeController';
 $classes[] = 'App\Controller\HomeController';
+$classes[] = 'App\Controller\InvitationController';
 $classes[] = 'App\Controller\JoueursController';
 $classes[] = 'App\Controller\MatchesController';
+$classes[] = 'App\Controller\PenaliteController';
+$classes[] = 'App\Controller\PenaliteJoueurController';
+$classes[] = 'App\Controller\Prop_complexe\LoginController';
+$classes[] = 'App\Controller\Prop_complexe\ProfileController';
 $classes[] = 'App\Controller\ReservationController';
 $classes[] = 'App\Controller\TerrainController';
+$classes[] = 'App\Form\PenaliteJoueurType';
+$classes[] = 'App\Form\PenaliteType';
+$classes[] = 'App\Form\ReservationType';
 $classes[] = 'App\Form\TerrainType';
+$classes[] = 'App\Repository\PenaliteJoueurRepository';
+$classes[] = 'App\Repository\PenaliteRepository';
 $classes[] = 'App\Repository\ReservationRepository';
 $classes[] = 'App\Repository\StudentRepository';
 $classes[] = 'App\Repository\TerrainRepository';

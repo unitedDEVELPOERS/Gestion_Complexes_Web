@@ -17,4 +17,18 @@ class BlogController extends AbstractController
             'controller_name' => 'BlogController',
         ]);
     }
+    /**
+     * @Route("/reservation", name="reservation")
+     */
+    public function reservation(): Response
+    {
+        return $this->render('front/reservation.html.twig');
+    }
+    /**
+     * @Route("/shop", name="shop")
+     */
+    public function shop(): Response
+    {
+        return $this->render('front/shop.html.twig');
+    }
 }

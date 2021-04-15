@@ -9,48 +9,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class BaseController extends AbstractController
 {
     /**
-     * @Route("/base", name="base")
+     * @Route("/aboutus", name="aboutus")
      */
     public function index(): Response
     {
-        return $this->render('base/index.html.twig', [
-            'controller_name' => 'BaseController',
-        ]);
+        return $this->render('front/aboutus.html.twig');
     }
 
-
-
-    /**
-     * @Route("/matches", name="base")
-     */
-    public function matches(): Response
-    {
-        return $this->render('matches/index.html.twig', [
-            'controller_name' => 'MatchesController',
-        ]);
-    }
-
-    /**
-     * @Route("/joueurs", name="base")
-     */
-    public function joueurs(): Response
-    {
-        return $this->render('joueurs/index.html.twig', [
-            'controller_name' => 'JoueursController',
-        ]);
-    }
-
-
-
-    /**
-     * @Route("/contact", name="base")
-     */
-    public function contact(): Response
-    {
-        return $this->render('contact/index.html.twig', [
-            'controller_name' => 'ContactController',
-        ]);
-    }
 
 
 

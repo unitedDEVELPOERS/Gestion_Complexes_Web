@@ -3,12 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Penalite
  *
  * @ORM\Table(name="penalite", indexes={@ORM\Index(name="penalite_ibfk_1", columns={"complexe"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\PenaliteRepository")
  */
 class Penalite
 {
@@ -25,6 +26,11 @@ class Penalite
      * @var string
      *
      * @ORM\Column(name="designation", type="string", length=30, nullable=false)
+     * @Assert\NotNull(message = "Ce champs est obligatoire")
+     * @Assert\Length(min = 5, max = 50,
+     * minMessage = "La désignation doit comporter au moins {{ limit }} caractères",
+     * maxMessage = "La désignation doit comporter au plus {{ limit }} caractères"
+     * )
      */
     private $designation;
 
@@ -32,6 +38,7 @@ class Penalite
      * @var int
      *
      * @ORM\Column(name="nbre_points_retires", type="integer", nullable=false)
+     * @Assert\Positive(message = "Le nombre des points doit être positif")
      */
     private $nbrePointsRetires;
 
@@ -85,6 +92,5 @@ class Penalite
 
         return $this;
     }
-
 
 }

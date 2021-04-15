@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * PenaliteJoueur
  *
  * @ORM\Table(name="penalite_joueur", indexes={@ORM\Index(name="arbitre", columns={"arbitre"}), @ORM\Index(name="joueur", columns={"joueur"}), @ORM\Index(name="matche", columns={"matche"}), @ORM\Index(name="penalite", columns={"penalite"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\PenaliteJoueurRepository")
  */
 class PenaliteJoueur
 {

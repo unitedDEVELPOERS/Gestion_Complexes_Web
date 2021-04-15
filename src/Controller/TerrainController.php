@@ -26,7 +26,7 @@ class TerrainController extends AbstractController
     }
 
     /**
-     * @Route("/terrain/add", name="terrain")
+     * @Route("/Admin/terrain/add", name="terrain")
      */
     function add(Request $request)
     {
@@ -45,7 +45,7 @@ class TerrainController extends AbstractController
             $this -> addFlash('success', 'Terrain bien ajouté avec succès');
             return $this->redirectToRoute("AfficheTerrains");
         }
-        return $this->render('terrain/Ajouter.html.twig',['form' => $form->createView()]);
+        return $this->render('Admin/terrain/Ajouter.html.twig',['form' => $form->createView()]);
 
     }
 
@@ -57,30 +57,17 @@ class TerrainController extends AbstractController
     public function Affiche(TerrainRepository  $repository){
         //$repo = $this->getDoctrine()->getRepository(Classroom::class);
         $tettains = $repository->findAll();
-        return $this->render('Admin/terrain/Affiche.html.twig', ['terrains' => $tettains]);
+        return $this->render('admin/terrain/listeTerrains.html.twig', ['terrains' => $tettains]);
     }
 
     /**
      * @Route("/terrain/supp/{id}", name="d", methods="DELETE")
      */
-    /*function delete($id, TerrainRepository $repository, Request $request){
 
-            $terrain = $repository->find($id);
-        if($this->isCsrfTokenValid('delete', $terrain, $request->get('_token'))){
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($terrain);
-            $em->flush();
 
-            $this -> addFlash('danger', 'Terrain supprimé !');
-        }
-        return $this->redirectToRoute("AfficheTerrains");
-    }
-    */
-
-    function delete(Terrain $terrain, Request $request)
+    function delete(TerrainRepository $repository,Terrain $terrain, Request $request)
     {
 
-        //$terrain = $repository->find($id);
         if ($this->isCsrfTokenValid('delete' . $terrain->getId(), $request->get('_token'))) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($terrain);
@@ -88,7 +75,7 @@ class TerrainController extends AbstractController
 
             $this->addFlash('danger', 'Terrain bien supprimé avec succès');
         }
-        else $this->addFlash('danger', 'err !');
+        else $this->addFlash('danger', 'Terrain non supprimé !');
         return $this->redirectToRoute("AfficheTerrains");
     }
     /**
@@ -109,6 +96,18 @@ class TerrainController extends AbstractController
             return $this->redirectToRoute("AfficheTerrains");
         }
         return $this->render('terrain/Update.html.twig',['form' => $form->createView()]);
+    }
+
+
+    /**
+     * @param TerrainRepository $repository
+     * @return Response
+     * @Route ("/Terrains", name="TerrainsClient")
+     */
+    public function AfficheClient(TerrainRepository  $repository){
+
+        $terrains = $repository->findAll();
+        return $this->render('front/terrain.html.twig');
     }
 
 }
