@@ -212,6 +212,6 @@ class __TwigTemplate_27624e1a7c26ebb2c6cea042e68f94a38362f896ec1d7a9b5b3affeebb6
     {% endfor %}
     </tbody>
 </table>
-", "@Twig/Exception/logs.html.twig", "D:\\Esprit\\Ahmed\\Semestre2\\Symfony\\EspritClub\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\logs.html.twig");
+", "@Twig/Exception/logs.html.twig", "C:\\xampp\\htdocs\\Gestion_Complexes_Web\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\logs.html.twig");
     }
 }
