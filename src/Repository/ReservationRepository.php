@@ -47,4 +47,12 @@ class ReservationRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findReservation($cl){
+        return $this->createQueryBuilder('reservation')
+            ->where('reservation.client = :cl')
+            ->setParameter('cl', $cl)
+            ->getQuery()
+            ->getResult();
+    }
 }

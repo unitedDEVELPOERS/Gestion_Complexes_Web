@@ -17,6 +17,7 @@ return [
         '/admint' => [[['_route' => 'admint', '_controller' => 'App\\Controller\\AdminController::terrains'], null, null, null, false, false, null]],
         '/aboutus' => [[['_route' => 'aboutus', '_controller' => 'App\\Controller\\BaseController::index'], null, null, null, false, false, null]],
         '/blog' => [[['_route' => 'blog', '_controller' => 'App\\Controller\\BlogController::index'], null, null, null, false, false, null]],
+        '/reservation' => [[['_route' => 'reservation', '_controller' => 'App\\Controller\\BlogController::reservation'], null, null, null, false, false, null]],
         '/shop' => [[['_route' => 'shop', '_controller' => 'App\\Controller\\BlogController::shop'], null, null, null, false, false, null]],
         '/club' => [[['_route' => 'club', '_controller' => 'App\\Controller\\ClubController::index'], null, null, null, false, false, null]],
         '/contact' => [[['_route' => 'contact', '_controller' => 'App\\Controller\\ContactController::index'], null, null, null, false, false, null]],
@@ -37,11 +38,13 @@ return [
         '/Porp/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\Prop_complexe\\LoginController::index'], null, null, null, false, false, null]],
         '/Prop_complexe/profile' => [[['_route' => 'profile', '_controller' => 'App\\Controller\\Prop_complexe\\ProfileController::index'], null, null, null, false, false, null]],
         '/terrains' => [[['_route' => 'front_office', '_controller' => 'App\\Controller\\Prop_complexe\\ProfileController::terrains'], null, null, null, false, false, null]],
-        '/reservation' => [[['_route' => 'reservation', '_controller' => 'App\\Controller\\ReservationController::index'], null, null, null, false, false, null]],
-        '/AfficheReservations' => [[['_route' => 'AfficheReservations', '_controller' => 'App\\Controller\\ReservationController::Affiche'], null, null, null, true, false, null]],
+        '/reservation/add' => [[['_route' => 're', '_controller' => 'App\\Controller\\ReservationController::add'], null, null, null, false, false, null]],
+        '/AfficheReservations' => [[['_route' => 'Reservations', '_controller' => 'App\\Controller\\ReservationController::Affiche'], null, null, null, true, false, null]],
+        '/send' => [[['_route' => 'send', '_controller' => 'App\\Controller\\TerrainController::send'], null, null, null, false, false, null]],
         '/Admin/terrain/add' => [[['_route' => 'terrain', '_controller' => 'App\\Controller\\TerrainController::add'], null, null, null, false, false, null]],
         '/AfficheTerrains' => [[['_route' => 'AfficheTerrains', '_controller' => 'App\\Controller\\TerrainController::Affiche'], null, null, null, true, false, null]],
-        '/Terrains' => [[['_route' => 'TerrainsClient', '_controller' => 'App\\Controller\\TerrainController::AfficheClient'], null, null, null, false, false, null]],
+        '/Terrains' => [[['_route' => 'TerrainsClient', '_controller' => 'App\\Controller\\TerrainController::AfficheTerrain'], null, null, null, false, false, null]],
+        '/searchTerrain' => [[['_route' => 'searchTerrain', '_controller' => 'App\\Controller\\TerrainController::searchTerrain'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -68,14 +71,20 @@ return [
                     .'|/([^/]++)(*:241)'
                     .'|invitation/([^/]++)(*:268)'
                 .')'
-                .'|/penalite/(?'
-                    .'|update/([^/]++)(*:305)'
-                    .'|supp/([^/]++)(*:326)'
+                .'|/penalite(?'
+                    .'|/(?'
+                        .'|update/([^/]++)(*:308)'
+                        .'|supp/([^/]++)(*:329)'
+                    .')'
+                    .'|Joueur/update/([^/]++)(*:360)'
                 .')'
+                .'|/reservation/update/([^/]++)(*:397)'
+                .'|/AfficheTerrains/([^/]++)(*:430)'
                 .'|/terrain/(?'
-                    .'|supp/([^/]++)(*:360)'
-                    .'|update/([^/]++)(*:383)'
+                    .'|supp/([^/]++)(*:463)'
+                    .'|update/([^/]++)(*:486)'
                 .')'
+                .'|/Terrain/afficher/([^/]++)(*:521)'
             .')/?$}sD',
     ],
     [ // $dynamicRoutes
@@ -90,11 +99,15 @@ return [
         213 => [[['_route' => 'deleteinvitation', '_controller' => 'App\\Controller\\InvitationController::Delete'], ['id'], null, null, false, true, null]],
         241 => [[['_route' => 'updateequipe', '_controller' => 'App\\Controller\\EquipeController::update'], ['id'], null, null, false, true, null]],
         268 => [[['_route' => 'updateinvitation', '_controller' => 'App\\Controller\\InvitationController::update'], ['id'], null, null, false, true, null]],
-        305 => [[['_route' => 'updatePenalite', '_controller' => 'App\\Controller\\PenaliteController::Update'], ['id'], null, null, false, true, null]],
-        326 => [[['_route' => 'dp', '_controller' => 'App\\Controller\\PenaliteController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        360 => [[['_route' => 'd', '_controller' => 'App\\Controller\\TerrainController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        383 => [
-            [['_route' => 'update', '_controller' => 'App\\Controller\\TerrainController::Update'], ['id'], null, null, false, true, null],
+        308 => [[['_route' => 'updatePenalite', '_controller' => 'App\\Controller\\PenaliteController::Update'], ['id'], null, null, false, true, null]],
+        329 => [[['_route' => 'dp', '_controller' => 'App\\Controller\\PenaliteController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        360 => [[['_route' => 'update', '_controller' => 'App\\Controller\\PenaliteJoueurController::Update'], ['id'], null, null, false, true, null]],
+        397 => [[['_route' => 'updateReservation', '_controller' => 'App\\Controller\\ReservationController::Update'], ['id'], null, null, false, true, null]],
+        430 => [[['_route' => 'filterTerrains', '_controller' => 'App\\Controller\\TerrainController::filter'], ['m'], null, null, false, true, null]],
+        463 => [[['_route' => 'd', '_controller' => 'App\\Controller\\TerrainController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        486 => [[['_route' => 'updateTerrain', '_controller' => 'App\\Controller\\TerrainController::Update'], ['id'], null, null, false, true, null]],
+        521 => [
+            [['_route' => 'terrain_show', '_controller' => 'App\\Controller\\TerrainController::show'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

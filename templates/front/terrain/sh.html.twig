@@ -1,0 +1,125 @@
+{% extends'front/base.html.twig' %}
+{% block title %} Contact US
+{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{{ asset('front/reservation/dist/simplepicker.css')}}">
+<style>
+    .event-log {
+        font-family: consolas, Monaco, monospace;
+        margin: 10px 5px;
+        line-height: 2;
+        border: 1px solid #4c4c4c;
+        height: auto;
+        width: 90%;
+        padding: 2px 6px;
+        color: #4c4c4c;
+        white-space: pre;
+    }
+</style>
+{% endblock %}
+{% block body %}
+    <div class="kode-subheader subheader-height">
+        <div class="container">
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+    <div class="kode-content">
+<script>
+    $t=new Terrain();
+
+</script>
+        <!--// Page Content //-->
+        <section class="kode-pagesection">
+            <div class="container">
+                <div class="row">
+
+                    <div class="kode-pagecontent col-md-12">
+
+                        <div class="kode-gallery">
+                            <ul class="row">
+
+                                    <li class="col-md-6">
+                                        <img  src="{{ asset('uploads/terrains/' ~terrain.image) }}" alt="" style="width: 500px; height: 350px">
+
+                                            <h3>{{ terrain.designation }}</h3>
+                                            <h2>{{ terrain.description }}</h2>
+
+
+
+                                    </li>
+
+                                <li class="col-md-6">
+
+                                    {{ form(form) }}
+
+
+                                </li>
+
+
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="kode-pagecontent col-md-12">
+
+                        <div class="kode-gallery">
+                            <ul class="row">
+
+
+
+                                <li class="col-md-12">
+                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+                                    <div style="margin-left: 150px">
+                                        <button class="btn" style="margin-right: 20px; width: 150px" value="06:00:00">06 : 00</button>
+                                        <button class="btn" style="margin-right: 20px; width: 150px" value="08:00:00">08 : 00</button>
+                                        <button class="btn" style="margin-right: 20px; width: 150px" value="10:00:00">10 : 00</button>
+                                        <button class="btn" style="margin-right: 20px; width: 150px" value="12:00:00">12 : 00</button>
+                                        <button class="btn" style="margin-right: 20px; width: 150px" value="14:00:00">14 : 00</button>
+                                    </div>
+                                    <div style="margin-left: 323px">
+                                        <button class="btn" style="margin-right: 20px; margin-top: 10px; width: 150px" value="16:00:00">16 : 00</button>
+                                        <button class="btn" style="margin-right: 20px; margin-top: 10px; width: 150px" value="18:00:00">18 : 00</button>
+                                        <button class="btn" style="margin-right: 20px; margin-top: 10px; width: 150px" value="20:00:00">20 : 00</button>
+                                    </div>
+
+                                    <script>
+                                        $("button").click(function() {
+                                            var fired_button = $(this).val();
+
+                                            reservation.heure=$(this).val();
+
+
+                                            alert(reservation.heure);
+                                        });
+                                    </script>
+                                </li>
+
+
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--// Page Content //-->
+
+    </div>
+
+    <script>
+
+    </script>
+{% endblock %}

@@ -7,8 +7,10 @@ use App\Entity\Terrain;
 use App\Entity\Utilisateur;
 use phpDocumentor\Reflection\Types\Integer;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -21,7 +23,7 @@ class TerrainType extends AbstractType
         $builder
             ->add('designation')
             ->add('description')
-            ->add('ville', ChoiceType::class, [
+            ->add('ville',ChoiceType::class, [
                 'choices' => array(
                     "Ariana" => "Ariana",
                     "Béja"=> "Béja",
@@ -50,7 +52,7 @@ class TerrainType extends AbstractType
                 )
             ])
             ->add('adresse')
-            ->add('image')
+            ->add('image' , FileType::class, array('data_class' => null))
             ->add('disponible')
             ->add('prixLocation', IntegerType::class)
             ->add('heureOuverture', null, [

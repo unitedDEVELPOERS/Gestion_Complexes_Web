@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Categorie
@@ -24,6 +25,7 @@ class Categorie
     /**
      * @var string
      *
+     * @Groups("terrains")
      * @ORM\Column(name="designation", type="string", length=30, nullable=false)
      */
     private $designation;

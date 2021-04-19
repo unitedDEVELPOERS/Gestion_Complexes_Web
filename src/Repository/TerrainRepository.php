@@ -47,4 +47,42 @@ class TerrainRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findTerrainByDesignation($des){
+        return $this->createQueryBuilder('terrain')
+            ->where('terrain.designation LIKE :des')
+            ->orWhere('terrain.ville LIKE :des')
+            ->setParameter('des', '%'.$des.'%')
+            ->getQuery()
+            ->getResult();
+    }
+
+
+    public function findTerrainByVille($des){
+        return $this->createQueryBuilder('terrain')
+            ->where('terrain.ville LIKE :des')
+            ->setParameter('des', '%'.$des.'%')
+            ->getQuery()
+            ->getResult();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

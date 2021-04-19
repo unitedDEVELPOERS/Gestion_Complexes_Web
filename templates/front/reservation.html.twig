@@ -1,6 +1,2087 @@
 {% extends'front/base.html.twig' %}
-{% block title %} reservation
+{% block title %} About Us
 {% endblock %}
 {% block body %}
+<head>
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='tribe-common-skeleton-style-css'  href="{{ asset('front/reservation/wp-content/plugins/the-events-calendar/common/src/resources/css/common-skeleton.minb2a6.css?ver=4.12.15.1') }}" type='text/css' media='all' />
+    <link rel='stylesheet' id='tribe-tooltip-css'  href="{{ asset('front/reservation/wp-content/plugins/the-events-calendar/common/src/resources/css/tooltip.minb2a6.css?ver=4.12.15.1') }}" type='text/css' media='all' />
+    <link rel='stylesheet' id='wp-block-library-css'  href="{{ asset('front/reservation/wp-includes/css/dist/block-library/style.min40df.css?ver=5.6') }}" type='text/css' media='all' />
+    <link rel='stylesheet' id='wc-block-vendors-style-css'  href="{{ asset('front/reservation/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/vendors-stylecce7.css?ver=4.0.0') }}" type='text/css' media='all' />
+    <link rel='stylesheet' id='wc-block-style-css'  href="{{ asset('front/reservation/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/stylecce7.css?ver=4.0.0') }}" type='text/css' media='all' />
+    <link rel='stylesheet' id='contact-form-7-css'  href="{{ asset('front/reservation/wp-content/plugins/contact-form-7/includes/css/styles9dff.css?ver=5.3.2') }}" type='text/css' media='all' />
+    <link rel='stylesheet' id='nd_tds_style-css'  href="{{ asset('front/reservation/wp-content/plugins/nd-theme-demos-switcher/css/style40df.css?ver=5.6') }}" type='text/css' media='all' />
+    <link rel='stylesheet' id='nd_elements_style-css'  href="{{ asset('front/reservation/wp-content/plugins/nd-elements/css/style40df.css?ver=5.6') }}" type='text/css' media='all' />
+    <link rel='stylesheet' id='nd_options_style-css'  href="{{ asset('front/reservation/wp-content/plugins/nd-shortcodes/css/style40df.css?ver=5.6') }}" type='text/css' media='all' />
+    <link rel='stylesheet' id='nd_options_font_family_h-css'  href="http://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C700&amp;ver=5.6" type='text/css' media='all' />
+    <link rel='stylesheet' id='nd_options_font_family_p-css'  href="http://fonts.googleapis.com/css?family=Rubik%3A300%2C400%2C500%2C700&amp;ver=5.6" type='text/css' media='all' />
+    <link rel='stylesheet' id='nd_options_font_family_third-css'  href="http://fonts.googleapis.com/css?family=Rubik%3A300%2C400%2C500%2C700&amp;ver=5.6" type='text/css' media='all' />
 
+    <link rel='stylesheet' id='nd_spt_style-css'  href="{{ asset('front/reservation/wp-content/plugins/nd-sports-booking/assets/css/style40df.css?ver=5.6') }}" type='text/css' media='all' />
+    <link rel='stylesheet' id='rs-plugin-settings-css'  href="{{ asset('front/reservation/wp-content/plugins/revslider/public/assets/css/rs60587.css?ver=6.3.6') }}" type='text/css' media='all' />
+    <style id='rs-plugin-settings-inline-css' type='text/css'>
+        #rs-demo-id {}
+    </style>
+    <link rel='stylesheet' id='timetable_sf_style-css'  href="{{ asset('front/reservation/wp-content/plugins/timetable/style/superfish40df.css?ver=5.6')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='timetable_gtip2_style-css'  href="{{ asset('front/reservation/wp-content/plugins/timetable/style/jquery.qtip40df.css?ver=5.6')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='timetable_style-css'  href="{{ asset('front/reservation/wp-content/plugins/timetable/style/style40df.css?ver=5.6')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='timetable_event_template-css'  href="{{ asset('front/reservation/wp-content/plugins/timetable/style/event_template40df.css?ver=5.6')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='timetable_responsive_style-css'  href="{{ asset('front/reservation/wp-content/plugins/timetable/style/responsive40df.css?ver=5.6')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='timetable_font_lato-css'  href="http://fonts.googleapis.com/css?family=Lato%3A400%2C700&amp;ver=5.6" type='text/css' media='all' />
+    <link rel='stylesheet' id='woocommerce-layout-css'  href="{{ asset('front/reservation/wp-content/plugins/woocommerce/assets/css/woocommerce-layout20fd.css?ver=4.9.2')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='woocommerce-smallscreen-css'  href="{{ asset('front/reservation/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen20fd.css?ver=4.9.2')}}" type='text/css' media='only screen and (max-width: 768px)' />
+    <link rel='stylesheet' id='woocommerce-general-css'  href="{{ asset('front/reservation/wp-content/plugins/woocommerce/assets/css/woocommerce20fd.css?ver=4.9.2')}}" type='text/css' media='all' />
+    <style id='woocommerce-inline-inline-css' type='text/css'>
+        .woocommerce form .form-row .required { visibility: visible; }
+    </style>
+    <link rel='stylesheet' id='nicdark-style-css'  href="{{ asset('front/reservation/wp-content/themes/atp/style40df.css?ver=5.6')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='nicdark-fonts-css'  href=http://fonts.googleapis.com/css?family=Poppins%7CRubik%3A300%2C400%2C500%2C700&amp;ver=1.0.0')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-icons-css'  href="{{ asset('front/reservation/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.minee95.css?ver=5.10.0')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-animations-css'  href="{{ asset('front/reservation/wp-content/plugins/elementor/assets/lib/animations/animations.min324d.css?ver=3.1.0')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-frontend-css'  href="{{ asset('front/reservation/wp-content/uploads/sites/2/elementor/css/custom-frontend.mina4af.css?ver=1615543370')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-post-5428-css'  href="{{ asset('front/reservation/wp-content/uploads/sites/2/elementor/css/post-5428a4af.css?ver=1615543370')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='elementor-post-4605-css'  href="{{ asset('front/reservation/wp-content/uploads/sites/2/elementor/css/post-4605c5b5.css?ver=1615546167')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='google-fonts-1-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;ver=5.6' type='text/css' media='all' />
+    <script type='text/javascript' src="{{ asset('front/reservation/wp-includes/js/jquery/jquery.min9d52.js?ver=3.5.1')}}" id='jquery-core-js'></script>
+    <script type='text/javascript' src="{{ asset('front/reservation/wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2')}}" id='jquery-migrate-js'></script>
+    <script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/revslider/public/assets/js/rbtools.min0587.js?ver=6.3.6')}}" id='tp-tools-js'></script>
+    <script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/revslider/public/assets/js/rs6.min0587.js?ver=6.3.6')}}" id='revmin-js'></script>
+    <link rel="https://api.w.org/" href="{{ asset('front/reservation/wp-json/index.html')}}" />
+    <link rel="alternate" type="application/json" href="{{ asset('front/reservation/wp-json/wp/v2/pages/4605.json') }}" />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="{{ asset('front/reservation/xmlrpc0db0.html?rsd') }}" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="{{ asset('front/reservation/wp-includes/wlwmanifest.xml')}}" />
+    <meta name="generator" content="WordPress 5.6" />
+    <meta name="generator" content="WooCommerce 4.9.2" />
+    <link rel="canonical" href="index.html" />
+    <link rel='shortlink' href='front/reservation/indexe80e.html?p=4605' />
+    <link rel="alternate" type="application/json+oembed" href="{{ asset('front/reservation/wp-json/oembed/1.0/embedfd81.json?url=http%3A%2F%2Fwww.nicdarkthemes.com%2Fthemes%2Ftennis%2Fwp%2Fdemo%2Ftennis-club%2Freserve%2F')}}" />
+    <link rel="alternate" type="text/xml+oembed" href="{{ asset('front/reservation/wp-json/oembed/1.0/embedd812?url=http%3A%2F%2Fwww.nicdarkthemes.com%2Fthemes%2Ftennis%2Fwp%2Fdemo%2Ftennis-club%2Freserve%2F&amp;format=xml')}}" />
+
+
+
+    <style type="text/css">
+
+        .nd_tds_background_color_1 { background-color: #008f70; }
+        .nd_tds_background_color_2 { background-color: #008f70; }
+        .nd_tds_background_color_3 { background-color: #f2a922; }
+
+    </style>
+
+
+
+
+    <style type="text/css">
+
+        /*START FONTS FAMILY*/
+        .nd_options_customizer_fonts .nd_options_first_font,
+        .nd_options_customizer_fonts h1,
+        .nd_options_customizer_fonts h2,
+        .nd_options_customizer_fonts h3,
+        .nd_options_customizer_fonts h4,
+        .nd_options_customizer_fonts h5,
+        .nd_options_customizer_fonts h6
+        { font-family: 'Poppins', sans-serif; }
+
+        .nd_options_customizer_fonts,
+        .nd_options_customizer_fonts .nd_options_second_font,
+        .nd_options_customizer_fonts p,
+        .nd_options_customizer_fonts a,
+        .nd_options_customizer_fonts select,
+        .nd_options_customizer_fonts textarea,
+        .nd_options_customizer_fonts label,
+        .nd_options_customizer_fonts input,
+        #start_nicdark_framework
+        { font-family: 'Rubik', sans-serif; }
+
+        .nd_options_customizer_fonts .nd_options_second_font_important
+        { font-family: 'Rubik', sans-serif !important; }
+
+        .nd_options_customizer_fonts .nd_options_third_font
+        { font-family: 'Rubik', sans-serif; }
+
+
+        /*START FONTS COLOR*/
+        .nd_options_customizer_fonts .nd_options_color_greydark,
+        .nd_options_customizer_fonts h1,
+        .nd_options_customizer_fonts h2,
+        .nd_options_customizer_fonts h3,
+        .nd_options_customizer_fonts h4,
+        .nd_options_customizer_fonts h5,
+        .nd_options_customizer_fonts h6
+        { color: #1d1d1d; }
+        .nd_options_customizer_fonts .nd_options_color_greydark_important
+        { color: #1d1d1d !important; }
+
+        /*PLACEHOLDER*/
+        .nd_options_customizer_fonts .nd_options_placeholder_color_greydark_important::-webkit-input-placeholder { color: #1d1d1d !important; }
+        .nd_options_customizer_fonts .nd_options_placeholder_color_greydark_important::-moz-placeholder { color: #1d1d1d !important; }
+        .nd_options_customizer_fonts .nd_options_placeholder_color_greydark_important:-ms-input-placeholder { color: #1d1d1d !important; }
+        .nd_options_customizer_fonts .nd_options_placeholder_color_greydark_important:-moz-placeholder { color: #1d1d1d !important; }
+
+        .nd_options_customizer_fonts,
+        .nd_options_customizer_fonts .nd_options_color_grey,
+        .nd_options_customizer_fonts p,
+        .nd_options_customizer_fonts a,
+        .nd_options_customizer_fonts select,
+        .nd_options_customizer_fonts textarea,
+        .nd_options_customizer_fonts label,
+        .nd_options_customizer_fonts input
+        { color: #4c4c4c; }
+
+        .nd_options_color_grey_important { color: #4c4c4c !important; }
+
+
+        /*compatibility with plugin Learning*/
+        #nd_learning_calendar_single_course .ui-datepicker-title {
+            font-family: 'Poppins', sans-serif;
+            color: #1d1d1d;
+        }
+        #nd_learning_calendar_single_course .ui-datepicker-calendar th {
+            color: #1d1d1d;
+        }
+
+    </style>
+
+
+
+
+    <style type="text/css">
+
+        /*START FORMS STYLES*/
+        .nd_options_customizer_forms span.wpcf7-not-valid-tip,
+        .nd_options_customizer_forms .wpcf7-response-output.wpcf7-validation-errors,
+        .wpcf7-response-output
+        {
+            background-color: #444;
+            border-width: 0px !important;
+            border-color: #fff !important;
+            border-radius: 3px;
+            border-style: solid;
+            padding: 10px 20px !important;
+            color: #ffffff;
+            margin: 10px 0px 10px 0px !important;
+            font-size: 13px;
+            line-height: 20px;
+        }
+        .nd_options_customizer_forms .wpcf7-response-output.wpcf7-mail-sent-ok
+        {
+            background-color: #444;
+            border-width: 0px;
+            border-color: #fff;
+            border-radius: 3px;
+            border-style: solid;
+            padding: 10px 20px;
+            color: #ffffff;
+            margin: 0px;
+            margin-top: 10px;
+            font-size: 13px;
+            line-height: 20px;
+        }
+
+
+        /*new compatibility*/
+        .nd_options_customizer_forms .wpcf7 form.sent .wpcf7-response-output {
+            background-color: #444;
+            border-width: 0px;
+            border-color: #fff;
+            border-radius: 3px;
+            border-style: solid;
+            padding: 10px 20px;
+            color: #ffffff;
+            margin: 0px;
+            margin-top: 10px;
+            font-size: 13px;
+            line-height: 20px;
+        }
+
+
+
+
+    </style>
+
+
+
+
+    <style type="text/css">
+
+        /*START FORMS STYLES*/
+        .nd_options_customizer_forms input[type="text"],
+        .nd_options_customizer_forms input[type="email"],
+        .nd_options_customizer_forms input[type="url"],
+        .nd_options_customizer_forms input[type="tel"],
+        .nd_options_customizer_forms input[type="number"],
+        .nd_options_customizer_forms input[type="date"],
+        .nd_options_customizer_forms input[type="file"],
+        .nd_options_customizer_forms input[type="password"],
+        .nd_options_customizer_forms select,
+        .nd_options_customizer_forms textarea,
+        .StripeElement
+
+        {
+            background-color: #ffffff;
+            border-width: 1px;
+            border-color: #f1f1f1;
+            border-radius: 0px;
+            border-style: solid;
+            padding: 10px 20px;
+            -webkit-appearance: none;
+            color: #4c4c4c !important;
+
+        }
+
+
+        .nd_options_customizer_forms input[type="text"]::-webkit-input-placeholder,
+        .nd_options_customizer_forms input[type="email"]::-webkit-input-placeholder,
+        .nd_options_customizer_forms input[type="url"]::-webkit-input-placeholder,
+        .nd_options_customizer_forms input[type="tel"]::-webkit-input-placeholder ,
+        .nd_options_customizer_forms input[type="password"]::-webkit-input-placeholder ,
+        .nd_options_customizer_forms input[type="number"]::-webkit-input-placeholder,
+        .nd_options_customizer_forms textarea::-webkit-input-placeholder  {
+            color: #4c4c4c !important;
+        }
+
+
+        .nd_options_customizer_forms select {
+            cursor: pointer;
+        }
+
+        .nd_options_customizer_forms select option {
+            padding: 10px 20px;
+        }
+
+
+    </style>
+
+
+
+
+    <style type="text/css">
+
+        /*START FORMS STYLES*/
+        .nd_options_customizer_forms input[type="submit"],
+        .nd_options_customizer_forms button[type="submit"],
+        .give-btn.give-btn-modal
+        {
+            background-color: #008f70;
+            border-width: 0px;
+            border-color: #fff;
+            border-radius: 0px;
+            border-style: solid;
+            padding: 10px 20px;
+            -webkit-appearance: none;
+            color: #ffffff;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+
+    </style>
+
+
+
+    <style type="text/css">
+
+        .nd_options_cursor_default_a > a { cursor: default; }
+
+        .nd_options_navigation_type .menu li.nd_options_hot_label > a:after,
+        #nd_options_header_5 .menu li.nd_options_hot_label > a:after,
+        #nd_options_header_6 .menu li.nd_options_hot_label > a:after { content: "HOT"; float: right; background-color: #1d1d1d; border-radius: 3px; color: #fff; font-size: 10px; line-height: 10px; padding: 3px 5px; }
+
+        .nd_options_navigation_type .menu li.nd_options_best_label > a:after,
+        #nd_options_header_5 .menu li.nd_options_best_label > a:after,
+        #nd_options_header_6 .menu li.nd_options_best_label > a:after { content: "BEST"; float: right; background-color: #f2a922; border-radius: 3px; color: #fff; font-size: 10px; line-height: 10px; padding: 3px 5px; }
+
+        .nd_options_navigation_type .menu li.nd_options_new_label > a:after,
+        #nd_options_header_5 .menu li.nd_options_new_label > a:after,
+        #nd_options_header_6 .menu li.nd_options_new_label > a:after { content: "NEW"; float: right; background-color: #008f70; border-radius: 3px; color: #fff; font-size: 10px; line-height: 10px; padding: 3px 5px; }
+
+        .nd_options_customizer_labels_color_new { background-color: #008f70; }
+
+        #nd_options_header_6 .menu li.nd_options_hot_label > a:after,
+        #nd_options_header_6 .menu li.nd_options_best_label > a:after,
+        #nd_options_header_6 .menu li.nd_options_new_label > a:after { padding: 5px 5px 3px 5px; border-radius: 0px; letter-spacing: 1px; }
+
+        .nd_elements_navigation_sidebar_content .menu li.nd_options_new_label > a:after,
+        .nd_elements_navigation_sidebar_content .menu li.nd_options_hot_label > a:after,
+        .nd_elements_navigation_sidebar_content .menu li.nd_options_best_label > a:after { display: none; }
+
+    </style>
+
+
+    <!--START css-->
+    <style type="text/css">
+
+        .nd_options_navigation_search_content_form {  }
+        .nd_options_navigation_search_content_form input[type="search"] {
+            background: none;
+            border: 0px;
+            border-bottom: 2px solid #fff;
+            color: #fff;
+            font-size: 30px;
+            line-height: 30px;
+        }
+        .nd_options_navigation_search_content_form input[type="search"]::-webkit-input-placeholder { color: #fff; }
+        .nd_options_navigation_search_content_form input[type="submit"]{
+            font-size: 25px;
+            line-height: 40px;
+            margin-left: 20px;
+        }
+
+    </style>
+    <!--END css-->
+
+    <style type="text/css"></style>
+    <style>
+        /*HEADER IMAGE*/
+        #nd_options_eventscalendar_header_img h1 { font-size: 60px; font-weight: bold; text-align: center; }
+
+        /*CALENDAR PAGE*/
+        .post-type-archive-tribe_events .tribe-events-view--month,
+        .post-type-archive-tribe_events .tribe-events-view--day,
+        .post-type-archive-tribe_events .tribe-events-view--list { float: left; width:100%; }
+
+        /*SINGLE EVENT*/
+        .tribe-events-single .tribe-events-back a {background-color: #1d1d1d;color: #fff;font-size: 13px;font-weight: 700;letter-spacing: 1px;padding: 10px 20px;line-height: 13px;text-transform: uppercase;display: inline-block;}
+        .tribe-events-single .tribe-events-single-event-title {font-size: 40px;font-weight: 700;}
+        .tribe-events-single .tribe-events-schedule h2 {font-size: 17px;font-weight: normal;color: #4c4c4c; letter-spacing: 1px;text-transform: uppercase;}
+        .tribe-events-single .tribe-events-schedule span.tribe-events-cost { letter-spacing: 1px; }
+        .tribe-events-single .tribe-events-single-event-description p { line-height: 2em; }
+        .tribe-events-single .tribe-events-single-section .tribe-events-venue-map { padding: 0px;border-width: 0px;border-radius: 0px;background-color: #fff; }
+        #tribe-events-footer { border-top-width: 0px !important;padding-top: 0px !important; }
+        #tribe-events-footer .tribe-events-nav-pagination a { background-color: #1d1d1d;color: #fff;font-size: 13px;font-weight: 700;letter-spacing: 1px;padding: 10px 20px;line-height: 13px;text-transform: uppercase;display: inline-block; }
+        .tribe-events-single .tribe-events-single-section .tribe-events-meta-group h2 { font-size: 23px; }
+        .tribe-events-single .tribe-events-single-section .tribe-events-meta-group dl dt { font-size: 17px;margin-top: 20px; }
+        .tribe-events-single .tribe-events-single-section .tribe-events-meta-group .tribe-events-start-date,
+        .tribe-events-single .tribe-events-single-section .tribe-events-meta-group .tribe-events-start-time,
+        .tribe-events-single .tribe-events-single-section .tribe-events-meta-group .tribe-events-event-cost,
+        .tribe-events-single .tribe-events-single-section .tribe-events-meta-group .tribe-events-event-categories a,
+        .tribe-events-single .tribe-events-single-section .tribe-events-meta-group   .tribe-organizer-tel,
+        .tribe-events-single .tribe-events-single-section .tribe-events-meta-group  .tribe-organizer-email,
+        .tribe-events-single .tribe-events-single-section .tribe-events-meta-group  .tribe-organizer-url,
+        .tribe-events-single .tribe-events-single-section .tribe-events-meta-group .tribe-organizer,
+        .tribe-events-single .tribe-events-single-section .tribe-events-meta-group .tribe-venue-tel,
+        .tribe-events-single .tribe-events-single-section .tribe-events-meta-group .tribe-venue-url,
+        .tribe-events-single .tribe-events-single-section .tribe-events-meta-group .tribe-venue,
+        .tribe-events-single .tribe-events-single-section .tribe-events-meta-group .tribe-venue-location {font-size: 15px;color: #5c5c5c;margin-top: 10px !important;letter-spacing: 1px;display: inline-block;text-decoration: none;}
+        .tribe-events-single .tribe-events-single-section .tribe-events-meta-group { padding: 0px; }
+        .tribe-events-single .tribe-events-single-section .tribe-events-venue-map { margin: 20px 0px 0px 0px; }
+        .tribe-events-single .tribe-events-single-section { border-width:0px; }
+
+        /*ARCHIVE EVENTS*/
+        .post-type-archive-tribe_events .tribe-events-calendar-list .tribe-common-g-row.tribe-events-calendar-list__event-row{box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1); padding: 20px 0px;box-sizing: border-box;}
+        .post-type-archive-tribe_events .tribe-events-calendar-list .tribe-common-g-row time.tribe-events-calendar-list__event-date-tag-datetime{background-color: #1d1d1d; height: auto;padding: 10px 0px;}
+        .post-type-archive-tribe_events .tribe-events-calendar-list .tribe-common-g-row time .tribe-events-calendar-list__event-date-tag-weekday,
+        .post-type-archive-tribe_events .tribe-events-calendar-list .tribe-common-g-row time .tribe-events-calendar-list__event-date-tag-daynum { color: #fff; }
+        .post-type-archive-tribe_events .tribe-events-calendar-list .tribe-common-g-row header time { font-size: 13px;line-height: 13px;text-transform: uppercase;letter-spacing: 1px;color: #4c4c4c; }
+        .post-type-archive-tribe_events .tribe-events-calendar-list .tribe-common-g-row header h3 a{font-size: 23px;line-height: 23px;}
+        .post-type-archive-tribe_events .tribe-events-calendar-list .tribe-common-g-row header address { display: none; }
+        .post-type-archive-tribe_events .tribe-events-calendar-list .tribe-common-g-row .tribe-events-calendar-list__event-description p {font-size: 15px;line-height: 2em;}
+        .post-type-archive-tribe_events .tribe-events-calendar-list .tribe-common-g-row .tribe-events-calendar-list__event-cost {font-size: 13px;line-height: 13px;font-weight: bold;letter-spacing: 1px;background-color: #008f70;color: #fff;padding: 10px 20px;display: inline-block;}
+        .post-type-archive-tribe_events .tribe-events-calendar-list .tribe-common-g-row .tribe-events-calendar-list__event-details { width: 70%; }
+        .post-type-archive-tribe_events .tribe-events-calendar-list .tribe-common-g-row .tribe-events-calendar-list__event-featured-image-wrapper { width: 30%; }
+        .post-type-archive-tribe_events .tribe-events-view--month header .tribe-events-header__breadcrumbs { display: none; }
+
+    </style>
+
+
+    <style>
+
+        /*-------------------------WooCommerce for 3.x-------------------------*/
+
+        .post-type-archive-product.woocommerce .product { text-align: left; }
+
+        /*title product*/
+        .woocommerce ul.products li.product a h2.woocommerce-loop-product__title{font-size: 23px;line-height: 23px;padding: 10px 0px; font-weight: bold; letter-spacing: 1px;}
+
+        /*image*/
+        .woocommerce.woocommerce-page .product figure {margin: 0px;}
+
+        /*price*/
+        .woocommerce.woocommerce-page .product .summary.entry-summary  .price {font-size: 30px;line-height: 30px;color: #4c4c4c;	font-family: 'Poppins', sans-serif;}
+        .woocommerce.woocommerce-page .product .summary.entry-summary  .price span { display: inline-block !important; }
+        .woocommerce.woocommerce-page .product .summary.entry-summary  .price .woocommerce-Price-amount{display: table;}
+        .woocommerce.woocommerce-page .product .summary.entry-summary  .price .woocommerce-Price-amount .woocommerce-Price-currencySymbol{display: table-cell;vertical-align: top;font-size: 20px;line-height: 20px;padding-right: 10px;}
+        .woocommerce.woocommerce-page .product .summary.entry-summary .price ins{ text-decoration: none;font-weight: normal;}
+        .woocommerce.woocommerce-page .product .summary.entry-summary .price del{ float: left; margin-right: 20px;}
+
+
+        .woocommerce .star-rating {
+            height: 15px;
+            line-height: 15px;
+            width: 80px;
+        }
+
+
+        .woocommerce.post-type-archive-product .star-rating {
+            width: 70px;
+        }
+
+
+        /*-------------------------WooCommerce Archive Page-------------------------*/
+        /*page-title*/
+        .woocommerce.woocommerce-page.post-type-archive-product h1.page-title,
+        .woocommerce.woocommerce-page.tax-product_cat h1.page-title,
+        .woocommerce.woocommerce-page.tax-product_tag h1.page-title
+        {
+            display: none;
+        }
+
+        /*result-count*/
+        .woocommerce.woocommerce-page.post-type-archive-product p.woocommerce-result-count,
+        .woocommerce.woocommerce-page.tax-product_cat p.woocommerce-result-count,
+        .woocommerce.woocommerce-page.tax-product_tag p.woocommerce-result-count
+        {
+            display: none;
+        }
+
+        /*woocommerce-ordering*/
+        .woocommerce.woocommerce-page.post-type-archive-product form.woocommerce-ordering,
+        .woocommerce.woocommerce-page.tax-product_cat form.woocommerce-ordering,
+        .woocommerce.woocommerce-page.tax-product_tag form.woocommerce-ordering
+        {
+            display: none;
+        }
+
+        /*img product*/
+        .woocommerce ul.products li.product a img{
+            margin-bottom: 10px;
+        }
+
+        /*onsale*/
+        .woocommerce ul.products li.product a span.onsale{
+            top:20px !important;
+            right: 20px !important;
+            left: initial !important;
+        }
+
+        /*title product*/
+        .woocommerce ul.products li.product a h3{
+            font-size: 20px;
+            line-height: 20px;
+            padding: 10px 0px;
+        }
+
+        /*price*/
+        .woocommerce ul.products li.product a .price{
+            color: #4c4c4c!important;
+            font-size: 20px !important;
+            line-height: 20px !important;
+            margin-top: 25px;
+            letter-spacing: 1px;
+        }
+        .woocommerce ul.products li.product a .price del,
+        .woocommerce ul.products li.product a .price ins{
+            font-weight: normal;
+        }
+
+
+        .post-type-archive-product.woocommerce ul.products li.product .button.product_type_variable.add_to_cart_button,
+        .post-type-archive-product.woocommerce ul.products li.product .button.product_type_simple.add_to_cart_button,
+        .post-type-archive-product.woocommerce ul.products li.product .button.product_type_external
+        {
+            font-size: 13px !important;
+            letter-spacing: 1px;
+            font-weight: bold !important;
+            padding: 10px 20px;
+            border-radius: 0px !important;
+            color: #fff !important;
+            background-color: #008f70 !important;
+            border-width: 0px !important;
+        }
+
+
+
+        /*-------------------------WooCommerce Single Product-------------------------*/
+
+        /*gallery*/
+        .woocommerce div.product div.images .woocommerce-product-gallery__image:nth-child(n+2){
+            width: 25%;
+            display: inline-block;
+            border: 4px solid #fff;
+            box-sizing: border-box;
+            margin-top: 4px;
+        }
+
+
+        /*.woocommerce.single-product .related.products > h2:after {
+            width: 30px;
+            height: 2px;
+            background-color: #f1f1f1;
+            content : "";
+            position: absolute;
+            left: 0px;
+            bottom: -20px;
+        }*/
+        .woocommerce.single-product .related.products ul li{
+            text-align: center;
+        }
+        .woocommerce.single-product .related.products > h2{
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+
+        .woocommerce.single-product .woocommerce-Reviews .comment-text .meta {
+            color: #1d1d1d !important;
+        }
+        .woocommerce.single-product .woocommerce-Reviews .comment-text .meta strong {
+            font-weight: normal;
+        }
+
+
+        .woocommerce.single-product table.shop_attributes {
+            text-align: left;
+        }
+        .woocommerce.single-product table.shop_attributes th {
+            font-weight: normal;
+            color: #1d1d1d;
+            padding: 15px 20px;
+        }
+        .woocommerce.single-product table.shop_attributes th,
+        .woocommerce.single-product table.shop_attributes td {
+            border-bottom: 1px solid #f1f1f1;
+        }
+        .woocommerce.single-product table.shop_attributes{
+            border-top: 1px solid #f1f1f1;
+        }
+
+
+        .woocommerce.single-product .summary.entry-summary .woocommerce-product-rating {
+            margin-top: -15px;
+        }
+
+
+        .woocommerce.single-product .woocommerce-product-details__short-description {
+            margin-top: 10px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /*title*/
+        .woocommerce.single-product .product_title{
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+
+
+        .woocommerce.single-product .variations_form.cart p.stock.out-of-stock {
+            background-color: #f2a922;
+            color: #fff;
+            padding: 5px 10px;
+        }
+
+
+        /*tab description*/
+        .woocommerce-Tabs-panel.woocommerce-Tabs-panel--description{
+            margin-bottom: 60px !important;
+        }
+        .woocommerce-Tabs-panel.woocommerce-Tabs-panel--description h2{
+            font-size: 20px;
+            line-height: 20px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        /*tab additional*/
+        .woocommerce-Tabs-panel--additional_information h2 {
+            font-weight: normal;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        /*tab reviews*/
+        .woocommerce-Tabs-panel.woocommerce-Tabs-panel--reviews{
+            margin-bottom: 60px !important;
+        }
+        .woocommerce-Tabs-panel.woocommerce-Tabs-panel--reviews .woocommerce-Reviews #comments h2{
+            font-size: 20px;
+            line-height: 20px;
+            font-weight: normal;
+            margin-bottom: 40px;
+        }
+        .woocommerce-Tabs-panel.woocommerce-Tabs-panel--reviews .woocommerce-Reviews #comments ol.commentlist{
+            margin: 0px;
+            padding: 0px;
+        }
+        .woocommerce-Tabs-panel.woocommerce-Tabs-panel--reviews .woocommerce-Reviews #comments ol.commentlist li{
+            border-bottom: 1px solid #f1f1f1 !important;
+        }
+        .woocommerce-Tabs-panel.woocommerce-Tabs-panel--reviews .woocommerce-Reviews #comments ol.commentlist li .avatar{
+            border: 0px !important;
+            padding: 0px !important;
+            border-radius: 100%;
+            width: 40px !important;
+        }
+        .woocommerce-Tabs-panel.woocommerce-Tabs-panel--reviews .woocommerce-Reviews #comments ol.commentlist li div .comment-text{
+            border: 0px solid #f1f1f1 !important;
+            padding: 15px 10px !important;
+        }
+        .woocommerce-Tabs-panel.woocommerce-Tabs-panel--reviews .woocommerce-Reviews #comments ol.commentlist li div .comment-text .meta{
+            font-size: 16px !important;
+            line-height: 16px !important;
+            font-family: 'Poppins', sans-serif;
+            font-weight: normal;
+        }
+        .woocommerce-Tabs-panel.woocommerce-Tabs-panel--reviews .woocommerce-Reviews #review_form .submit{
+            background-color: #008f70 !important;
+            border-radius: 0px !important;
+            font-weight: normal;
+            padding: 10px 20px !important;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            color: #fff !important;
+        }
+
+        /*top description*/
+        .woocommerce.woocommerce-page .product.type-product .summary.entry-summary div p{
+            margin: 20px 0px;
+        }
+
+        /*button add to cart*/
+        .woocommerce.woocommerce-page .product .summary.entry-summary form .single_add_to_cart_button{
+            background-color: #008f70;
+            border-radius: 3px;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /*qnt form*/
+        .woocommerce.woocommerce-page .product .summary.entry-summary form div.quantity{
+            margin-right: 20px;
+        }
+
+        /*product_meta*/
+        .woocommerce.woocommerce-page .product .summary.entry-summary .product_meta{
+            color: #1d1d1d;
+        }
+        .woocommerce.woocommerce-page .product .summary.entry-summary .product_meta > span{
+            font-family: 'Poppins', sans-serif;
+            display: block;
+        }
+        .woocommerce.woocommerce-page .product .summary.entry-summary .product_meta span a{
+            padding: 8px;
+            border: 1px solid #f1f1f1;
+            font-size: 13px;
+            line-height: 13px;
+            display: inline-block;
+            margin: 5px 10px;
+            margin-left: 0px;
+            border-radius: 3px;
+        }
+
+
+        /*sku*/
+        .woocommerce.woocommerce-page .product .summary.entry-summary .product_meta .sku_wrapper span.sku{
+            padding: 8px;
+            border: 1px solid #f1f1f1;
+            font-size: 13px;
+            line-height: 13px;
+            display: inline-block;
+            margin: 5px 10px;
+            margin-left: 0px;
+            border-radius: 0px;
+            color: #4c4c4c;
+            font-family: 'Rubik', sans-serif !important;
+        }
+
+        /*variations*/
+        .woocommerce.woocommerce-page .product .summary.entry-summary .variations .value .reset_variations{
+            background-color: #f2a922;
+            margin: 0px;
+            padding: 8px;
+            color: #fff;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            line-height: 13px;
+            border-radius: 0px;
+        }
+        .woocommerce.woocommerce-page .product .summary.entry-summary .variations .label label{
+            font-size: 16px;
+            line-height: 16px;
+            color: #1d1d1d;
+            font-family: 'Poppins', sans-serif;
+            font-weight: normal;
+        }
+
+        /*price*/
+        .woocommerce.woocommerce-page .product .summary.entry-summary div .price {
+            font-size: 30px;
+            line-height: 30px;
+            color: #4c4c4c;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .woocommerce.woocommerce-page .product .single_variation_wrap .woocommerce-variation.single_variation {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .woocommerce.woocommerce-page .product .summary.entry-summary div .price .woocommerce-Price-amount{
+            display: table;
+        }
+        .woocommerce.woocommerce-page .product .summary.entry-summary div .price .woocommerce-Price-amount .woocommerce-Price-currencySymbol{
+            display: table-cell;
+            vertical-align: top;
+            font-size: 20px;
+            line-height: 20px;
+            padding-right: 10px;
+        }
+        .woocommerce.woocommerce-page .product .summary.entry-summary div .price ins{
+            text-decoration: none;
+            font-weight: normal;
+        }
+        .woocommerce.woocommerce-page .product .summary.entry-summary div .price del{
+            float: left;
+            margin-right: 20px;
+        }
+
+        /*tab*/
+        .woocommerce.woocommerce-page .product .woocommerce-tabs ul{
+            margin: 0px 0px 40px 0px !important;
+            padding: 0px !important;
+            border-bottom: 1px solid #f1f1f1;
+            overflow: visible !important;
+        }
+        .woocommerce.woocommerce-page .product .woocommerce-tabs ul:before{
+            border-bottom: 0px solid #f1f1f1 !important;
+        }
+        .woocommerce.woocommerce-page .product .woocommerce-tabs ul li{
+            background-color: #fff !important;
+            border: 0px !important;
+            margin: 0px !important;
+        }
+        .woocommerce.woocommerce-page .product .woocommerce-tabs ul li a{
+            color: #1d1d1d !important;
+            font-family: 'Poppins', sans-serif !important;
+            font-size: 17px !important;
+            line-height: 17px;
+            font-weight: normal !important;
+            padding: 20px 10px !important;
+        }
+        .woocommerce.woocommerce-page .product .woocommerce-tabs ul li.active{
+            box-shadow: 0px 1px 0px #008f70 !important;
+        }
+        .woocommerce.woocommerce-page .product .woocommerce-tabs ul li.active:before,
+        .woocommerce.woocommerce-page .product .woocommerce-tabs ul li.active:after,
+        .woocommerce.woocommerce-page .product .woocommerce-tabs ul li:after,
+        .woocommerce.woocommerce-page .product .woocommerce-tabs ul li:before{
+            display: none;
+        }
+
+
+        /*-------------------------WooCommerce General-------------------------*/
+        /*onsale*/
+        .woocommerce span.onsale {
+            top:20px !important;
+            left: 20px !important;
+            border-radius: 3px;
+            min-width: initial;
+            min-height: initial;
+            padding: 8px;
+            line-height: 13px;
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: normal;
+            font-family: 'Poppins', sans-serif;
+            background-color: #008f70;
+        }
+
+        /*button*/
+        .add_to_cart_button,
+        .button.product_type_variable,
+        .button.product_type_grouped,
+        .button.product_type_external{
+            font-size: 13px !important;
+            line-height: 13px !important;
+            color: #4c4c4c!important;
+            font-weight: normal !important;
+            text-transform: uppercase;
+            border-radius: 3px !important;
+            border: 1px solid #f1f1f1 !important;
+            background-color: #fff !important;
+            font-family: 'Poppins', sans-serif !important;
+        }
+        .added_to_cart{
+            background-color: #008f70 !important;
+            color: #fff !important;
+            text-transform: uppercase;
+            font-size: 13px !important;
+            line-height: 13px !important;
+            margin: 0px;
+            margin-left: 5px;
+            padding: .618em 1em !important;
+            font-weight: normal !important;
+            border-radius: 0px !important;
+            font-family: 'Poppins', sans-serif !important;
+        }
+
+
+        /*return-to-shop*/
+        .return-to-shop .button{
+            background-color: #008f70 !important;
+            border-radius: 0px !important;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            color:#fff !important;
+            margin-top: 20px !important;
+            font-weight: normal !important;
+            padding: 15px 20px !important;
+        }
+
+
+        /*qnt form*/
+        .woocommerce .quantity .qty{
+            min-width: 100px;
+            height: 34px;
+        }
+
+
+        /*woocommerce-pagination*/
+        .woocommerce nav.woocommerce-pagination ul{
+            border: 0px;
+        }
+        .woocommerce nav.woocommerce-pagination ul li{
+            border: 0px;
+        }
+        .woocommerce nav.woocommerce-pagination ul li span.current{
+            background-color: #fff;
+            color: #1d1d1d!important;
+            font-family: 'Poppins', sans-serif !important;
+            font-size: 20px;
+            line-height: 20px;
+            font-weight: normal;
+            padding: 5px
+        }
+        .woocommerce nav.woocommerce-pagination ul li a{
+            font-family: 'Poppins', sans-serif !important;
+            color: #4c4c4c!important;
+            font-size: 20px;
+            line-height: 20px;
+            font-weight: normal;
+            padding: 5px;
+        }
+        .woocommerce nav.woocommerce-pagination ul li a:hover{
+            background-color: #fff;
+        }
+
+
+        /*related products*/
+        .related.products h2{
+            margin-bottom: 25px;
+            font-weight: normal;
+        }
+
+        .woocommerce.single-product .related.products .star-rating { display: none; }
+
+        /*upsells products*/
+        .up-sells.upsells.products h2{
+            margin-bottom: 25px;
+        }
+
+        /*reviews link*/
+        .woocommerce-review-link{
+            display: none;
+        }
+
+        /*woocommerce-message*/
+        .woocommerce-message{
+            border-top: 0px;
+            background-color: #008f70;
+            border-radius: 0px;
+            color: #fff;
+            line-height: 36px;
+        }
+        .woocommerce-message:before{
+            color: #fff;
+        }
+        .woocommerce-message a{
+            background-color: #f2a922 !important;
+            border-radius: 0px !important;
+            color: #fff !important;
+            text-transform: uppercase;
+            padding: 10px 20px !important;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /*woocommerce-error*/
+        .woocommerce-error{
+            border-top: 0px;
+            background-color: #f2a922;
+            border-radius: 0px;
+            color: #fff;
+            line-height: 36px;
+        }
+        .woocommerce-checkout .woocommerce-error li strong{
+            font-weight: normal;
+        }
+        .woocommerce-error:before{
+            color: #fff;
+        }
+        .woocommerce-error a{
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /*woocommerce-info*/
+        .woocommerce-info{
+            border-top: 0px;
+            background-color: #008f70;
+            border-radius: 0px;
+            color: #fff !important;
+            line-height: 36px;
+        }
+        .woocommerce-info a{
+            color: #fff;
+            text-decoration: underline;
+        }
+        .woocommerce-info:before{
+            color: #fff;
+        }
+
+        /*required*/
+        .woocommerce form .form-row .required{
+            color: #4c4c4c;
+        }
+        .woocommerce form .form-row.woocommerce-invalid label{
+            color: #4c4c4c;
+        }
+
+
+        /*-------------------------WooCommerce Cart-------------------------*/
+        .woocommerce-cart .woocommerce table.shop_table thead tr th {
+            font-weight: normal;
+            color: #1d1d1d;
+        }
+
+        .woocommerce-cart .woocommerce table.shop_table tr button[type="submit"]{
+            font-weight: normal;
+            color: #fff;
+        }
+
+        .woocommerce-cart .woocommerce .shop_table.cart td{
+            border-color: #f1f1f1;
+        }
+        .woocommerce-cart .woocommerce .shop_table.cart{
+            border: 1px solid #f1f1f1;
+            border-radius: 0px !important;
+        }
+        .woocommerce-cart .woocommerce .shop_table.cart .actions{
+            background-color:#f9f9f9;
+        }
+        .woocommerce-cart .woocommerce .shop_table.cart th,
+        .woocommerce-cart .woocommerce .shop_table.cart td{
+            padding: 20px;
+        }
+        .woocommerce-cart .woocommerce .shop_table.cart thead{
+            background-color:#f9f9f9;
+        }
+        .woocommerce-cart .woocommerce .shop_table.cart tr.cart_item .product-thumbnail a img{
+            float: left;
+        }
+        .woocommerce-cart .woocommerce .shop_table.cart tr.cart_item .product-name .variation{
+            display: none;
+        }
+        .woocommerce-cart .woocommerce .shop_table.cart .product-remove .remove{
+            color: #f2a922 !important;
+            background-color: #fff !important;
+            font-size: 15px;
+            padding: 5px;
+        }
+
+        .woocommerce-cart .cart-collaterals{
+            margin-top: 50px;
+        }
+        .woocommerce-cart .cart-collaterals h2:after {
+            width: 30px;
+            height: 2px;
+            background-color: #f1f1f1;
+            content : "";
+            position: absolute;
+            left: 0px;
+            bottom: -20px;
+        }
+
+        .woocommerce-cart .cart-collaterals h2{
+            position: relative;
+            margin-bottom: 45px;
+            font-weight: normal;
+        }
+
+
+        .woocommerce-cart .shop_table tr th,
+        .woocommerce-cart .shop_table tr td strong { font-weight: normal !important; }
+
+
+        .woocommerce-cart .cart-collaterals .cart_totals table{
+            border: 1px solid #f1f1f1;
+            border-radius: 0px !important;
+        }
+        .woocommerce-cart .cart-collaterals .cart_totals table th,
+        .woocommerce-cart .cart-collaterals .cart_totals table td{
+            padding: 20px;
+        }
+
+        .woocommerce-cart .cart-collaterals .cart_totals .wc-proceed-to-checkout a{
+            background-color: #008f70;
+            border-radius: 0px;
+            padding: 20px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            font-weight: normal;
+        }
+
+        .woocommerce-cart .woocommerce .shop_table.cart .actions input[type="submit"]{
+            background-color: #008f70;
+            border-radius: 0px;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            font-weight: normal;
+        }
+        .woocommerce-cart .woocommerce .shop_table.cart .actions .coupon #coupon_code{
+            border-radius: 0px;
+            border: 1px solid #f1f1f1;
+            min-width: 180px;
+            padding: 8px 20px;
+        }
+        @media only screen and (min-width: 320px) and (max-width: 767px) {
+            .woocommerce-cart .woocommerce .shop_table.cart .actions .coupon #coupon_code{
+                min-width: 0px;
+            }
+        }
+
+
+        /*-------------------------WooCommerce Checkout-------------------------*/
+
+
+        .woocommerce form.woocommerce-checkout .col-1 h3:after,
+        .woocommerce form.woocommerce-checkout .col-2 h3:after,
+        .woocommerce form.woocommerce-checkout h3#order_review_heading:after {
+            width: 30px;
+            height: 2px;
+            background-color: #f1f1f1;
+            content : "";
+            position: absolute;
+            left: 0px;
+            bottom: -20px;
+        }
+        .woocommerce form.woocommerce-checkout .col-1 h3,
+        .woocommerce form.woocommerce-checkout .col-2 h3,
+        .woocommerce form.woocommerce-checkout h3#order_review_heading {
+            position: relative;
+            margin-bottom: 45px;
+            font-weight: normal;
+        }
+
+        .woocommerce form.checkout_coupon button[type="submit"],
+        .woocommerce form.woocommerce-checkout #order_review .woocommerce-checkout-payment .place-order button[type="submit"]{ font-weight: normal; }
+
+
+        .woocommerce form.woocommerce-checkout #order_review table tr th,
+        .woocommerce form.woocommerce-checkout #order_review table tr td,
+        .woocommerce form.woocommerce-checkout #order_review table tr td strong{
+            font-weight: normal;
+        }
+
+        .woocommerce-checkout .woocommerce .checkout_coupon{
+            border-radius: 0px;
+            border: 1px solid #f1f1f1;
+        }
+        .woocommerce-checkout .woocommerce form.login{
+            border-radius: 0px;
+            border: 1px solid #f1f1f1;
+        }
+        .woocommerce-checkout .woocommerce .checkout_coupon input[type="submit"],
+        .woocommerce-checkout .woocommerce form.login p .button{
+            background-color: #008f70;
+            border-radius: 0px;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            font-weight: normal;
+        }
+
+        .woocommerce-checkout .woocommerce .woocommerce-billing-fields h3,
+        .woocommerce-checkout .woocommerce .woocommerce-shipping-fields h3,
+        .woocommerce-checkout #order_review_heading{
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+        .woocommerce-checkout #order_review_heading{
+            margin-top: 40px;
+        }
+
+
+        .woocommerce-checkout.checkout #customer_details .woocommerce-billing-fields p{
+            margin: 0px 0px 20px 0px;
+        }
+
+        .woocommerce-checkout.checkout #customer_details .woocommerce-shipping-fields textarea{
+            height: 100px;
+        }
+
+        .woocommerce-checkout.checkout  #order_review .shop_table.woocommerce-checkout-review-order-table{
+            border: 1px solid #f1f1f1;
+            border-collapse: collapse;
+        }
+        .woocommerce-checkout.checkout  #order_review .shop_table.woocommerce-checkout-review-order-table th,
+        .woocommerce-checkout.checkout  #order_review .shop_table.woocommerce-checkout-review-order-table td{
+            border-color: #f1f1f1;
+            padding: 20px;
+        }
+        .woocommerce-checkout.checkout  #order_review .shop_table.woocommerce-checkout-review-order-table thead,
+        .woocommerce-checkout.checkout  #order_review .shop_table.woocommerce-checkout-review-order-table tfoot{
+            background-color: #f9f9f9;
+        }
+
+        /*select drop*/
+        .select2-container .select2-choice {
+            border-color:#f1f1f1;
+            color: #4c4c4c;
+            border-width: 0px;
+            border-bottom-width: 2px;
+            font-size: 15px;
+            line-height: 19px;
+            padding: 10px 20px;
+            border-radius: 0px;
+        }
+        .select2-drop.select2-drop-above{
+            border-color:#f1f1f1;
+        }
+        .select2-drop.select2-drop-above.select2-drop-active{
+            border-color:#f1f1f1;
+        }
+        .select2-drop-active{
+            border-color:#f1f1f1;
+        }
+        .select2-drop{
+            color: #4c4c4c !important;
+        }
+        .select2-results .select2-highlighted{
+            color: #1d1d1d !important;
+        }
+
+
+        .woocommerce-checkout.checkout .woocommerce-checkout-payment .about_paypal{
+            display: none;
+        }
+
+        /*placeorder*/
+        .woocommerce-checkout.checkout .woocommerce-checkout-payment #place_order{
+            background-color: #008f70;
+            border-radius: 0px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+        }
+        .woocommerce-checkout.checkout .woocommerce-checkout-payment .form-row.place-order{
+            padding: 30px !important;
+        }
+
+
+        /*payment block*/
+        .woocommerce-checkout.checkout .woocommerce-checkout-payment {
+            background-color: #f2a922 !important;
+            border-radius: 0px !important;
+        }
+        .woocommerce-checkout.checkout .woocommerce-checkout-payment ul{
+            border-bottom-width: 0px !important;
+        }
+
+        .woocommerce-checkout.checkout .woocommerce-checkout-payment .wc_payment_method.payment_method_paypal img{
+            display: none;
+        }
+
+        .woocommerce-checkout.checkout .woocommerce-checkout-payment .wc_payment_methods{
+            padding: 20px 30px 0px 30px !important;
+        }
+        .woocommerce-checkout.checkout .woocommerce-checkout-payment .wc_payment_methods li{
+            padding: 5px 0px;
+        }
+        .woocommerce-checkout.checkout .woocommerce-checkout-payment .wc_payment_method div{
+            background-color: #f2a922 !important;
+            padding: 0px !important;
+        }
+        .woocommerce-checkout.checkout .woocommerce-checkout-payment .wc_payment_method div:before{
+            border-color: #f2a922 !important;
+        }
+        .woocommerce-checkout.checkout .woocommerce-checkout-payment .wc_payment_method label{
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+
+        .woocommerce form .form-row.woocommerce-validated input.input-text{
+            border-color: #008f70;
+        }
+        .woocommerce form .form-row.woocommerce-invalid input.input-text{
+            border-color: #f2a922;
+        }
+
+
+
+        /*-------------------------WooCommerce Account-------------------------*/
+        .woocommerce-account .woocommerce > h2 {
+            display: none;
+        }
+
+        .woocommerce-account .woocommerce .login{
+            border-radius: 0px;
+            border-color:#f1f1f1;
+        }
+
+        .woocommerce-account .woocommerce .login p .woocommerce-Button,
+        .woocommerce-account .lost_reset_password p .woocommerce-Button{
+            background-color: #008f70 !important;
+            border-radius: 0px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            color:#fff !important;
+        }
+
+
+        /*-------------------------WooCommerce Order Completed-------------------------*/
+        .woocommerce-checkout .woocommerce .woocommerce-thankyou-order-details,
+        .woocommerce-checkout .woocommerce .wc-bacs-bank-details.order_details.bacs_details{
+            margin: 20px 0px;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border: 1px solid #f1f1f1;
+        }
+        .woocommerce-checkout .woocommerce .wc-bacs-bank-details.order_details.bacs_details{
+            margin-bottom: 40px;
+        }
+
+        .woocommerce-checkout .woocommerce table.shop_table.order_details{
+            border-color: #f1f1f1;
+            border-collapse: collapse;
+            margin-top: 25px;
+        }
+        .woocommerce-checkout .woocommerce table.shop_table.order_details thead{
+            background-color: #f9f9f9;
+        }
+        .woocommerce-checkout .woocommerce table.shop_table.order_details tr,
+        .woocommerce-checkout .woocommerce table.shop_table.order_details td,
+        .woocommerce-checkout .woocommerce table.shop_table.order_details th{
+            border-color: #f1f1f1;
+            padding: 20px;
+        }
+
+
+        .woocommerce-checkout .woocommerce h2.wc-bacs-bank-details-heading{
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+
+
+
+        .woocommerce h2.woocommerce-order-details__title:after{
+            width: 30px;
+            height: 2px;
+            background-color: #f1f1f1;
+            content : "";
+            position: absolute;
+            left: 0px;
+            bottom: -20px;
+        }
+        .woocommerce h2.woocommerce-order-details__title{
+            position: relative;
+            margin-bottom: 45px;
+            font-weight: normal;
+            margin-top: 40px;
+        }
+
+        .woocommerce .woocommerce-table--order-details tr td,
+        .woocommerce .woocommerce-table--order-details tr th,
+        .woocommerce .woocommerce-table--order-details tr td strong {
+            font-weight: normal !important;
+        }
+
+        .woocommerce ul.woocommerce-thankyou-order-details li strong {
+            font-weight: normal !important;
+            color: #4c4c4c;
+        }
+
+        .woocommerce ul.woocommerce-thankyou-order-details li {
+            color: #1d1d1d;
+        }
+
+        /*-------------------------WooCommerce Widgets-------------------------*/
+        .nd_options_woocommerce_sidebar .widget h3{
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+        .nd_options_woocommerce_sidebar .widget{
+            margin-bottom: 40px;
+        }
+
+        .widget_shopping_cart .woocommerce-mini-cart__buttons {
+            margin-top: 15px;
+        }
+
+        .widget.woocommerce.widget_layered_nav li {
+            padding: 10px;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        .widget.woocommerce.widget_layered_nav li:last-child {
+            border-bottom-width: 0px;
+        }
+
+        .widget.woocommerce.widget_shopping_cart ul,
+        .widget.woocommerce.widget_recent_reviews ul,
+        .widget.woocommerce.widget_top_rated_products ul,
+        .widget.woocommerce.widget_recently_viewed_products ul,
+        .widget.woocommerce.widget_products ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        .widget.woocommerce.widget_shopping_cart ul li,
+        .widget.woocommerce.widget_recent_reviews ul li,
+        .widget.woocommerce.widget_top_rated_products ul li,
+        .widget.woocommerce.widget_recently_viewed_products ul li,
+        .widget.woocommerce.widget_products ul li{
+            margin: 0px;
+            padding: 20px 90px;
+            position: relative;
+        }
+        .widget.woocommerce.widget_shopping_cart ul li:last-child{
+            padding-bottom: 20px;
+        }
+        .widget.woocommerce.widget_shopping_cart ul .empty{
+            padding:20px;
+            border:1px solid #f1f1f1;
+        }
+        .widget.woocommerce.widget_shopping_cart ul li .variation,
+        .widget.woocommerce.widget_shopping_cart .total,
+        .widget.woocommerce.widget_recent_reviews ul li .reviewer,
+        .widget.woocommerce.widget_top_rated_products ul li .amount{
+            display: none;
+        }
+        .widget.woocommerce.widget_shopping_cart ul li .remove{
+            right: 0px;
+            left: initial;
+            top: 40px;
+            font-size: 20px;
+            color: #f2a922 !important;
+        }
+        .widget.woocommerce.widget_shopping_cart ul li .remove:hover{
+            color: #fff !important;
+            background-color: #f2a922 !important;
+        }
+        .widget.woocommerce.widget_shopping_cart ul li a{
+            font-weight: normal;
+            color: #1d1d1d!important;
+        }
+        .widget.woocommerce.widget_shopping_cart .buttons a{
+            background-color: #008f70;
+            border-radius: 0px;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            font-weight: normal;
+        }
+        .widget.woocommerce.widget_shopping_cart .buttons a.checkout{
+            background-color: #008f70;
+            float: right;
+        }
+        .widget.woocommerce.widget_shopping_cart ul li a img,
+        .widget.woocommerce.widget_recent_reviews ul li a img,
+        .widget.woocommerce.widget_top_rated_products ul li a img,
+        .widget.woocommerce.widget_recently_viewed_products ul li a img,
+        .widget.woocommerce.widget_products ul li a img{
+            position:absolute;
+            left: 0px;
+            top: 13px;
+            width: 70px;
+            margin: 0px;
+            padding: 0px;
+        }
+        .widget.woocommerce.widget_recent_reviews ul li,
+        .widget.woocommerce.widget_top_rated_products ul li{
+            padding-bottom: 30px;
+        }
+        .widget.woocommerce.widget_product_tag_cloud .tagcloud a{
+            padding: 5px 10px;
+            border: 1px solid #f1f1f1;
+            border-radius: 0px;
+            display: inline-block;
+            margin: 5px;
+            margin-left: 0px;
+            font-size: 13px !important;
+            line-height: 20px;
+        }
+        .widget.woocommerce.widget_product_categories ul { margin: 0px; padding: 0px; list-style: none; }
+        .widget.woocommerce.widget_product_categories > ul > li { padding: 10px; border-bottom: 1px solid #f1f1f1; }
+        .widget.woocommerce.widget_product_categories > ul > li:last-child { padding-bottom: 0px; border-bottom: 0px solid #f1f1f1; }
+        .widget.woocommerce.widget_product_categories ul li { padding: 10px; }
+        .widget.woocommerce.widget_product_categories ul.sub-menu { padding: 10px; }
+        .widget.woocommerce.widget_product_categories ul.sub-menu:last-child { padding-bottom: 0px; }
+
+        .widget.woocommerce.widget_products ul li a,
+        .widget.woocommerce.widget_top_rated_products ul li a,
+        .widget.woocommerce.widget_recent_reviews ul li a,
+        .widget.woocommerce.widget_recently_viewed_products ul li a{
+            font-weight: normal;
+            color: #1d1d1d;
+        }
+        .widget.woocommerce.widget_products ul li{
+            min-height: 54px;
+        }
+
+        .widget.woocommerce.widget_top_rated_products ul li,
+        .widget.woocommerce.widget_recent_reviews  ul li,
+        .widget.woocommerce.widget_recently_viewed_products ul li
+        {
+            min-height: 44px;
+        }
+
+        .widget.woocommerce.widget_price_filter .price_slider_amount .button{
+            background-color: #008f70;
+            border-radius: 0px;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            font-weight: normal;
+        }
+        .widget.woocommerce.widget_price_filter .price_slider_amount .price_label{
+            font-size: 16px;
+        }
+        .woocommerce.widget_price_filter .price_slider{
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .woocommerce.widget_price_filter .ui-slider .ui-slider-handle,
+        .woocommerce.widget_price_filter .ui-slider .ui-slider-range{
+            background-color: #008f70;
+        }
+        .woocommerce.widget_price_filter .price_slider_wrapper .ui-widget-content
+        {
+            background-color: #f1f1f1;
+            height: 4px;
+            border-radius: 0px;
+        }
+
+        .widget.woocommerce.widget_price_filter .price_slider_amount { margin-top: 30px; }
+
+        .widget.woocommerce.widget_layered_nav_filters ul li a:before {
+            color: #f2a922;
+        }
+
+        .widget.woocommerce.widget_product_search button[type="submit"]{
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 11px 22px;
+        }
+        .widget.woocommerce.widget_product_search input[type="search"]::placeholder{
+            color: #4c4c4c;
+        }
+
+
+    </style>
+
+
+    <style type="text/css">
+
+        /*color_dark_1*/
+        .nd_spt_bg_dark_1 { background-color: #008f70; }
+
+        /*color_1*/
+        .nd_spt_bg_color_1 { background-color: #f2a922; }
+
+        /*color_2*/
+        .nd_spt_bg_color_2 { background-color: #db981b; }
+
+    </style>
+
+</head>
+
+<<body id="start_nicdark_framework" class="page-template-default page page-id-4605 theme-atp nd_options_customizer_fonts nd_options_customizer_forms woocommerce-no-js tribe-no-js elementor-default elementor-kit-5428 elementor-page elementor-page-4605">
+
+
+<br><br>
+
+<section class="elementor-section elementor-top-section elementor-element elementor-element-cd75283 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="cd75283" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+    <div class="elementor-container elementor-column-gap-default">
+        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-63938fe" data-id="63938fe" data-element_type="column">
+            <div class="elementor-widget-wrap elementor-element-populated">
+                <div class="elementor-element elementor-element-4d1acbc elementor-widget elementor-widget-shortcode" data-id="4d1acbc" data-element_type="widget" data-widget_type="shortcode.default">
+                    <div class="elementor-widget-container">
+                        <div class="elementor-shortcode">
+
+                            <div id="nd_spt_component_container" class="nd_spt_section nd_spt_padding_30 nd_spt_box_sizing_border_box nd_spt_border_1_solid_grey">
+
+
+                                <input id="nd_spt_action_return" type="hidden" name="nd_spt_action_return" value="index.html">
+
+
+                                <!--START step index-->
+                                <div id="nd_spt_steps_container" class="nd_spt_section nd_spt_text_align_center">
+                                    <div class="nd_spt_float_left nd_spt_width_20_percentage "><div class="nd_spt_section nd_spt_height_1"></div></div>
+                                    <div class="nd_spt_float_left nd_spt_width_20_percentage nd_spt_single_step nd_spt_step_first nd_spt_step_active">
+                                        <h5 class="nd_options_color_grey"><span>1</span>SELECT</h5>
+                                    </div>
+                                    <div class="nd_spt_float_left nd_spt_width_20_percentage nd_spt_single_step nd_spt_step_booking">
+                                        <h5 class="nd_options_color_grey"><span>2</span>DETAILS</h5>
+                                    </div>
+                                    <div class="nd_spt_float_left nd_spt_width_20_percentage nd_spt_single_step nd_spt_step_checkout">
+                                        <h5 class="nd_options_color_grey"><span>3</span>CONFIRM</h5>
+                                    </div>
+                                    <div class="nd_spt_float_left nd_spt_width_20_percentage "><div class="nd_spt_section nd_spt_height_1"></div></div>
+                                </div>
+                                <!--END step index-->
+
+
+                                <div class="nd_spt_section nd_spt_booking_container_all">
+                                    <div class="nd_spt_section nd_spt_booking_container_1">
+
+
+                                        <div id="nd_spt_rest_players_legend_section" class="nd_spt_section">
+
+                                            <!--START sport-->
+                                            <div id="nd_spt_section_sport" class="nd_spt_section  ">
+                                                <label class="" for="nd_spt_sport">sport</label>
+
+                                                <div class="nd_spt_section nd_spt_position_relative">
+
+                                                    <div class="nd_spt_rest_single  nd_spt_rest_single_4889 ">
+
+
+                                                        <div class="nd_spt_section nd_spt_position_relative nd_spt_sport_image">
+                                                            <img class="nd_spt_section" src="{{asset('front/reservation/wp-content/uploads/sites/2/2021/02/court-2-1024x827.jpg') }}">
+
+                                                            <div class="nd_spt_sport_image_filter nd_spt_position_absolute nd_spt_left_0 nd_spt_height_100_percentage nd_spt_width_100_percentage nd_spt_box_sizing_border_box">
+
+                                                                <div class="nd_spt_position_absolute nd_spt_bottom_20 nd_spt_sport_image_content">
+                                                                    <h3>Clay Courts</h3>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div class="nd_spt_rest_single nd_spt_display_none nd_spt_rest_single_4890 ">
+
+
+                                                        <div class="nd_spt_section nd_spt_position_relative nd_spt_sport_image">
+                                                            <img class="nd_spt_section" src="{{asset('front/reservation/wp-content/uploads/sites/2/2021/02/court-1-1024x827.jpg') }}">
+
+                                                            <div class="nd_spt_sport_image_filter nd_spt_position_absolute nd_spt_left_0 nd_spt_height_100_percentage nd_spt_width_100_percentage nd_spt_box_sizing_border_box">
+
+                                                                <div class="nd_spt_position_absolute nd_spt_bottom_20 nd_spt_sport_image_content">
+                                                                    <h3>Hard Court</h3>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+                                                    </div>
+                                                    <ul class="nd_spt_ul_sport nd_spt_display_none"><li data-sport="4889" class="nd_spt_ulli_sport  nd_spt_bg_color_blue  ">Clay Courts</li><li data-sport="4890" class="nd_spt_ulli_sport  ">Hard Court</li></ul>
+                                                </div>
+
+                                                <input readonly class="nd_spt_display_none_important" type="number" name="nd_spt_sport" id="nd_spt_sport" value="4889">
+
+                                            </div>
+                                            <!--END sport-->
+
+
+
+                                            <div id="nd_spt_players_legend_section" class="nd_spt_section">
+
+                                                <!--START playerS-->
+                                                <div id="nd_spt_players_section" class="nd_spt_section">
+
+                                                    <h3 class="">players</h3>
+
+                                                    <div class=" nd_spt_section">
+
+                                                        <div class=" nd_spt_player_number  nd_spt_section">
+                                                            <h1 class="nd_spt_players_number nd_spt_margin_0 nd_spt_padding_0">1</h1>
+
+
+                                                            <div class=" nd_spt_player_number_add  nd_spt_width_50_percentage">
+                                                                <button class="nd_spt_players_increase" type="button">Add</button>
+                                                            </div>
+
+                                                            <div class=" nd_spt_player_number_remove  nd_spt_width_50_percentage">
+                                                                <button class="nd_spt_players_decrease" type="button">Remove</button>
+                                                            </div>
+
+
+                                                        </div>
+
+
+
+                                                    </div>
+
+                                                    <input readonly class="nd_spt_display_none_important" type="number" name="nd_spt_players" id="nd_spt_players" min="1" value="1">
+
+                                                </div>
+                                                <!--END playerS-->
+
+                                                <!--START LEGEND-->
+                                                <div id="nd_spt_legend_section" class="nd_spt_section">
+                                                    <p class="nd_spt_legend_current"><span></span>Current Day</p>
+                                                    <p class="nd_spt_legend_selected"><span></span>Selected Day</p>
+                                                    <p class="nd_spt_legend_not_available"><span></span>Not Available</p>
+                                                </div>
+                                                <!--END LEGEND-->
+
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <div id="nd_spt_cal_occa_section" class="nd_spt_section">
+
+                                            <h1 id="nd_spt_calendar_word_bg">Service</h1>
+                                            <div id="nd_spt_datepicker_dev"></div>
+                                            <input readonly class="nd_spt_display_none_important" type="text" name="nd_spt_date" id="nd_spt_date" value="2021-04-14">
+                                            <!--START SERVICE-->
+                                            <div id="nd_spt_occasion_section" class="nd_spt_section">
+                                                <div id="nd_spt_occasion_cont" class="nd_spt_section  ">
+                                                    <h3 class="">Service :</h3>
+
+                                                    <div id="nd_spt_occasion_cont_change" class="nd_spt_section nd_spt_position_relative"><div class="nd_spt_occas_single  nd_spt_occas_single_0">Not Set</div><div class="nd_spt_occas_single  nd_spt_display_none  nd_spt_occas_single_1">Lights</div><div class="nd_spt_occas_single  nd_spt_display_none  nd_spt_occas_single_2">Heating</div><div class="nd_spt_occas_single  nd_spt_display_none  nd_spt_occas_single_3">Balls</div><ul class="nd_spt_ul_occasion nd_spt_display_none"><li data-occasion="0" class="nd_spt_ulli_occasion  nd_spt_bg_color_blue  ">Not Set</li><li data-occasion="1" class="nd_spt_ulli_occasion   ">Lights</li><li data-occasion="2" class="nd_spt_ulli_occasion   ">Heating</li><li data-occasion="3" class="nd_spt_ulli_occasion   ">Balls</li></ul>
+                                                    </div>
+
+                                                </div>
+
+                                                <input readonly class="nd_spt_display_none_important" type="text" name="nd_spt_occasion" id="nd_spt_occasion" value="0">
+
+                                            </div>
+                                            <!--END SERVICE-->
+
+                                        </div>
+                                        <div id="nd_spt_time_section" class="nd_spt_section">
+                                            <h3 class="">Time :</h3>
+
+                                            <ul id="nd_spt_all_time_slots_container" class="nd_spt_margin_0 nd_spt_padding_0 nd_spt_list_style_none">
+
+                                                <div class="nd_spt_section nd_spt_all_time_slots_single"><li class="nd_spt_display_inline_block"><p class="nd_spt_margin_0 nd_spt_padding_0 nd_spt_bg_color_ccc nd_spt_margin_right_10 nd_spt_time nd_spt_bg_color_blue" data-time="9:00">9:00 am</p></li><li class="nd_spt_display_inline_block"><p class="nd_spt_margin_0 nd_spt_padding_0 nd_spt_bg_color_ccc nd_spt_margin_right_10 nd_spt_time" data-time="10:00">10:00 am</p></li><li class="nd_spt_display_inline_block"><p class="nd_spt_margin_0 nd_spt_padding_0 nd_spt_bg_color_ccc nd_spt_margin_right_10 nd_spt_time" data-time="11:00">11:00 am</p></li><li class="nd_spt_display_inline_block"><p class="nd_spt_margin_0 nd_spt_padding_0 nd_spt_bg_color_ccc nd_spt_margin_right_10 nd_spt_time" data-time="12:00">12:00 pm</p></li><li class="nd_spt_display_inline_block"><p class="nd_spt_margin_0 nd_spt_padding_0 nd_spt_bg_color_ccc nd_spt_margin_right_10 nd_spt_time" data-time="13:00">1:00 pm</p></li><li class="nd_spt_display_inline_block"><p class="nd_spt_margin_0 nd_spt_padding_0 nd_spt_bg_color_ccc nd_spt_margin_right_10 nd_spt_time" data-time="14:00">2:00 pm</p></li><li class="nd_spt_display_inline_block"><p class="nd_spt_margin_0 nd_spt_padding_0 nd_spt_bg_color_ccc nd_spt_margin_right_10 nd_spt_time" data-time="15:00">3:00 pm</p></li><li class="nd_spt_display_inline_block"><p class="nd_spt_margin_0 nd_spt_padding_0 nd_spt_bg_color_ccc nd_spt_margin_right_10 nd_spt_time" data-time="16:00">4:00 pm</p></li><li class="nd_spt_display_inline_block"><p class="nd_spt_margin_0 nd_spt_padding_0 nd_spt_bg_color_ccc nd_spt_margin_right_10 nd_spt_time" data-time="17:00">5:00 pm</p></li><li class="nd_spt_display_inline_block"><p class="nd_spt_margin_0 nd_spt_padding_0 nd_spt_bg_color_ccc nd_spt_margin_right_10 nd_spt_time" data-time="18:00">6:00 pm</p></li><li class="nd_spt_display_inline_block"><p class="nd_spt_margin_0 nd_spt_padding_0 nd_spt_bg_color_ccc nd_spt_margin_right_10 nd_spt_time" data-time="19:00">7:00 pm</p></li><li class="nd_spt_display_inline_block"><p class="nd_spt_margin_0 nd_spt_padding_0 nd_spt_bg_color_ccc nd_spt_margin_right_10 nd_spt_time" data-time="20:00">8:00 pm</p></li>
+                                                    <div class="nd_spt_section nd_spt_height_20"></div>
+                                                    <input readonly class="nd_spt_display_none_important" type="text" name="nd_spt_time" id="nd_spt_time" value="9:00">
+                                                </div>
+
+
+                                                <script>
+                                                    jQuery(document).ready(function() {
+
+                                                        jQuery( function ( $ ) {
+
+                                                            $("#nd_spt_btn_go_to_booking").removeClass("nd_spt_display_none_important");
+
+                                                            $(".nd_spt_all_time_slots_single li:first-child p").trigger( "click" );
+
+                                                        });
+
+                                                    });
+                                                </script>
+
+
+                                            </ul>
+                                        </div>
+                                        <!--END TIME-->
+
+
+
+                                        <div id="nd_spt_btn_go_to_booking_container" class="nd_spt_section">
+                                            <button class="nd_options_first_font" id="nd_spt_btn_go_to_booking" onclick="nd_spt_go_to_booking()">BOOK NOW</button>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+</div>
+<!--end content-->
+</div>
+<!--post-->
+
+</div>
+<!--END all content-->
+
+
+
+</div>
+<!--end container-->
+
+</div>
+<!--END theme-->
+
+<script>
+    ( function ( body ) {
+        'use strict';
+        body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+    } )( document.body );
+</script>
+<script> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesMin":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done","today":"Today","clear":"Clear"}};/* ]]> */ </script>	<script type="text/javascript">
+    (function () {
+        var c = document.body.className;
+        c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+        document.body.className = c;
+    })()
+</script>
+<link rel='stylesheet' id='elementor-post-3545-css'  href="{{ asset('front/reservation/wp-content/uploads/sites/2/elementor/css/post-3545aa3f.css?ver=1615804644') }}" type='text/css' media='all' />
+<link rel='stylesheet' id='nd_spt_style_layout-css'  href="{{ asset('front/reservation/wp-content/plugins/nd-sports-booking/inc/shortcodes/css/booking-form/layout-140df.css?ver=5.6') }}" type='text/css' media='all' />
+<style id='nd_spt_style_layout-inline-css' type='text/css'>
+
+
+    /*dark 1*/
+    #nd_spt_steps_container h5 span{background-color: #008f70;  }
+    #nd_spt_cal_occa_section { background-color: #008f70; }
+    #nd_spt_booking_step_datas_form label span { background-color: #008f70; }
+    #nd_spt_booking_step_resume_all_info { background-color: #008f70; }
+    #nd_spt_checkout_step_resume_all_info { background-color: #008f70; }
+    .nd_spt_ul_sport li.nd_spt_bg_color_blue { background-color: #008f70;}
+    .nd_spt_ul_occasion li.nd_spt_bg_color_blue {background-color: #008f70;}
+    #nd_spt_time_section .nd_spt_time.nd_spt_bg_color_blue { background-color: #008f70; }
+    .nd_spt_toogle_icon { background-color: #008f70; }
+
+    /*color 1*/
+    #nd_spt_steps_container .nd_spt_step_active h5 span { background-color: #f2a922; }
+    .nd_spt_legend_selected span { background-color: #f2a922; }
+    .nd_spt_legend_not_available span { background-color: #f2a922; }
+    .nd_spt_cal_active.nd_spt_calendar_date{ background-color: #f2a922 !important; }
+    #nd_spt_time_section p { background-color: #f2a922; }
+    #nd_spt_btn_go_to_booking { box-shadow: 5px 5px 0px 1px #db981b; background-color: #f2a922; }
+    #nd_spt_booking_step_datas_form button { background-color: #f2a922; box-shadow: 5px 5px 0px 1px #db981b; }
+    .nd_spt_checkout_container_3 button { background-color: #f2a922; }
+    #nd_spt_checkout_step_datas_form button,#nd_spt_checkout_step_datas_form input[type="submit"] { background-color: #f2a922; box-shadow: 3px 3px 0px 1px #db981b; }
+    .nd_spt_cal_not_set:after { background-color: #f2a922; }
+
+    /*color 2*/
+    .nd_spt_legend_current span { background-color: #008f70; }
+    .nd_spt_cal_today.nd_spt_calendar_date{ background-color: rgb(0 0 0 /10%); }
+
+
+    .nd_spt_cal_ex_close:after { background-color:#f2a922;}
+
+
+    #nd_spt_cal_occa_section {background-position: center;background-repeat: no-repeat;background-size: cover;background-image: url();}
+</style>
+<link rel='stylesheet' id='jquery-ui-datepicker-dev-css'  href="{{ asset('front/reservation/wp-content/plugins/nd-sports-booking/inc/shortcodes/css/datepicker-dev40df.css?ver=5.6') }}" type='text/css' media='all' />
+<style id='jquery-ui-datepicker-dev-inline-css' type='text/css'>
+
+
+    /* color */
+    #nd_spt_datepicker_dev .ui-datepicker-today { background-color: rgb(0 0 0 / 10%); }
+    #nd_spt_datepicker_dev .ui-datepicker-current-day { background-color: #f2a922; }
+    #nd_spt_datepicker_dev .ui-state-disabled span{ color: #fff !important; opacity: 0.5; }
+
+
+</style>
+<link rel='stylesheet' id='elementor-post-454-css'  href="{{ asset('front/reservation/wp-content/uploads/sites/2/elementor/css/post-45469d6.css?ver=1615807306') }}" type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-0-css'  href="{{ asset('front/reservation/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min9e0b.css?ver=5.15.1') }}" type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-fa-brands-css'  href="{{ asset('front/reservation/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min9e0b.css?ver=5.15.1') }}" type='text/css' media='all' />
+<script type='text/javascript' id='contact-form-7-js-extra'>
+    /* <![CDATA[ */
+    var wpcf7 = {"apiSettings":{"root":"http:\/\/www.nicdarkthemes.com\/themes\/tennis\/wp\/demo\/tennis-club\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+    /* ]]> */
+</script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/contact-form-7/includes/js/scripts9dff.js?ver=5.3.2') }}" id='contact-form-7-js'></script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-includes/js/jquery/ui/core.min35d0.js?ver=1.12.1') }}" id='jquery-ui-core-js'></script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-includes/js/jquery/ui/tabs.min35d0.js?ver=1.12.1') }}" id='jquery-ui-tabs-js'></script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/timetable/js/jquery.qtip.min40df.js?ver=5.6') }}" id='jquery-qtip2-js'></script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/timetable/js/jquery.ba-bbq.min40df.js?ver=5.6') }}" id='jquery-ba-bqq-js'></script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/timetable/js/jquery.carouFredSel-6.2.1-packed40df.js?ver=5.6') }}" id='jquery-carouFredSel-js'></script>
+<script type='text/javascript' id='timetable_main-js-extra'>
+    /* <![CDATA[ */
+    var tt_config = [];
+    tt_config = {"ajaxurl":"http:\/\/www.nicdarkthemes.com\/themes\/tennis\/wp\/demo\/tennis-club\/wp-admin\/admin-ajax.php"};;
+    /* ]]> */
+</script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/timetable/js/timetable40df.js?ver=5.6') }}" id='timetable_main-js'></script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js?ver=2.70') }}" id='jquery-blockui-js'></script>
+<script type='text/javascript' id='wc-add-to-cart-js-extra'>
+    /* <![CDATA[ */
+    var wc_add_to_cart_params = {"ajax_url":"\/themes\/tennis\/wp\/demo\/tennis-club\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/themes\/tennis\/wp\/demo\/tennis-club\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"http:\/\/www.nicdarkthemes.com\/themes\/tennis\/wp\/demo\/tennis-club\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+    /* ]]> */
+</script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min20fd.js?ver=4.9.2') }}" id='wc-add-to-cart-js'></script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js?ver=2.1.4') }}" id='js-cookie-js'></script>
+<script type='text/javascript' id='woocommerce-js-extra'>
+    /* <![CDATA[ */
+    var woocommerce_params = {"ajax_url":"\/themes\/tennis\/wp\/demo\/tennis-club\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/themes\/tennis\/wp\/demo\/tennis-club\/?wc-ajax=%%endpoint%%"};
+    /* ]]> */
+</script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min20fd.js?ver=4.9.2') }}" id='woocommerce-js'></script>
+<script type='text/javascript' id='wc-cart-fragments-js-extra'>
+    /* <![CDATA[ */
+    var wc_cart_fragments_params = {"ajax_url":"\/themes\/tennis\/wp\/demo\/tennis-club\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/themes\/tennis\/wp\/demo\/tennis-club\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_c2f33b480b0a9bf6629314413664202b","fragment_name":"wc_fragments_c2f33b480b0a9bf6629314413664202b","request_timeout":"5000"};
+    /* ]]> */
+</script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min20fd.js?ver=4.9.2') }}" id='wc-cart-fragments-js'></script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-includes/js/comment-reply.min40df.js?ver=5.6') }}" id='comment-reply-js'></script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-includes/js/wp-embed.min40df.js?ver=5.6') }}" id='wp-embed-js'></script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/nd-elements/widgets/navigation/js/navigation40df.js?ver=5.6') }}" id='nd_elements_navigation_js-js'></script>
+<script type='text/javascript' src='https://js.stripe.com/v3/?ver=5.6' id='nd_spt_stripe_script-js'></script>
+<script type='text/javascript' id='nd_spt_calendar_script-js-extra'>
+    /* <![CDATA[ */
+    var nd_spt_my_vars_calendar = {"nd_spt_ajaxurl":"http:\/\/www.nicdarkthemes.com\/themes\/tennis\/wp\/demo\/tennis-club\/wp-admin\/admin-ajax.php","nd_spt_ajaxnonce":"2049a71031"};
+    /* ]]> */
+</script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/nd-sports-booking/inc/shortcodes/nd_spt_calendar40df.js?ver=5.6')}}" id='nd_spt_calendar_script-js'></script>
+<script type='text/javascript' id='nd_spt_calendar_script-js-after'>
+
+    jQuery(document).ready(function() {
+
+        jQuery( function ( $ ) {
+
+            $(".nd_spt_calendar_date").click(function() {
+
+                $(".nd_spt_calendar_date").removeClass("nd_spt_cal_active");
+                var nd_spt_calendar_date_select = $(this).attr("data-date");
+                $(this).addClass("nd_spt_cal_active");
+
+                $("#nd_spt_date").val(nd_spt_calendar_date_select);
+            });
+
+        });
+
+    });
+
+
+
+
+    jQuery(document).ready(function() {
+
+        jQuery( function ( $ ) {
+
+
+            $(".nd_spt_rest_single").click(function() {
+
+                $(".nd_spt_ul_sport").removeClass("nd_spt_display_none");
+
+            });
+
+
+            $(".nd_spt_ulli_sport").click(function() {
+
+                $(".nd_spt_rest_single").removeClass("nd_spt_display_block");
+                $(".nd_spt_ulli_sport").removeClass("nd_spt_bg_color_blue");
+                var nd_spt_rest_select = $(this).attr("data-sport");
+                $(this).addClass("nd_spt_bg_color_blue");
+
+                $("#nd_spt_sport").val(nd_spt_rest_select);
+
+                var nd_spt_calendar_date_select = $("#nd_spt_date").val();
+                $(".nd_spt_rest_single").addClass("nd_spt_display_none");
+                $(".nd_spt_rest_single_"+nd_spt_rest_select).addClass("nd_spt_display_block");
+                $(".nd_spt_ul_sport").addClass("nd_spt_display_none");
+
+            });
+
+        });
+
+    });
+
+
+
+
+    jQuery(document).ready(function() {
+
+        jQuery( function ( $ ) {
+
+            $(".nd_spt_players_increase").click(function() {
+                var value = $(".nd_spt_players_number").text();
+
+                if ( value < 4 ){
+                    value++;
+                    $(".nd_spt_players_number").text(value);
+                    $("#nd_spt_players").val(value);
+
+                    var nd_spt_calendar_date_select = $("#nd_spt_date").val();
+                }
+
+            });
+
+            $(".nd_spt_players_decrease").click(function() {
+                var value = $(".nd_spt_players_number").text();
+
+                if ( value > 1 ) {
+                    value--;
+                    $(".nd_spt_players_number").text(value);
+                    $("#nd_spt_players").val(value);
+
+                    var nd_spt_calendar_date_select = $("#nd_spt_date").val();
+                }
+
+            });
+
+        });
+
+    });
+
+
+
+
+
+    jQuery(document).ready(function() {
+
+        jQuery( function ( $ ) {
+
+
+            $(".nd_spt_occas_single").click(function() {
+
+                $(".nd_spt_ul_occasion").removeClass("nd_spt_display_none");
+
+            });
+
+
+            $(".nd_spt_ulli_occasion").click(function() {
+
+                $(".nd_spt_occas_single").removeClass("nd_spt_display_block");
+                $(".nd_spt_ulli_occasion").removeClass("nd_spt_bg_color_blue");
+                var nd_spt_occas_select = $(this).attr("data-occasion");
+                $(this).addClass("nd_spt_bg_color_blue");
+
+                $("#nd_spt_occasion").val(nd_spt_occas_select);
+
+                $(".nd_spt_occas_single").addClass("nd_spt_display_none");
+                $(".nd_spt_occas_single_"+nd_spt_occas_select).addClass("nd_spt_display_block");
+                $(".nd_spt_ul_occasion").addClass("nd_spt_display_none");
+
+            });
+
+        });
+
+    });
+
+
+
+
+    jQuery(document).ready(function() {
+
+        jQuery( function ( $ ) {
+
+            $(".nd_spt_time").click(function() {
+
+                $(".nd_spt_time").removeClass("nd_spt_bg_color_blue");
+                var nd_spt_calendar_time_select = $(this).attr("data-time");
+                $(this).addClass("nd_spt_bg_color_blue");
+
+                $("#nd_spt_time").val(nd_spt_calendar_time_select);
+
+            });
+
+        });
+
+    });
+
+
+
+
+    jQuery(document).ready(function() {
+
+        jQuery( function ( $ ) {
+
+            $("#nd_spt_btn_go_to_booking").removeClass("nd_spt_display_none_important");
+
+            $(".nd_spt_all_time_slots_single li:first-child p").trigger( "click" );
+
+        });
+
+    });
+
+
+</script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-includes/js/jquery/ui/datepicker.min35d0.js?ver=1.12.1') }}" id='jquery-ui-datepicker-js'></script>
+<script type='text/javascript' id='jquery-ui-datepicker-js-after'>
+    jQuery(document).ready(function() {
+
+        jQuery( function ( $ ) {
+
+            $( "#nd_spt_datepicker_dev" ).datepicker({
+                defaultDate : "2021-04-14",
+                minDate: 0,
+                altField: "#nd_spt_date",
+                altFormat: "yy-mm-dd",
+                firstDay: 0,
+                dateFormat: "yy-mm-dd",
+                monthNames: ["January","February","March","April","May","June", "July","August","September","October","November","December"],
+                monthNamesShort: [ "Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ],
+                dayNamesMin: ["S","M","T","W","T","F", "S"],
+                nextText: "NEXT",
+                prevText: "PREV",
+                changeMonth: false,
+                numberOfMonths: 1
+            });
+
+        });
+
+    });
+
+
+</script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/elementor/assets/js/webpack.runtime.min324d.js?ver=3.1.0') }}" id='elementor-webpack-runtime-js'></script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/elementor/assets/js/frontend-modules.min324d.js?ver=3.1.0') }}" id='elementor-frontend-modules-js'></script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/elementor/assets/lib/dialog/dialog.mina288.js?ver=4.8.1') }}" id='elementor-dialog-js'></script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min05da.js?ver=4.0.2') }}" id='elementor-waypoints-js'></script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/elementor/assets/lib/share-link/share-link.min324d.js?ver=3.1.0') }}" id='share-link-js'></script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/elementor/assets/lib/swiper/swiper.min48f5.js?ver=5.3.6') }}" id='swiper-js'></script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-includes/js/dist/vendor/wp-polyfill.min89b1.js?ver=7.4.4') }}" id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-polyfill-js-after'>
+    ( 'fetch' in window ) || document.write( '<script src="{{ asset('front/reservation/wp-includes/js/dist/vendor/wp-polyfill-fetch.min6e0e.js?ver=3.0.0') }}"></scr' + 'ipt>' );( document.contains ) || document.write( '<script src="../wp-includes/js/dist/vendor/wp-polyfill-node-contains.min2e00.js?ver=3.42.0"></scr' + 'ipt>' );( window.DOMRect ) || document.write( '<script src="../wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min2e00.js?ver=3.42.0"></scr' + 'ipt>' );( window.URL && window.URL.prototype && window.URLSearchParams ) || document.write( '<script src="../wp-includes/js/dist/vendor/wp-polyfill-url.min5aed.js?ver=3.6.4"></scr' + 'ipt>' );( window.FormData && window.FormData.prototype.keys ) || document.write( '<script src="../wp-includes/js/dist/vendor/wp-polyfill-formdata.mine9bd.js?ver=3.0.12"></scr' + 'ipt>' );( Element.prototype.matches && Element.prototype.closest ) || document.write( '<script src="../wp-includes/js/dist/vendor/wp-polyfill-element-closest.min4c56.js?ver=2.0.2"></scr' + 'ipt>' );
+</script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-includes/js/dist/i18n.min3a83.js?ver=326fe7fbfdb407b6edbcfba7e17f3909') }}" id='wp-i18n-js'></script>
+<script type='text/javascript' id='elementor-frontend-js-translations'>
+    ( function( domain, translations ) {
+        var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+        localeData[""].domain = domain;
+        wp.i18n.setLocaleData( localeData, domain );
+    } )( "elementor", { "locale_data": { "messages": { "": {} } } } );
+</script>
+<script type='text/javascript' id='elementor-frontend-js-before'>
+    var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false,"isImprovedAssetsLoading":false},"i18n":[],"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1200,"xl":1440,"xxl":1600},"version":"3.1.0","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"a11y_improvements":true,"landing-pages":true},"urls":{"assets":"http:\/\/www.nicdarkthemes.com\/themes\/tennis\/wp\/demo\/tennis-club\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":4605,"title":"Reserve%20%E2%80%93%20Tennis%20Club%20DEMO","excerpt":"","featuredImage":false}};
+</script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/elementor/assets/js/frontend.min324d.js?ver=3.1.0') }}" id='elementor-frontend-js'></script>
+<script type='text/javascript' src="{{ asset('front/reservation/wp-content/plugins/elementor/assets/js/preloaded-elements-handlers.min324d.js?ver=3.1.0' ) }}" id='preloaded-elements-handlers-js'></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P5T6J8BRP0"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-P5T6J8BRP0');
+</script>
+
+</body>
 {% endblock %}

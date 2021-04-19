@@ -3,7 +3,9 @@
 namespace App\Controller;
 use App\Entity\Reservation;
 use App\Form\ReservationType;
+use App\Form\TerrainType;
 use App\Repository\ReservationRepository;
+use App\Repository\TerrainRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,18 +14,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ReservationController extends AbstractController
 {
-    /**
-     * @Route("/reservation", name="reservation")
-     */
-    public function index(): Response
-    {
-        return $this->render('reservation/index.html.twig', [
-            'controller_name' => 'ReservationController',
-        ]);
-    }
+
 
     /**
-     * @Route("/reservation/add", name="terrain")
+     * @Route("/reservation/add", name="re")
      */
     function add(Request $request)
     {
@@ -42,18 +36,18 @@ class ReservationController extends AbstractController
             $this -> addFlash('success', 'Réservation bien ajoutée avec succès');
             return $this->redirectToRoute("AfficheReservations");
         }
-        return $this->render('reservation/Ajouter.html.twig',['form' => $form->createView()]);
+        return $this->render('Admin/reservation/Ajouter.html.twig',['form' => $form->createView()]);
 
     }
 
     /**
      * @param ReservationRepository $repository
      * @return Response
-     * @Route ("/AfficheReservations/", name="AfficheReservations")
+     * @Route ("/AfficheReservations/", name="Reservations")
      */
     public function Affiche(ReservationRepository  $repository){
         $reservations = $repository->findAll();
-        return $this->render('Admin/reservation/Affiche.html.twig', ['reservations' => $reservations]);
+        return $this->render('Admin/reservation/listeReservations.html.twig', ['reservations' => $reservations]);
     }
 
     /**
@@ -76,7 +70,7 @@ class ReservationController extends AbstractController
         return $this->redirectToRoute("AfficheReservations");
     }
     /**
-     * @Route("reservation/update/{id}", name="update")
+     * @Route("reservation/update/{id}", name="updateReservation")
      */
 
     function Update(ReservationRepository $repository,Request $request, $id){
@@ -94,5 +88,41 @@ class ReservationController extends AbstractController
         }
         return $this->render('reservation/Update.html.twig',['form' => $form->createView()]);
     }
+
+
+    /**
+     * @Route("terrain/reserver/{id}", name="updateTerrain")
+     */
+
+    function reserver(TerrainRepository $repository,Request $request, $id){
+        $terrain = $repository->find($id);
+        $form = $this->createForm(TerrainType::class, $terrain);
+        $form->add('Modifier', SubmitType::class);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()) {
+            $file = $terrain->getImage();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            try {
+                $file->move(
+                    $this->getParameter('terrain_directory'),
+                    $fileName
+                );
+            } catch (FileException $e) {
+                // ... handle exception if something happens during file upload
+            }
+            $em=$this->getDoctrine()->getManager();
+
+            $terrain->setImage($fileName);
+
+
+            $em->flush();
+
+            $this -> addFlash('success', 'Terrain bien réserver avec succès');
+
+
+        }
+        return $this->render('front/terrain/sh.html.twig',['form' => $form->createView()]);
+    }
+
 
 }

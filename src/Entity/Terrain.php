@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Terrain
@@ -16,6 +17,7 @@ class Terrain
     /**
      * @var int
      *
+     * @Groups("terrains")
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
@@ -25,6 +27,7 @@ class Terrain
     /**
      * @var string
      *
+     * @Groups("terrains")
      * @ORM\Column(name="designation", type="string", length=50, nullable=false)
      * @Assert\NotNull(message = "Ce champs est obligatoire")
      * @Assert\Length(min = 5, max = 50,
@@ -37,6 +40,7 @@ class Terrain
     /**
      * @var string|null
      *
+     * @Groups("terrains")
      * @ORM\Column(name="description", type="text", length=65535, nullable=true)
      * @Assert\Length(min = 5, max = 300,
      * minMessage = "La description doit comporter au moins {{ limit }} caractères",
@@ -48,6 +52,7 @@ class Terrain
     /**
      * @var string
      *
+     * @Groups("terrains")
      * @ORM\Column(name="ville", type="string", length=50, nullable=false)
      * @Assert\NotNull(message = "Ce champs est obligatoire")
      */
@@ -56,6 +61,7 @@ class Terrain
     /**
      * @var string
      *
+     * @Groups("terrains")
      * @ORM\Column(name="adresse", type="string", length=100, nullable=false)
      * @Assert\NotNull(message = "Ce champs est obligatoire")
      * @Assert\Length(min = 5, max = 100,
@@ -68,6 +74,7 @@ class Terrain
     /**
      * @var string|null
      *
+     * @Groups("terrains")
      * @ORM\Column(name="image", type="string", length=100, nullable=true)
      */
     private $image;
@@ -75,6 +82,7 @@ class Terrain
     /**
      * @var bool
      *
+     * @Groups("terrains")
      * @ORM\Column(name="disponible", type="boolean", nullable=false, options={"default"="1"})
      */
     private $disponible = true;
@@ -82,6 +90,7 @@ class Terrain
     /**
      * @var float
      *
+     * @Groups("terrains")
      * @ORM\Column(name="prix_location", type="float", precision=10, scale=0, nullable=false)
      * @Assert\NotNull(message = "Ce champs est obligatoire")
      * @Assert\Positive(message = "Le prix de location doit être positif")
@@ -91,6 +100,7 @@ class Terrain
     /**
      * @var \DateTime
      *
+     * @Groups("terrains")
      * @ORM\Column(name="heure_ouverture", type="time", nullable=false)
      * @Assert\NotNull(message = "Ce champs est obligatoire")
      */
@@ -99,6 +109,7 @@ class Terrain
     /**
      * @var \DateTime
      *
+     * @Groups("terrains")
      * @ORM\Column(name="heure_fermeture", type="time", nullable=false)
      * @Assert\NotNull(message = "Ce champs est obligatoire")
      */
@@ -107,6 +118,7 @@ class Terrain
     /**
      * @var \DateTime
      *
+     * @Groups("terrains")
      * @ORM\Column(name="created_at", type="datetime", nullable=true, options={"default"="CURRENT_TIMESTAMP"})
      */
     private $createdAt = 'CURRENT_TIMESTAMP';
@@ -114,6 +126,7 @@ class Terrain
     /**
      * @var \Utilisateur
      *
+     * @Groups("terrains")
      * @ORM\ManyToOne(targetEntity="Utilisateur")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="complexe", referencedColumnName="id")
@@ -124,6 +137,7 @@ class Terrain
     /**
      * @var \Categorie
      *
+     * @Groups("terrains")
      * @ORM\ManyToOne(targetEntity="Categorie")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="categorie", referencedColumnName="id")
@@ -184,12 +198,12 @@ class Terrain
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getImage()
     {
         return $this->image;
     }
 
-    public function setImage(?string $image): self
+    public function setImage($image)
     {
         $this->image = $image;
 
@@ -279,6 +293,8 @@ class Terrain
 
         return $this;
     }
+
+
 
 
 }

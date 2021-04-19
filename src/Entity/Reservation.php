@@ -24,15 +24,15 @@ class Reservation
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_creation", type="datetime", nullable=false, options={"default"="CURRENT_TIMESTAMP"})
+     * @ORM\Column(name="date_creation", type="datetime", nullable=true, options={"default"="CURRENT_TIMESTAMP"})
      */
     private $dateCreation = 'CURRENT_TIMESTAMP';
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_reservation", type="date", nullable=false)
-     *  @Assert\GreaterThan("today")
+     * @ORM\Column(name="date_reservation", type="datetime", nullable=true)
+
      */
     private $dateReservation;
 

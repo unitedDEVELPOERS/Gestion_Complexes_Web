@@ -76,6 +76,7 @@
     <parameter key="kernel.container_class">srcApp_KernelDevDebugContainer</parameter>
     <parameter key="container.dumper.inline_class_loader">true</parameter>
     <parameter key="container.dumper.inline_factories">true</parameter>
+    <parameter key="terrain_directory">D:\Esprit\Ahmed\Semestre2\Symfony\Gest_Complexes/public/uploads/terrains</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -5366,7 +5367,19 @@
         <argument key="terrain" type="service" id=".errored..service_locator.CTVg5QK.App\Entity\Terrain"/>
       </argument>
     </service>
-    <service id=".service_locator.bM5Grl2" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.oIFjKpW" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="terrain" type="service" id=".errored..service_locator.oIFjKpW.App\Entity\Terrain"/>
+      </argument>
+    </service>
+    <service id=".service_locator.4wRfwhS" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="Normalizer" type="service" id="serializer"/>
+      </argument>
+    </service>
+    <service id=".service_locator.SaCM__p" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\PenaliteController::Affiche" type="service" id=".service_locator.I2cQ1ku"/>
@@ -5378,10 +5391,14 @@
         <argument key="App\Controller\ReservationController::Affiche" type="service" id=".service_locator.Jfpm0Lz"/>
         <argument key="App\Controller\ReservationController::Update" type="service" id=".service_locator.Jfpm0Lz"/>
         <argument key="App\Controller\ReservationController::delete" type="service" id=".service_locator.kvNeJHT"/>
+        <argument key="App\Controller\ReservationController::reserver" type="service" id=".service_locator.uG7HzYB"/>
         <argument key="App\Controller\TerrainController::Affiche" type="service" id=".service_locator.uG7HzYB"/>
-        <argument key="App\Controller\TerrainController::AfficheClient" type="service" id=".service_locator.uG7HzYB"/>
+        <argument key="App\Controller\TerrainController::AfficheTerrain" type="service" id=".service_locator.uG7HzYB"/>
         <argument key="App\Controller\TerrainController::Update" type="service" id=".service_locator.uG7HzYB"/>
         <argument key="App\Controller\TerrainController::delete" type="service" id=".service_locator.CTVg5QK"/>
+        <argument key="App\Controller\TerrainController::filter" type="service" id=".service_locator.uG7HzYB"/>
+        <argument key="App\Controller\TerrainController::searchTerrain" type="service" id=".service_locator.4wRfwhS"/>
+        <argument key="App\Controller\TerrainController::show" type="service" id=".service_locator.oIFjKpW"/>
         <argument key="App\Controller\PenaliteController:Affiche" type="service" id=".service_locator.I2cQ1ku"/>
         <argument key="App\Controller\PenaliteController:Update" type="service" id=".service_locator.I2cQ1ku"/>
         <argument key="App\Controller\PenaliteController:delete" type="service" id=".service_locator..CcX0h8"/>
@@ -5391,10 +5408,14 @@
         <argument key="App\Controller\ReservationController:Affiche" type="service" id=".service_locator.Jfpm0Lz"/>
         <argument key="App\Controller\ReservationController:Update" type="service" id=".service_locator.Jfpm0Lz"/>
         <argument key="App\Controller\ReservationController:delete" type="service" id=".service_locator.kvNeJHT"/>
+        <argument key="App\Controller\ReservationController:reserver" type="service" id=".service_locator.uG7HzYB"/>
         <argument key="App\Controller\TerrainController:Affiche" type="service" id=".service_locator.uG7HzYB"/>
-        <argument key="App\Controller\TerrainController:AfficheClient" type="service" id=".service_locator.uG7HzYB"/>
+        <argument key="App\Controller\TerrainController:AfficheTerrain" type="service" id=".service_locator.uG7HzYB"/>
         <argument key="App\Controller\TerrainController:Update" type="service" id=".service_locator.uG7HzYB"/>
         <argument key="App\Controller\TerrainController:delete" type="service" id=".service_locator.CTVg5QK"/>
+        <argument key="App\Controller\TerrainController:filter" type="service" id=".service_locator.uG7HzYB"/>
+        <argument key="App\Controller\TerrainController:searchTerrain" type="service" id=".service_locator.4wRfwhS"/>
+        <argument key="App\Controller\TerrainController:show" type="service" id=".service_locator.oIFjKpW"/>
       </argument>
     </service>
     <service id=".service_locator.Y7gDuDN" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5931,12 +5952,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.bM5Grl2"/>
+      <argument type="service" id=".service_locator.SaCM__p"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.bM5Grl2"/>
+      <argument type="service" id=".service_locator.SaCM__p"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -5950,6 +5971,7 @@
     <service id=".errored..service_locator.8Ji8zkg.App\Entity\PenaliteJoueur" class="App\Entity\PenaliteJoueur"/>
     <service id=".errored..service_locator.kvNeJHT.App\Entity\Reservation" class="App\Entity\Reservation"/>
     <service id=".errored..service_locator.CTVg5QK.App\Entity\Terrain" class="App\Entity\Terrain"/>
+    <service id=".errored..service_locator.oIFjKpW.App\Entity\Terrain" class="App\Entity\Terrain"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <argument type="service" id=".service_locator..dRf9lX"/>
       <argument type="collection">
@@ -6341,7 +6363,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.bM5Grl2"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.SaCM__p"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

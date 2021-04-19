@@ -125,13 +125,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Controller/Prop_complexe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/uploads/terrains" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Esprit\Ahmed\Semestre2\Symfony\Gest_Complexes\public\uploads\terrains" />
       <recent name="D:\Esprit\Ahmed\Semestre2\Symfony\Gest_Complexes\src\Controller\Prop_complexe" />
       <recent name="D:\Esprit\Ahmed\Semestre2\Symfony\Gest_Complexes\templates\penalite" />
       <recent name="D:\Esprit\Ahmed\Semestre2\Symfony\Gest_Complexes\templates\terrain" />
@@ -168,7 +170,10 @@
       <workItem from="1618148068725" duration="5262000" />
       <workItem from="1618227015689" duration="4283000" />
       <workItem from="1618231435060" duration="3060000" />
-      <workItem from="1618414946463" duration="18497000" />
+      <workItem from="1618414946463" duration="40927000" />
+      <workItem from="1618533449680" duration="8196000" />
+      <workItem from="1618573993282" duration="7504000" />
+      <workItem from="1618584724587" duration="65833000" />
     </task>
     <servers />
   </component>
