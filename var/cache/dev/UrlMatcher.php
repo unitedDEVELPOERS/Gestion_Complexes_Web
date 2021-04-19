@@ -37,11 +37,18 @@ return [
         '/Porp/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\Prop_complexe\\LoginController::index'], null, null, null, false, false, null]],
         '/Prop_complexe/profile' => [[['_route' => 'profile', '_controller' => 'App\\Controller\\Prop_complexe\\ProfileController::index'], null, null, null, false, false, null]],
         '/terrains' => [[['_route' => 'front_office', '_controller' => 'App\\Controller\\Prop_complexe\\ProfileController::terrains'], null, null, null, false, false, null]],
+        '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
+        '/verify/email' => [[['_route' => 'app_verify_email', '_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], null, null, null, false, false, null]],
         '/reservation' => [[['_route' => 'reservation', '_controller' => 'App\\Controller\\ReservationController::index'], null, null, null, false, false, null]],
         '/AfficheReservations' => [[['_route' => 'AfficheReservations', '_controller' => 'App\\Controller\\ReservationController::Affiche'], null, null, null, true, false, null]],
+        '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
+        '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/Admin/terrain/add' => [[['_route' => 'terrain', '_controller' => 'App\\Controller\\TerrainController::add'], null, null, null, false, false, null]],
         '/AfficheTerrains' => [[['_route' => 'AfficheTerrains', '_controller' => 'App\\Controller\\TerrainController::Affiche'], null, null, null, true, false, null]],
         '/Terrains' => [[['_route' => 'TerrainsClient', '_controller' => 'App\\Controller\\TerrainController::AfficheClient'], null, null, null, false, false, null]],
+        '/utilisateur' => [[['_route' => 'utilisateur', '_controller' => 'App\\Controller\\UtilisateurController::index'], null, null, null, false, false, null]],
+        '/AfficheUtilisateur' => [[['_route' => 'AfficheUtilisateur', '_controller' => 'App\\Controller\\UtilisateurController::Affiche'], null, null, null, false, false, null]],
+        '/utilisateur/Add' => [[['_route' => 'ad', '_controller' => 'App\\Controller\\UtilisateurController::Add'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -63,19 +70,18 @@ return [
                 .'|/Supp(?'
                     .'|/([^/]++)(*:186)'
                     .'|Invitation/([^/]++)(*:213)'
+                    .'|Utilisateur/([^/]++)(*:241)'
                 .')'
                 .'|/update(?'
-                    .'|/([^/]++)(*:241)'
-                    .'|invitation/([^/]++)(*:268)'
+                    .'|/([^/]++)(*:269)'
+                    .'|invitation/([^/]++)(*:296)'
                 .')'
                 .'|/penalite/(?'
-                    .'|update/([^/]++)(*:305)'
-                    .'|supp/([^/]++)(*:326)'
+                    .'|update/([^/]++)(*:333)'
+                    .'|supp/([^/]++)(*:354)'
                 .')'
-                .'|/terrain/(?'
-                    .'|supp/([^/]++)(*:360)'
-                    .'|update/([^/]++)(*:383)'
-                .')'
+                .'|/terrain/update/([^/]++)(*:387)'
+                .'|/UpdateUtilisateur/([^/]++)(*:422)'
             .')/?$}sD',
     ],
     [ // $dynamicRoutes
@@ -88,13 +94,14 @@ return [
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         186 => [[['_route' => 'deleteequipe', '_controller' => 'App\\Controller\\EquipeController::Delete'], ['id'], null, null, false, true, null]],
         213 => [[['_route' => 'deleteinvitation', '_controller' => 'App\\Controller\\InvitationController::Delete'], ['id'], null, null, false, true, null]],
-        241 => [[['_route' => 'updateequipe', '_controller' => 'App\\Controller\\EquipeController::update'], ['id'], null, null, false, true, null]],
-        268 => [[['_route' => 'updateinvitation', '_controller' => 'App\\Controller\\InvitationController::update'], ['id'], null, null, false, true, null]],
-        305 => [[['_route' => 'updatePenalite', '_controller' => 'App\\Controller\\PenaliteController::Update'], ['id'], null, null, false, true, null]],
-        326 => [[['_route' => 'dp', '_controller' => 'App\\Controller\\PenaliteController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        360 => [[['_route' => 'd', '_controller' => 'App\\Controller\\TerrainController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        383 => [
-            [['_route' => 'update', '_controller' => 'App\\Controller\\TerrainController::Update'], ['id'], null, null, false, true, null],
+        241 => [[['_route' => 'd', '_controller' => 'App\\Controller\\UtilisateurController::Delete'], ['id'], null, null, false, true, null]],
+        269 => [[['_route' => 'updateequipe', '_controller' => 'App\\Controller\\EquipeController::update'], ['id'], null, null, false, true, null]],
+        296 => [[['_route' => 'updateinvitation', '_controller' => 'App\\Controller\\InvitationController::update'], ['id'], null, null, false, true, null]],
+        333 => [[['_route' => 'updatePenalite', '_controller' => 'App\\Controller\\PenaliteController::Update'], ['id'], null, null, false, true, null]],
+        354 => [[['_route' => 'dp', '_controller' => 'App\\Controller\\PenaliteController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        387 => [[['_route' => 'update', '_controller' => 'App\\Controller\\TerrainController::Update'], ['id'], null, null, false, true, null]],
+        422 => [
+            [['_route' => 'a', '_controller' => 'App\\Controller\\UtilisateurController::update'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

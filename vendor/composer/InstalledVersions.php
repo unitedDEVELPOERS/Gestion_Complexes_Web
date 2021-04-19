@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '0e89cde22969f293804feb0252c6d0e405061f96',
+    'reference' => 'c09a7c643ab2a23ec53751be42341eabb79350b9',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '0e89cde22969f293804feb0252c6d0e405061f96',
+      'reference' => 'c09a7c643ab2a23ec53751be42341eabb79350b9',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -408,6 +408,15 @@ private static $installed = array (
       ),
       'reference' => '430d14c01836b77c28092883d195a43ce413ee32',
     ),
+    'symfony/amazon-mailer' => 
+    array (
+      'pretty_version' => 'v4.4.20',
+      'version' => '4.4.20.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8e546507e38ca6701b77024a2a81e0f575e2d926',
+    ),
     'symfony/asset' => 
     array (
       'pretty_version' => 'v4.4.20',
@@ -710,12 +719,12 @@ private static $installed = array (
     ),
     'symfony/mime' => 
     array (
-      'pretty_version' => 'v4.4.20',
-      'version' => '4.4.20.0',
+      'pretty_version' => 'v4.4.21',
+      'version' => '4.4.21.0',
       'aliases' => 
       array (
       ),
-      'reference' => '6db092f97cd6eee8d4b2026e3a8fa3f576b396d4',
+      'reference' => '50d7a1d569edad1f1321c59123c4c322c8daff7c',
     ),
     'symfony/monolog-bridge' => 
     array (
@@ -1081,6 +1090,15 @@ private static $installed = array (
       ),
       'reference' => '29e61305e1c79d25f71060903982ead8f533e267',
     ),
+    'symfonycasts/verify-email-bundle' => 
+    array (
+      'pretty_version' => 'v1.4.0',
+      'version' => '1.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3935f7375b2fa795f349bb4281ba8bcb754f4c91',
+    ),
     'twig/extra-bundle' => 
     array (
       'pretty_version' => 'v3.3.0',
@@ -1345,7 +1363,6 @@ self::$canGetVendors = method_exists('Composer\Autoload\ClassLoader', 'getRegist
 $installed = array();
 
 if (self::$canGetVendors) {
-
 foreach (ClassLoader::getRegisteredLoaders() as $vendorDir => $loader) {
 if (isset(self::$installedByVendor[$vendorDir])) {
 $installed[] = self::$installedByVendor[$vendorDir];
