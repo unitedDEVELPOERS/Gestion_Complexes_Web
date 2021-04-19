@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
-require __DIR__.'/ContainerDT9xioF/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/Container4oPigYM/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -50,6 +50,10 @@ $classes[] = 'App\Controller\Prop_complexe\LoginController';
 $classes[] = 'App\Controller\Prop_complexe\ProfileController';
 $classes[] = 'App\Controller\ReservationController';
 $classes[] = 'App\Controller\TerrainController';
+$classes[] = 'App\Form\ContactType';
+$classes[] = 'App\Form\EquipeSearchType';
+$classes[] = 'App\Form\EquipeType';
+$classes[] = 'App\Form\InvitationType';
 $classes[] = 'App\Form\PenaliteJoueurType';
 $classes[] = 'App\Form\PenaliteType';
 $classes[] = 'App\Form\ReservationType';
@@ -261,6 +265,12 @@ $classes[] = 'Symfony\Component\HttpKernel\EventListener\LocaleAwareListener';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\LocaleListener';
 $classes[] = 'Symfony\Component\Mailer\EventListener\EnvelopeListener';
 $classes[] = 'Symfony\Component\Mailer\EventListener\MessageLoggerListener';
+$classes[] = 'Symfony\Component\Mailer\Mailer';
+$classes[] = 'Symfony\Component\Mailer\Transport\Transports';
+$classes[] = 'Symfony\Component\Mailer\Transport';
+$classes[] = 'Symfony\Component\Mailer\Transport\NullTransportFactory';
+$classes[] = 'Symfony\Component\Mailer\Transport\SendmailTransportFactory';
+$classes[] = 'Symfony\Component\Mailer\Transport\Smtp\EsmtpTransportFactory';
 $classes[] = 'Symfony\Bundle\MakerBundle\Command\MakerCommand';
 $classes[] = 'Symfony\Bundle\MakerBundle\Maker\MakeAuthenticator';
 $classes[] = 'Symfony\Bundle\MakerBundle\Maker\MakeCommand';

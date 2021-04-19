@@ -453,6 +453,18 @@
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\TerrainController"/>
       </call>
     </service>
+    <service id="App\Form\ContactType" class="App\Form\ContactType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\EquipeSearchType" class="App\Form\EquipeSearchType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\EquipeType" class="App\Form\EquipeType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\InvitationType" class="App\Form\InvitationType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\PenaliteJoueurType" class="App\Form\PenaliteJoueurType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -904,6 +916,10 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\ContactType</argument>
+        <argument>App\Form\EquipeSearchType</argument>
+        <argument>App\Form\EquipeType</argument>
+        <argument>App\Form\InvitationType</argument>
         <argument>App\Form\PenaliteJoueurType</argument>
         <argument>App\Form\PenaliteType</argument>
         <argument>App\Form\ReservationType</argument>
@@ -1242,7 +1258,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.qzWsZeX"/>
+      <argument type="service" id=".service_locator.vICplzq"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5041,6 +5057,14 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\TerrainController" class="App\Controller\TerrainController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\TerrainController" class="App\Controller\TerrainController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\TerrainController" class="App\Controller\TerrainController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContactType" class="App\Form\ContactType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ContactType" class="App\Form\ContactType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EquipeSearchType" class="App\Form\EquipeSearchType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\EquipeSearchType" class="App\Form\EquipeSearchType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EquipeType" class="App\Form\EquipeType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\EquipeType" class="App\Form\EquipeType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\InvitationType" class="App\Form\InvitationType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\InvitationType" class="App\Form\InvitationType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PenaliteJoueurType" class="App\Form\PenaliteJoueurType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\PenaliteJoueurType" class="App\Form\PenaliteJoueurType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PenaliteType" class="App\Form\PenaliteType" autowire="true" abstract="true"/>
@@ -5342,6 +5366,12 @@
         <argument>make:migration</argument>
       </call>
     </service>
+    <service id=".service_locator.iP8eVIx" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="mailer" type="service" id="mailer.mailer"/>
+      </argument>
+    </service>
     <service id=".service_locator.I2cQ1ku" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5391,9 +5421,11 @@
         <argument key="terrain" type="service" id=".errored..service_locator.CTVg5QK.App\Entity\Terrain"/>
       </argument>
     </service>
-    <service id=".service_locator.bM5Grl2" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.LZDknqb" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\ContactController::index" type="service" id=".service_locator.iP8eVIx"/>
+        <argument key="App\Controller\EquipeController::Add" type="service" id=".service_locator.iP8eVIx"/>
         <argument key="App\Controller\PenaliteController::Affiche" type="service" id=".service_locator.I2cQ1ku"/>
         <argument key="App\Controller\PenaliteController::Update" type="service" id=".service_locator.I2cQ1ku"/>
         <argument key="App\Controller\PenaliteController::delete" type="service" id=".service_locator..CcX0h8"/>
@@ -5407,6 +5439,8 @@
         <argument key="App\Controller\TerrainController::AfficheClient" type="service" id=".service_locator.uG7HzYB"/>
         <argument key="App\Controller\TerrainController::Update" type="service" id=".service_locator.uG7HzYB"/>
         <argument key="App\Controller\TerrainController::delete" type="service" id=".service_locator.CTVg5QK"/>
+        <argument key="App\Controller\ContactController:index" type="service" id=".service_locator.iP8eVIx"/>
+        <argument key="App\Controller\EquipeController:Add" type="service" id=".service_locator.iP8eVIx"/>
         <argument key="App\Controller\PenaliteController:Affiche" type="service" id=".service_locator.I2cQ1ku"/>
         <argument key="App\Controller\PenaliteController:Update" type="service" id=".service_locator.I2cQ1ku"/>
         <argument key="App\Controller\PenaliteController:delete" type="service" id=".service_locator..CcX0h8"/>
@@ -5481,9 +5515,13 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.qzWsZeX" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.vICplzq" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\ContactType" type="service" id="App\Form\ContactType"/>
+        <argument key="App\Form\EquipeSearchType" type="service" id="App\Form\EquipeSearchType"/>
+        <argument key="App\Form\EquipeType" type="service" id="App\Form\EquipeType"/>
+        <argument key="App\Form\InvitationType" type="service" id="App\Form\InvitationType"/>
         <argument key="App\Form\PenaliteJoueurType" type="service" id="App\Form\PenaliteJoueurType"/>
         <argument key="App\Form\PenaliteType" type="service" id="App\Form\PenaliteType"/>
         <argument key="App\Form\ReservationType" type="service" id="App\Form\ReservationType"/>
@@ -5957,12 +5995,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.bM5Grl2"/>
+      <argument type="service" id=".service_locator.LZDknqb"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.bM5Grl2"/>
+      <argument type="service" id=".service_locator.LZDknqb"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6367,7 +6405,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.bM5Grl2"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.LZDknqb"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

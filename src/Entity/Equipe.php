@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Equipe
@@ -27,6 +28,7 @@ class Equipe
      * @var string|null
      *
      * @ORM\Column(name="nom", type="string", length=100, nullable=true)
+     * @Assert\NotBlank(message="nom REQUIRED")
      */
     private $nom;
 
@@ -34,6 +36,12 @@ class Equipe
      * @var int
      *
      * @ORM\Column(name="nbre_joueur", type="integer", nullable=false)
+     *  @Assert\NotBlank(message="nombre REQUIRED")
+     * @Assert\Range(
+     *      min = 6,
+     *      max = 12,
+     *      notInRangeMessage = "You must be between {{ min }}Player and {{ max }}Player ",
+     * )
      */
     private $nbreJoueur;
 
@@ -41,6 +49,7 @@ class Equipe
      * @var string
      *
      * @ORM\Column(name="logo", type="string", length=100, nullable=false)
+
      */
     private $logo;
 
