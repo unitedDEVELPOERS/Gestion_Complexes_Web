@@ -2,303 +2,396 @@
 
 namespace App\Entity;
 
-use App\Repository\UtilisateurRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * @ORM\Entity(repositoryClass=UtilisateurRepository::class)
+ * Utilisateur
+ *
+ * @ORM\Table(name="utilisateur", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_1D1C63B3E7927C74", columns={"email"})}, indexes={@ORM\Index(name="IDX_1D1C63B3BCF5E72D", columns={"categorie_id"}), @ORM\Index(name="IDX_1D1C63B36D861B89", columns={"equipe_id"})})
+ * @ORM\Entity
+ * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
 class Utilisateur implements UserInterface
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=180, unique=true)
+     * @var int|null
+     *
+     * @ORM\Column(name="categorie_id", type="integer", nullable=true)
+     */
+    private $categorieId;
+
+    /**
+     * @var int|null
+     *
+     * @ORM\Column(name="equipe_id", type="integer", nullable=true)
+     */
+    private $equipeId;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="email", type="string", length=180, nullable=true)
      */
     private $email;
 
     /**
-     * @ORM\Column(type="json")
+     * @var json|null
+     *
+     * @ORM\Column(name="roles", type="json", nullable=true)
      */
-    private $roles = [];
+    private $roles;
 
     /**
-     * @var string The hashed password
-     * @ORM\Column(type="string")
+     * @var string|null
+     *
+     * @ORM\Column(name="password", type="string", length=255, nullable=true)
      */
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string|null
+     *
+     * @ORM\Column(name="nom", type="string", length=255, nullable=true)
      */
     private $nom;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string|null
+     *
+     * @ORM\Column(name="prenom", type="string", length=255, nullable=true)
      */
     private $prenom;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Categorie::class, inversedBy="utilisateurs")
-     */
-    private $categorie;
-
-    /**
-     * @ORM\Column(type="string", length=255)
+     * @var string|null
+     *
+     * @ORM\Column(name="raison_sociale", type="string", length=255, nullable=true)
      */
     private $raisonSociale;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string|null
+     *
+     * @ORM\Column(name="matricule_fiscale", type="string", length=255, nullable=true)
      */
     private $matriculeFiscale;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @var bool|null
+     *
+     * @ORM\Column(name="verifie", type="boolean", nullable=true)
      */
     private $verifie;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var int|null
+     *
+     * @ORM\Column(name="solde_point", type="integer", nullable=true)
      */
     private $soldePoint;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string|null
+     *
+     * @ORM\Column(name="position", type="string", length=255, nullable=true)
      */
     private $position;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string|null
+     *
+     * @ORM\Column(name="telephone", type="string", length=255, nullable=true)
      */
     private $telephone;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var int|null
+     *
+     * @ORM\Column(name="position_equipe", type="integer", nullable=true)
      */
     private $positionEquipe;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Equipe::class, inversedBy="utilisateurs")
+     * @ORM\Column(type="boolean")
      */
-    private $equipe;
+    private $isVerified = false;
 
-    public function getId(): ?int
+    /**
+     * @return int
+     */
+    public function getId(): int
     {
         return $this->id;
     }
 
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getCategorieId(): ?int
+    {
+        return $this->categorieId;
+    }
+
+    /**
+     * @param int|null $categorieId
+     */
+    public function setCategorieId(?int $categorieId): void
+    {
+        $this->categorieId = $categorieId;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getEquipeId(): ?int
+    {
+        return $this->equipeId;
+    }
+
+    /**
+     * @param int|null $equipeId
+     */
+    public function setEquipeId(?int $equipeId): void
+    {
+        $this->equipeId = $equipeId;
+    }
+
+    /**
+     * @return string|null
+     */
     public function getEmail(): ?string
     {
         return $this->email;
     }
 
-    public function setEmail(string $email): self
+    /**
+     * @param string|null $email
+     */
+    public function setEmail(?string $email): void
     {
         $this->email = $email;
-
-        return $this;
     }
 
     /**
-     * A visual identifier that represents this user.
-     *
-     * @see UserInterface
+     * @return json|null
      */
-    public function getUsername(): string
+    public function getRoles(): ?json
     {
-        return (string) $this->email;
+        return $this->roles;
     }
 
     /**
-     * @see UserInterface
+     * @param json|null $roles
      */
-    public function getRoles(): array
-    {
-        $roles = $this->roles;
-        // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
-
-        return array_unique($roles);
-    }
-
-    public function setRoles(array $roles): self
+    public function setRoles(?json $roles): void
     {
         $this->roles = $roles;
-
-        return $this;
     }
 
     /**
-     * @see UserInterface
+     * @return string|null
      */
-    public function getPassword(): string
+    public function getPassword(): ?string
     {
-        return (string) $this->password;
+        return $this->password;
     }
 
-    public function setPassword(string $password): self
+    /**
+     * @param string|null $password
+     */
+    public function setPassword(?string $password): void
     {
         $this->password = $password;
-
-        return $this;
     }
 
     /**
-     * Returning a salt is only needed, if you are not using a modern
-     * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
-     *
-     * @see UserInterface
+     * @return string|null
      */
-    public function getSalt(): ?string
-    {
-        return null;
-    }
-
-    /**
-     * @see UserInterface
-     */
-    public function eraseCredentials()
-    {
-        // If you store any temporary, sensitive data on the user, clear it here
-        // $this->plainPassword = null;
-    }
-
     public function getNom(): ?string
     {
         return $this->nom;
     }
 
-    public function setNom(string $nom): self
+    /**
+     * @param string|null $nom
+     */
+    public function setNom(?string $nom): void
     {
         $this->nom = $nom;
-
-        return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getPrenom(): ?string
     {
         return $this->prenom;
     }
 
-    public function setPrenom(string $prenom): self
+    /**
+     * @param string|null $prenom
+     */
+    public function setPrenom(?string $prenom): void
     {
         $this->prenom = $prenom;
-
-        return $this;
     }
 
-    public function getCategorie(): ?Categorie
-    {
-        return $this->categorie;
-    }
-
-    public function setCategorie(?Categorie $categorie): self
-    {
-        $this->categorie = $categorie;
-
-        return $this;
-    }
-
+    /**
+     * @return string|null
+     */
     public function getRaisonSociale(): ?string
     {
         return $this->raisonSociale;
     }
 
-    public function setRaisonSociale(string $raisonSociale): self
+    /**
+     * @param string|null $raisonSociale
+     */
+    public function setRaisonSociale(?string $raisonSociale): void
     {
         $this->raisonSociale = $raisonSociale;
-
-        return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getMatriculeFiscale(): ?string
     {
         return $this->matriculeFiscale;
     }
 
-    public function setMatriculeFiscale(string $matriculeFiscale): self
+    /**
+     * @param string|null $matriculeFiscale
+     */
+    public function setMatriculeFiscale(?string $matriculeFiscale): void
     {
         $this->matriculeFiscale = $matriculeFiscale;
-
-        return $this;
     }
 
+    /**
+     * @return bool|null
+     */
     public function getVerifie(): ?bool
     {
         return $this->verifie;
     }
 
-    public function setVerifie(bool $verifie): self
+    /**
+     * @param bool|null $verifie
+     */
+    public function setVerifie(?bool $verifie): void
     {
         $this->verifie = $verifie;
-
-        return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getSoldePoint(): ?int
     {
         return $this->soldePoint;
     }
 
-    public function setSoldePoint(int $soldePoint): self
+    /**
+     * @param int|null $soldePoint
+     */
+    public function setSoldePoint(?int $soldePoint): void
     {
         $this->soldePoint = $soldePoint;
-
-        return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getPosition(): ?string
     {
         return $this->position;
     }
 
-    public function setPosition(string $position): self
+    /**
+     * @param string|null $position
+     */
+    public function setPosition(?string $position): void
     {
         $this->position = $position;
-
-        return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getTelephone(): ?string
     {
         return $this->telephone;
     }
 
-    public function setTelephone(string $telephone): self
+    /**
+     * @param string|null $telephone
+     */
+    public function setTelephone(?string $telephone): void
     {
         $this->telephone = $telephone;
-
-        return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getPositionEquipe(): ?int
     {
         return $this->positionEquipe;
     }
 
-    public function setPositionEquipe(int $positionEquipe): self
+    /**
+     * @param int|null $positionEquipe
+     */
+    public function setPositionEquipe(?int $positionEquipe): void
     {
         $this->positionEquipe = $positionEquipe;
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
 
         return $this;
     }
 
-    public function getEquipe(): ?Equipe
+
+    public function getSalt()
     {
-        return $this->equipe;
+        // TODO: Implement getSalt() method.
     }
 
-    public function setEquipe(?Equipe $equipe): self
+    public function getUsername()
     {
-        $this->equipe = $equipe;
+        // TODO: Implement getUsername() method.
+    }
 
-        return $this;
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
     }
 }

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Competition
  *
- * @ORM\Table(name="competition", indexes={@ORM\Index(name="categorie", columns={"categorie"}), @ORM\Index(name="competition_ibfk_2", columns={"complexe"})})
+ * @ORM\Table(name="competition", indexes={@ORM\Index(name="competition_ibfk_2", columns={"complexe"}), @ORM\Index(name="categorie", columns={"categorie"})})
  * @ORM\Entity
  */
 class Competition
@@ -75,95 +75,6 @@ class Competition
      * })
      */
     private $complexe;
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    public function getDesignation(): ?string
-    {
-        return $this->designation;
-    }
-
-    public function setDesignation(string $designation): self
-    {
-        $this->designation = $designation;
-
-        return $this;
-    }
-
-    public function getDateCreation(): ?\DateTimeInterface
-    {
-        return $this->dateCreation;
-    }
-
-    public function setDateCreation(\DateTimeInterface $dateCreation): self
-    {
-        $this->dateCreation = $dateCreation;
-
-        return $this;
-    }
-
-    public function getDateDebut(): ?\DateTimeInterface
-    {
-        return $this->dateDebut;
-    }
-
-    public function setDateDebut(\DateTimeInterface $dateDebut): self
-    {
-        $this->dateDebut = $dateDebut;
-
-        return $this;
-    }
-
-    public function getNbreEquipes(): ?int
-    {
-        return $this->nbreEquipes;
-    }
-
-    public function setNbreEquipes(int $nbreEquipes): self
-    {
-        $this->nbreEquipes = $nbreEquipes;
-
-        return $this;
-    }
-
-    public function getPrixParticipation(): ?string
-    {
-        return $this->prixParticipation;
-    }
-
-    public function setPrixParticipation(string $prixParticipation): self
-    {
-        $this->prixParticipation = $prixParticipation;
-
-        return $this;
-    }
-
-    public function getCategorie(): ?Categorie
-    {
-        return $this->categorie;
-    }
-
-    public function setCategorie(?Categorie $categorie): self
-    {
-        $this->categorie = $categorie;
-
-        return $this;
-    }
-
-    public function getComplexe(): ?Utilisateur
-    {
-        return $this->complexe;
-    }
-
-    public function setComplexe(?Utilisateur $complexe): self
-    {
-        $this->complexe = $complexe;
-
-        return $this;
-    }
 
 
 }

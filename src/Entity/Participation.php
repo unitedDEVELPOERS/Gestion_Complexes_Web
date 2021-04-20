@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Participation
  *
- * @ORM\Table(name="participation", indexes={@ORM\Index(name="competition", columns={"competition"}), @ORM\Index(name="equipe", columns={"equipe"})})
+ * @ORM\Table(name="participation", indexes={@ORM\Index(name="equipe", columns={"equipe"}), @ORM\Index(name="competition", columns={"competition"})})
  * @ORM\Entity
  */
 class Participation
@@ -29,65 +29,18 @@ class Participation
     private $date;
 
     /**
-     * @var \Competition
+     * @var int|null
      *
-     * @ORM\ManyToOne(targetEntity="Competition")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="competition", referencedColumnName="id")
-     * })
+     * @ORM\Column(name="competition", type="integer", nullable=true)
      */
     private $competition;
 
     /**
-     * @var \Equipe
+     * @var int|null
      *
-     * @ORM\ManyToOne(targetEntity="Equipe")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="equipe", referencedColumnName="id")
-     * })
+     * @ORM\Column(name="equipe", type="integer", nullable=true)
      */
     private $equipe;
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    public function getDate(): ?\DateTimeInterface
-    {
-        return $this->date;
-    }
-
-    public function setDate(\DateTimeInterface $date): self
-    {
-        $this->date = $date;
-
-        return $this;
-    }
-
-    public function getCompetition(): ?Competition
-    {
-        return $this->competition;
-    }
-
-    public function setCompetition(?Competition $competition): self
-    {
-        $this->competition = $competition;
-
-        return $this;
-    }
-
-    public function getEquipe(): ?Equipe
-    {
-        return $this->equipe;
-    }
-
-    public function setEquipe(?Equipe $equipe): self
-    {
-        $this->equipe = $equipe;
-
-        return $this;
-    }
 
 
 }

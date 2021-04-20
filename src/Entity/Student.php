@@ -2,57 +2,38 @@
 
 namespace App\Entity;
 
-use App\Repository\StudentRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=StudentRepository::class)
+ * Student
+ *
+ * @ORM\Table(name="student")
+ * @ORM\Entity
  */
 class Student
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="nsc", type="string", length=255, nullable=false)
      */
     private $nsc;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255, nullable=false)
      */
     private $email;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
 
-    public function getNsc(): ?string
-    {
-        return $this->nsc;
-    }
-
-    public function setNsc(string $nsc): self
-    {
-        $this->nsc = $nsc;
-
-        return $this;
-    }
-
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public function setEmail(string $email): self
-    {
-        $this->email = $email;
-
-        return $this;
-    }
 }

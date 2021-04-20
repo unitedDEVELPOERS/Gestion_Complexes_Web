@@ -7,8 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PenaliteJoueur
  *
- * @ORM\Table(name="penalite_joueur", indexes={@ORM\Index(name="arbitre", columns={"arbitre"}), @ORM\Index(name="joueur", columns={"joueur"}), @ORM\Index(name="matche", columns={"matche"}), @ORM\Index(name="penalite", columns={"penalite"})})
- * @ORM\Entity(repositoryClass="App\Repository\PenaliteJoueurRepository")
+ * @ORM\Table(name="penalite_joueur", indexes={@ORM\Index(name="joueur", columns={"joueur"}), @ORM\Index(name="matche", columns={"matche"}), @ORM\Index(name="penalite", columns={"penalite"}), @ORM\Index(name="arbitre", columns={"arbitre"})})
+ * @ORM\Entity
  */
 class PenaliteJoueur
 {
@@ -29,109 +29,32 @@ class PenaliteJoueur
     private $heure;
 
     /**
-     * @var \Utilisateur
+     * @var int|null
      *
-     * @ORM\ManyToOne(targetEntity="Utilisateur")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="arbitre", referencedColumnName="id")
-     * })
+     * @ORM\Column(name="penalite", type="integer", nullable=true)
+     */
+    private $penalite;
+
+    /**
+     * @var int|null
+     *
+     * @ORM\Column(name="arbitre", type="integer", nullable=true)
      */
     private $arbitre;
 
     /**
-     * @var \Utilisateur
+     * @var int|null
      *
-     * @ORM\ManyToOne(targetEntity="Utilisateur")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="joueur", referencedColumnName="id")
-     * })
+     * @ORM\Column(name="joueur", type="integer", nullable=true)
      */
     private $joueur;
 
     /**
-     * @var \Matche
+     * @var int|null
      *
-     * @ORM\ManyToOne(targetEntity="Matche")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="matche", referencedColumnName="id")
-     * })
+     * @ORM\Column(name="matche", type="integer", nullable=true)
      */
     private $matche;
-
-    /**
-     * @var \Penalite
-     *
-     * @ORM\ManyToOne(targetEntity="Penalite")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="penalite", referencedColumnName="id")
-     * })
-     */
-    private $penalite;
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    public function getHeure(): ?\DateTimeInterface
-    {
-        return $this->heure;
-    }
-
-    public function setHeure(\DateTimeInterface $heure): self
-    {
-        $this->heure = $heure;
-
-        return $this;
-    }
-
-    public function getArbitre(): ?Utilisateur
-    {
-        return $this->arbitre;
-    }
-
-    public function setArbitre(?Utilisateur $arbitre): self
-    {
-        $this->arbitre = $arbitre;
-
-        return $this;
-    }
-
-    public function getJoueur(): ?Utilisateur
-    {
-        return $this->joueur;
-    }
-
-    public function setJoueur(?Utilisateur $joueur): self
-    {
-        $this->joueur = $joueur;
-
-        return $this;
-    }
-
-    public function getMatche(): ?Matche
-    {
-        return $this->matche;
-    }
-
-    public function setMatche(?Matche $matche): self
-    {
-        $this->matche = $matche;
-
-        return $this;
-    }
-
-    public function getPenalite(): ?Penalite
-    {
-        return $this->penalite;
-    }
-
-    public function setPenalite(?Penalite $penalite): self
-    {
-        $this->penalite = $penalite;
-
-        return $this;
-    }
 
 
 }

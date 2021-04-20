@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'c09a7c643ab2a23ec53751be42341eabb79350b9',
+    'reference' => 'ee569ecc8aafb929551c6bfcd86d52d93a837fa3',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'c09a7c643ab2a23ec53751be42341eabb79350b9',
+      'reference' => 'ee569ecc8aafb929551c6bfcd86d52d93a837fa3',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -1080,6 +1080,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '29e61305e1c79d25f71060903982ead8f533e267',
+    ),
+    'symfonycasts/verify-email-bundle' => 
+    array (
+      'pretty_version' => 'v1.4.0',
+      'version' => '1.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3935f7375b2fa795f349bb4281ba8bcb754f4c91',
     ),
     'twig/extra-bundle' => 
     array (
