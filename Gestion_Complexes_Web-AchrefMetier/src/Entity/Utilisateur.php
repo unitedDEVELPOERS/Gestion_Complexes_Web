@@ -25,18 +25,24 @@ class Utilisateur implements UserInterface
     private $id;
 
     /**
-     * @var int|null
+     * @var \Categorie
      *
-     * @ORM\Column(name="categorie_id", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Categorie")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="categorie_id", referencedColumnName="id")
+     * })
      */
-    private $categorieId;
-
+    private $categorie;
     /**
-     * @var int|null
+     * @var \Equipe
      *
-     * @ORM\Column(name="equipe_id", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Equipe")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="equipe_id", referencedColumnName="id")
+     * })
      */
-    private $equipeId;
+    private $equipe;
+
 
     /**
      * @var string|null
@@ -144,36 +150,39 @@ class Utilisateur implements UserInterface
     }
 
     /**
-     * @return int|null
+     * @return null\Categorie
      */
-    public function getCategorieId(): ?int
+    public function getCategorie(): ?\Categorie
     {
-        return $this->categorieId;
+        return $this->categorie;
     }
 
     /**
-     * @param int|null $categorieId
+     * @param Categorie $categorie
      */
-    public function setCategorieId(?int $categorieId): void
+    public function setCategorie( Categorie $categorie): void
     {
-        $this->categorieId = $categorieId;
+        $this->categorie = $categorie;
     }
 
     /**
-     * @return int|null
+     * @return null\Equipe
      */
-    public function getEquipeId(): ?int
+    public function getEquipe(): ?\Equipe
     {
-        return $this->equipeId;
+        return $this->equipe;
     }
 
     /**
-     * @param int|null $equipeId
+     * @param \Equipe $equipe
      */
-    public function setEquipeId(?int $equipeId): void
+    public function setEquipe(\Equipe $equipe): void
     {
-        $this->equipeId = $equipeId;
+        $this->equipe = $equipe;
     }
+
+
+
 
     /**
      * @return string|null
@@ -366,6 +375,7 @@ class Utilisateur implements UserInterface
     }
 
 
+
     public function getSalt()
     {
         return null;
@@ -373,7 +383,7 @@ class Utilisateur implements UserInterface
 
     public function getUsername()
     {
-        return $this->nom;
+        return $this->email;
     }
 
     public function eraseCredentials()
@@ -406,5 +416,6 @@ class Utilisateur implements UserInterface
     {
         return $this->roles;
     }
+
 
 }

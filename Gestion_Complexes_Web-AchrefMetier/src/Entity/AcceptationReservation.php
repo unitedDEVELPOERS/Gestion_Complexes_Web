@@ -48,46 +48,5 @@ class AcceptationReservation
      */
     private $reservation;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    public function getAcceptee(): ?bool
-    {
-        return $this->acceptee;
-    }
-
-    public function setAcceptee(?bool $acceptee): self
-    {
-        $this->acceptee = $acceptee;
-
-        return $this;
-    }
-
-    public function getClient(): ?Utilisateur
-    {
-        return $this->client;
-    }
-
-    public function setClient(?Utilisateur $client): self
-    {
-        $this->client = $client;
-
-        return $this;
-    }
-
-    public function getReservation(): ?Reservation
-    {
-        return $this->reservation;
-    }
-
-    public function setReservation(?Reservation $reservation): self
-    {
-        $this->reservation = $reservation;
-
-        return $this;
-    }
-
 
 }

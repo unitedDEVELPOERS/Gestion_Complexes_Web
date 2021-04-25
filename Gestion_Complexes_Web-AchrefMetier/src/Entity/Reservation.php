@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Reservation
  *
- * @ORM\Table(name="reservation", indexes={@ORM\Index(name="terrain", columns={"terrain"}), @ORM\Index(name="client", columns={"client"})})
+ * @ORM\Table(name="reservation", indexes={@ORM\Index(name="client", columns={"client"}), @ORM\Index(name="terrain", columns={"terrain"})})
  * @ORM\Entity
  */
 class Reservation
@@ -50,20 +50,6 @@ class Reservation
     private $validee;
 
     /**
-     * @var int|null
-     *
-     * @ORM\Column(name="client", type="integer", nullable=true)
-     */
-    private $client;
-
-    /**
-     * @var int|null
-     *
-     * @ORM\Column(name="terrain", type="integer", nullable=true)
-     */
-    private $terrain;
-
-    /**
      * @var float
      *
      * @ORM\Column(name="montant", type="float", precision=10, scale=3, nullable=false)
@@ -76,6 +62,26 @@ class Reservation
      * @ORM\Column(name="acceptee", type="boolean", nullable=false)
      */
     private $acceptee;
+
+    /**
+     * @var \Utilisateur
+     *
+     * @ORM\ManyToOne(targetEntity="Utilisateur")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="client", referencedColumnName="id")
+     * })
+     */
+    private $client;
+
+    /**
+     * @var \Terrain
+     *
+     * @ORM\ManyToOne(targetEntity="Terrain")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="terrain", referencedColumnName="id")
+     * })
+     */
+    private $terrain;
 
 
 }

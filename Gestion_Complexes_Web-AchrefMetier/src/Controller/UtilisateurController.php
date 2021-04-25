@@ -16,6 +16,7 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
+
 class UtilisateurController extends AbstractController
 {
     /**
@@ -27,31 +28,38 @@ class UtilisateurController extends AbstractController
             'controller_name' => 'UtilisateurController',
         ]);
     }
+
     /**
- * @Route("/inscrit", name="inscrit")
- */
+     * @Route("/inscrit", name="inscrit")
+     */
     public function inscrit(): Response
     {
         return $this->render('inscrit/inscrit.html.twig');
     }
+
     /**
      * @return Response
      * @Route("/AfficheUtilisateur",name="AfficheUtilisateur")
      */
-    public function Affiche(){
-        $repo=$this->getDoctrine()->getRepository(Utilisateur::class);
-        $Utilisateur=$repo->findAll();
-        return $this->render('Admin/utilisateur/Affiche.html.twig',['Utilisateur'=>$Utilisateur]);
+    public function Affiche()
+    {
+        $repo = $this->getDoctrine()->getRepository(Utilisateur::class);
+        $Utilisateur = $repo->findAll();
+        return $this->render('Admin/utilisateur/Affiche.html.twig', ['Utilisateur' => $Utilisateur]);
     }
+
     /**
-     * @IsGranted("ROLE_PROP")
+
      * @return Response
      * @Route("/AfficheArbitre",name="AfficheArbitre")
      */
-    public function Affichearbire(){
-        $repo=$this->getDoctrine()->getRepository(Utilisateur::class);
-        $Utilisateur=$repo->findAll();
-        return $this->render('Admin/utilisateur/Affichearbitre.html.twig',['Utilisateur'=>$Utilisateur]);
+    public function Affichearbire()
+    {
+        $repo = $this->getDoctrine()->getRepository(Utilisateur::class);
+
+        $Utilisateur = $repo->findBy(array('roles' =>"ROLE_ARBITRE" ));
+
+        return $this->render('Admin/utilisateur/Affichearbitre.html.twig', ['Utilisateur' => $Utilisateur]);
     }
 
     /**
@@ -59,20 +67,22 @@ class UtilisateurController extends AbstractController
      * @return Response
      * @Route("/AfficheProp",name="AfficheProp")
      */
-    public function AfficheProprietaire(){
-        $repo=$this->getDoctrine()->getRepository(Utilisateur::class);
-        $Utilisateur=$repo->findAll();
-        return $this->render('admin/utilisateur/AfficheProprietaire.html.twig',['Utilisateur'=>$Utilisateur]);
+    public function AfficheProprietaire()
+    {
+        $repo = $this->getDoctrine()->getRepository(Utilisateur::class);
+        $Utilisateur = $repo->findBy(array('roles' =>"ROLE_PROP" ));
+        return $this->render('admin/utilisateur/AfficheProprietaire.html.twig', ['Utilisateur' => $Utilisateur]);
     }
 
     /**
      * @Route("/SuppUtilisateur/{id}",name="d")
      */
-    function Delete($id){
-        $repo=$this->getDoctrine()->getRepository(Utilisateur::class);
-        $Utilisateur=$repo->find($id);
+    function Delete($id)
+    {
+        $repo = $this->getDoctrine()->getRepository(Utilisateur::class);
+        $Utilisateur = $repo->find($id);
 
-        $em=$this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
         $em->remove($Utilisateur);
         $em->flush();
         return $this->redirectToRoute('AfficheUtilisateur');
@@ -83,18 +93,20 @@ class UtilisateurController extends AbstractController
      * @param Request $request
      * @Route("/AjouterArbitre",name="ad")
      */
-    function Add(Request $request,MailerInterface $mailer){
-        $Utilisateur=new Utilisateur();
-        $form=$this->createForm(UtilisateurType::class,$Utilisateur);
-        $form->add('Ajouter',SubmitType::class);
+    function Add(Request $request, MailerInterface $mailer)
+    {
+        $Utilisateur = new Utilisateur();
+        $form = $this->createForm(UtilisateurType::class, $Utilisateur);
+        $form->add('Ajouter', SubmitType::class);
         $form->handleRequest($request);
-        if($form->isSubmitted()&&$form->isValid()){
-            $em=$this->getDoctrine()->getManager();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $Utilisateur->setrolesarbitre();
             $em->persist($Utilisateur);
-            $em->flush();$email = (new Email())
+            $em->flush();
+            $email = (new Email())
                 ->from('complexsportiftunis@gmail.com')
                 ->to('sahar.gharrad@esprit.tn')
-
                 ->subject('you have created a user!')
                 ->text('Complexes Sportif Sending you E-mail to tell you that you have successfully created an account!');
 
@@ -102,12 +114,8 @@ class UtilisateurController extends AbstractController
             $mailer->send($email);
             return $this->redirectToRoute('AfficheArbitre');
         }
-        return $this->render('Admin/utilisateur/AjouterArbitre.html.twig',['form'=>$form->createView()]);
+        return $this->render('Admin/utilisateur/AjouterArbitre.html.twig', ['form' => $form->createView()]);
     }
-
-
-
-
 
 
     /**
@@ -115,18 +123,20 @@ class UtilisateurController extends AbstractController
      * @param Request $request
      * @Route("/AjouterProp",name="ap")
      */
-    function AddProp(Request $request,MailerInterface $mailer){
-        $Utilisateur=new Utilisateur();
-        $form=$this->createForm(ProprietaireType::class,$Utilisateur);
-        $form->add('Ajouter',SubmitType::class);
+    function AddProp(Request $request, MailerInterface $mailer)
+    {
+        $Utilisateur = new Utilisateur();
+        $form = $this->createForm(ProprietaireType::class, $Utilisateur);
+        $form->add('Ajouter', SubmitType::class);
         $form->handleRequest($request);
-        if($form->isSubmitted()&&$form->isValid()){
-            $em=$this->getDoctrine()->getManager();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $Utilisateur->setrolesprop();
             $em->persist($Utilisateur);
-            $em->flush();$email = (new Email())
+            $em->flush();
+            $email = (new Email())
                 ->from('complexsportiftunis@gmail.com')
                 ->to('sahar.gharrad@esprit.tn')
-
                 ->subject('you have created a user!')
                 ->text('Complexes Sportif Sending you E-mail to tell you that you have successfully created an account!');
 
@@ -134,28 +144,29 @@ class UtilisateurController extends AbstractController
             $mailer->send($email);
             return $this->redirectToRoute('AfficheProp');
         }
-        return $this->render('Admin/utilisateur/AjouterProprietaire.html.twig',['form'=>$form->createView()]);
+        return $this->render('Admin/utilisateur/AjouterProprietaire.html.twig', ['form' => $form->createView()]);
     }
 
     /**
      * @IsGranted("ROLE_PROP")
      * @param $id
      * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     * @return Response
      * @Route("/UpdateUtilisateur/{id}",name="a")
      */
-    function update($id,Request $request){
-        $repo=$this->getDoctrine()->getRepository(Utilisateur::class);
-        $Utilisateur=$repo->find($id);
-        $form=$this->createForm(UtilisateurType::class,$Utilisateur);
-        $form->add('Update',SubmitType::class);
+    function update($id, Request $request)
+    {
+        $repo = $this->getDoctrine()->getRepository(Utilisateur::class);
+        $Utilisateur = $repo->find($id);
+        $form = $this->createForm(UtilisateurType::class, $Utilisateur);
+        $form->add('Update', SubmitType::class);
         $form->handleRequest($request);
-        if($form->isSubmitted()&&$form->isValid()){
-            $em=$this->getDoctrine()->getManager();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
             $em->flush();
             return $this->redirectToRoute('AfficheArbitre');
         }
-        return $this->render('utilisateur/Update.html.twig',['f'=>$form->createView()]);
+        return $this->render('utilisateur/Update.html.twig', ['f' => $form->createView()]);
 
     }
 
@@ -163,21 +174,85 @@ class UtilisateurController extends AbstractController
      * @IsGranted("ROLE_ADMIN")
      * @param $id
      * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     * @return Response
      * @Route("/UpdateProprietaire/{id}",name="updateProp")
      */
-    function updateProp($id,Request $request){
-        $repo=$this->getDoctrine()->getRepository(Utilisateur::class);
-        $Utilisateur=$repo->find($id);
-        $form=$this->createForm(ProprietaireType::class,$Utilisateur);
-        $form->add('Update',SubmitType::class);
+    function updateProp($id, Request $request)
+    {
+        $repo = $this->getDoctrine()->getRepository(Utilisateur::class);
+        $Utilisateur = $repo->find($id);
+        $form = $this->createForm(ProprietaireType::class, $Utilisateur);
+        $form->add('Update', SubmitType::class);
         $form->handleRequest($request);
-        if($form->isSubmitted()&&$form->isValid()){
-            $em=$this->getDoctrine()->getManager();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
             $em->flush();
             return $this->redirectToRoute('AfficheProp');
         }
-        return $this->render('admin/utilisateur/UpdateProprietaire.html.twig',['f'=>$form->createView()]);
+        return $this->render('admin/utilisateur/UpdateProprietaire.html.twig', ['f' => $form->createView()]);
 
     }
+
+    /**
+     * @IsGranted("ROLE_ADMIN")
+     * @param $id
+     * @param Request $request
+     * @return Response
+     * @Route("/UpdateAdmin/{id}",name="updateAdmin")
+     */
+
+    function updateAdmin($id, Request $request)
+    {
+        $repo = $this->getDoctrine()->getRepository(Utilisateur::class);
+        $Utilisateur = $repo->find($id);
+        $form = $this->createForm(AdminType::class, $Utilisateur);
+        $form->add('Update', SubmitType::class);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+            return $this->redirectToRoute('AfficheProp');
+        }
+        return $this->render('admin/utilisateur/UpdateProprietaire.html.twig', ['f' => $form->createView()]);
+
+    }
+
+
+    /**
+     * @IsGranted("ROLE_ADMIN")
+     * @param $id
+     * @param Request $request
+     * @return Response
+     * @Route("/CompteAdmin",name="CompteAdmin")
+     */
+
+    public function CompteAdmin()
+    {
+        $username = $this->getUser()->getUsername();
+        $repo = $this->getDoctrine()->getRepository(Utilisateur::class);
+        $Utilisateur = $repo->findOneBy(array('email' => $username));
+
+        return $this->render('admin/profil/CompteAdmin.html.twig', ['Utilisateur' => $Utilisateur]);
+        }
+
+
+    /**
+     * @IsGranted("ROLE_ADMIN")
+     * @param $id
+     * @param Request $request
+     * @return Response
+     * @Route("/CompteAdmin",name="CompteAdmin")
+     */
+
+    public function CompteProp()
+    {
+        $username = $this->getUser()->getUsername();
+        $repo = $this->getDoctrine()->getRepository(Utilisateur::class);
+        $Utilisateur = $repo->findOneBy(array('email' => $username));
+
+        return $this->render('admin/profil/CompteProp.html.twig', ['Utilisateur' => $Utilisateur]);
+    }
+
+
+
 }

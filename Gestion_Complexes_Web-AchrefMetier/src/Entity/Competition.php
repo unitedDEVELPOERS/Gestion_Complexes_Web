@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Competition
  *
- * @ORM\Table(name="competition", indexes={@ORM\Index(name="competition_ibfk_2", columns={"complexe"}), @ORM\Index(name="categorie", columns={"categorie"})})
+ * @ORM\Table(name="competition", indexes={@ORM\Index(name="categorie", columns={"categorie"}), @ORM\Index(name="competition_ibfk_2", columns={"complexe"})})
  * @ORM\Entity
  */
 class Competition

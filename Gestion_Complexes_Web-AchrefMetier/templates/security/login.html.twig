@@ -36,9 +36,18 @@
     <!--===============================================================================================-->
 </head>
 
-{% block title %}Log in!{% endblock %}
+<body style="background-color: #666666;">
 
-{% block body %}
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-form validate-form">
+					<span class="login100-form-title p-b-43">
+						Login to continue
+					</span>
+
+
+                <div >
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -50,7 +59,7 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
     <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
     <label for="inputPassword">Password</label>
@@ -69,8 +78,71 @@
         </div>
 
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
-{% endblock %}
+
+                </div>
+                <div class="container-login100-form-btn">
+
+                    <button class="btn btn-lg btn-primary" type="submit">
+                        Sign in
+                    </button>
+
+                </div>
+
+                <div class="text-center p-t-46 p-b-20">
+						<span class="txt2">
+							or sign up using
+						</span>
+                </div>
+
+                <div class="login100-form-social flex-c-m">
+                    <a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
+                        <i class="fa fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+
+                    <a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+                </form>
+            <div class="login100-more" style="background-image: url(
+            {{ asset('inscrit/images/bg-01.jpg')}});">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--===============================================================================================-->
+<script src="
+{{ asset('inscrit/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+<!--===============================================================================================-->
+<script src="
+{{ asset('inscrit/vendor/animsition/js/animsition.min.js')}}"></script>
+<!--===============================================================================================-->
+<script src="
+{{ asset('inscrit/vendor/bootstrap/js/popper.js')}}"></script>
+<script src="
+{{ asset('inscrit/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+<!--===============================================================================================-->
+<script src="
+{{ asset('inscrit/vendor/select2/select2.min.js')}}"></script>
+<!--===============================================================================================-->
+<script src="
+{{ asset('inscrit/vendor/daterangepicker/moment.min.js')}}"></script>
+<script src="
+{{ asset('inscrit/vendor/daterangepicker/daterangepicker.js')}}"></script>
+<!--===============================================================================================-->
+<script src="
+{{ asset('inscrit/vendor/countdowntime/countdowntime.js')}}"></script>
+<!--===============================================================================================-->
+<script src="
+{{ asset('inscrit/js/main.js')}}"></script>
+
+</body>
+</html>
+

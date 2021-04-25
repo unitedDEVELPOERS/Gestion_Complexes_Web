@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Penalite
  *
- * @ORM\Table(name="penalite", indexes={@ORM\Index(name="penalite_ibfk_1", columns={"complexe"})})
+ * @ORM\Table(name="penalite", indexes={@ORM\Index(name="complexe", columns={"complexe"})})
  * @ORM\Entity
  */
 class Penalite
@@ -36,9 +36,12 @@ class Penalite
     private $nbrePointsRetires;
 
     /**
-     * @var int|null
+     * @var \Utilisateur
      *
-     * @ORM\Column(name="complexe", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Utilisateur")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="complexe", referencedColumnName="id")
+     * })
      */
     private $complexe;
 

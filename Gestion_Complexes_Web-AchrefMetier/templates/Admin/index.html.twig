@@ -232,7 +232,7 @@
         </div>
         <div class="top-menu">
             <ul class="nav pull-right top-menu">
-                <li><a class="logout" href="{{ asset('/Porp/login') }}">Logout</a></li>
+                <li><a class="logout" href="{{ asset('/logout') }}">Logout</a></li>
             </ul>
         </div>
     </header>
@@ -245,15 +245,21 @@
         <div id="sidebar" class="nav-collapse ">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
-                <p class="centered"><a href="{{ asset('/Prop_complexe/profile') }}"><img src="{{ asset('admin/img/ui-sam.jpg') }}" class="img-circle" width="80"></a></p>
-                <h5 class="centered">Sam Soffes</h5>
+                {% if is_granted('ROLE_ADMIN') %}
+                <p class="centered"><a href="{{ asset('/CompteAdmin') }}"><img src="{{ asset('admin/img/ui-sam.jpg') }}" class="img-circle" width="80"></a></p>
+                {% endif %}
+
+
+
+
+                <h5 class="centered">Compte</h5>
                 <li class="mt">
                     <a class="active" href="index.html">
                         <i class="fa fa-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
-              {% if is_granted('ROLE_PROP') %}
+              {% if is_granted('ROLE_PROP') or is_granted('ROLE_ADMIN')%}
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-desktop"></i>
@@ -266,7 +272,7 @@
                     </ul>
                 </li>
                 {% endif %}
-                {% if is_granted('ROLE_PROP') %}
+                {% if is_granted('ROLE_PROP') or is_granted('ROLE_ADMIN') %}
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-desktop"></i>
@@ -279,7 +285,7 @@
                     </ul>
                 </li>
                {% endif %}
-                {% if is_granted('ROLE_PROP') %}
+                {% if is_granted('ROLE_PROP') or is_granted('ROLE_ADMIN') %}
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-desktop"></i>
@@ -293,7 +299,7 @@
                 </li>
                 {% endif %}
 
-                {% if is_granted('ROLE_PROP') %}
+                {% if is_granted('ROLE_PROP') or is_granted('ROLE_ADMIN') %}
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-desktop"></i>
@@ -305,6 +311,34 @@
 
                     </ul>
                 </li>
+                {% endif %}
+
+                {% if is_granted('ROLE_ARBITRE') or is_granted('ROLE_ADMIN') %}
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-desktop"></i>
+                            <span>Penalité</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="{{ asset('/AfficheArbitre') }}">Nos pénalité</a></li>
+                            <li><a href="{{ asset('/AjouterArbitre') }}">Ajouter pénalité</a></li>
+
+                        </ul>
+                    </li>
+                {% endif %}
+
+                {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_ADMIN') %}
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-desktop"></i>
+                            <span>Propriétaire de complexe</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="{{ asset('/AfficheProp') }}">Nos Proprietaire </a></li>
+                            <li><a href="{{ asset('/AjouterProp') }}">Ajouter Propriétaire</a></li>
+
+                        </ul>
+                    </li>
                 {% endif %}
 
 

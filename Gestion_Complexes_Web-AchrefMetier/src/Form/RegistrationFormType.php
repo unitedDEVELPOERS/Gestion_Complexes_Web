@@ -14,6 +14,7 @@ use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
+
 class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -44,7 +45,43 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+            ->add('nom',TextareaType::class,[
+                'label'=>'Nom :',
+                'attr'=>[
+                    'placeholder'=>'Nom',
+                    'class'=>'nom'
+                ]
+            ])
+            ->add('prenom',TextareaType::class,[
+                'label'=>'Prénom :',
+                'attr'=>[
+                    'placeholder'=>'Prenom',
+                    'class'=>'prenom'
+                ]
+            ])
+            ->add('telephone',TextareaType::class,[
+                'label'=>'Téléphone :',
+                'attr'=>[
+                    'placeholder'=>'Telephone',
+                    'class'=>'telephone'
+                ]
+            ])
+            ->add('position',TextareaType::class,[
+                'label'=>'Position :',
+                'attr'=>[
+                    'placeholder'=>'Telephone',
+                    'class'=>'telephone'
+                ]
+            ])
 
+
+            ->add('categorie',TextareaType::class,[
+                'label'=>'categorie :',
+                'attr'=>[
+                    'placeholder'=>'Telephone',
+                    'class'=>'telephone'
+                ]
+            ])
 
         ;
     }

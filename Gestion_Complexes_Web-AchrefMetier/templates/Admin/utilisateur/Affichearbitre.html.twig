@@ -25,26 +25,25 @@
             <th> NOM</th>
             <th>PRENOM </th>
 
-            <th>POSITION </th>
-            <th>TELEPHONE </th>
-<td>UPDATE</td>
+            <th>Equipe </th>
+                   <th>TELEPHONE </th>
+            {% if is_granted('ROLE_PROP')%}
+            <td>UPDATE</td>
             <td> Delete</td>
+            {% endif %}
         </tr>
         <tr {% for u in Utilisateur %}>
             <td>{{ u.id }}</td>
             <td>{{ u.email }}</td>
             <td>{{ u.nom }}</td>
             <td>{{ u.prenom }}</td>
-
-
-            <td>{{ u.position }}</td>
+            <td>{{ u.equipe }}</td>
             <td>{{ u.telephone }}</td>
+            {% if is_granted('ROLE_PROP')%}
             <td><a href="{{ path('a',{'id':u.id}) }}"> Update</a> </td>
             <td><a href="{{ path('d',{'id':u.id}) }}"> Delete</a> </td>
+            {% endif %}
         </tr {% endfor %}>
-
-
     </table>
-
     </body>
 {% endblock %}

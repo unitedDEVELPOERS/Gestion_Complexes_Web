@@ -13,6 +13,36 @@ use Doctrine\ORM\Mapping as ORM;
 class Equipe
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="nom", type="string", length=100, nullable=true)
+     */
+    private $nom;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="nbre_joueur", type="integer", nullable=false)
+     */
+    private $nbreJoueur;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="logo", type="string", length=100, nullable=true)
+     */
+    private $logo;
+
+    /**
      * @return int
      */
     public function getId(): int
@@ -61,65 +91,36 @@ class Equipe
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getLogo(): string
+    public function getLogo(): ?string
     {
         return $this->logo;
     }
 
     /**
-     * @param string $logo
+     * @param string|null $logo
      */
-    public function setLogo(string $logo): void
+    public function setLogo(?string $logo): void
     {
         $this->logo = $logo;
     }
 
     /**
-     * @return \Utilisateur
+     * @return \Utilisateur|null
      */
-    public function getCapitain(): \Utilisateur
+    public function getCapitain(): ?Utilisateur
     {
         return $this->capitain;
     }
 
     /**
-     * @param \Utilisateur $capitain
+     * @param \Utilisateur|null $capitain
      */
     public function setCapitain(\Utilisateur $capitain): void
     {
         $this->capitain = $capitain;
     }
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="nom", type="string", length=100, nullable=true)
-     */
-    private $nom;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="nbre_joueur", type="integer", nullable=false)
-     */
-    private $nbreJoueur;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="logo", type="string", length=100, nullable=false)
-     */
-    private $logo;
 
     /**
      * @var \Utilisateur

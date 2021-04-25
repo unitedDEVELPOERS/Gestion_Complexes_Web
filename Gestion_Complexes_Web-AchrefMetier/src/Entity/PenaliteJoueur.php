@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PenaliteJoueur
  *
- * @ORM\Table(name="penalite_joueur", indexes={@ORM\Index(name="joueur", columns={"joueur"}), @ORM\Index(name="matche", columns={"matche"}), @ORM\Index(name="penalite", columns={"penalite"}), @ORM\Index(name="arbitre", columns={"arbitre"})})
+ * @ORM\Table(name="penalite_joueur", indexes={@ORM\Index(name="matche", columns={"matche"}), @ORM\Index(name="penalite", columns={"penalite"}), @ORM\Index(name="arbitre", columns={"arbitre"}), @ORM\Index(name="joueur", columns={"joueur"})})
  * @ORM\Entity
  */
 class PenaliteJoueur
@@ -29,32 +29,44 @@ class PenaliteJoueur
     private $heure;
 
     /**
-     * @var int|null
+     * @var \Utilisateur
      *
-     * @ORM\Column(name="penalite", type="integer", nullable=true)
-     */
-    private $penalite;
-
-    /**
-     * @var int|null
-     *
-     * @ORM\Column(name="arbitre", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Utilisateur")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="arbitre", referencedColumnName="id")
+     * })
      */
     private $arbitre;
 
     /**
-     * @var int|null
+     * @var \Utilisateur
      *
-     * @ORM\Column(name="joueur", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Utilisateur")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="joueur", referencedColumnName="id")
+     * })
      */
     private $joueur;
 
     /**
-     * @var int|null
+     * @var \Matche
      *
-     * @ORM\Column(name="matche", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Matche")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="matche", referencedColumnName="id")
+     * })
      */
     private $matche;
+
+    /**
+     * @var \Penalite
+     *
+     * @ORM\ManyToOne(targetEntity="Penalite")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="penalite", referencedColumnName="id")
+     * })
+     */
+    private $penalite;
 
 
 }

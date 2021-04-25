@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Participation
  *
- * @ORM\Table(name="participation", indexes={@ORM\Index(name="equipe", columns={"equipe"}), @ORM\Index(name="competition", columns={"competition"})})
+ * @ORM\Table(name="participation", indexes={@ORM\Index(name="competition", columns={"competition"}), @ORM\Index(name="equipe", columns={"equipe"})})
  * @ORM\Entity
  */
 class Participation
@@ -29,16 +29,22 @@ class Participation
     private $date;
 
     /**
-     * @var int|null
+     * @var \Competition
      *
-     * @ORM\Column(name="competition", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Competition")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="competition", referencedColumnName="id")
+     * })
      */
     private $competition;
 
     /**
-     * @var int|null
+     * @var \Equipe
      *
-     * @ORM\Column(name="equipe", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Equipe")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="equipe", referencedColumnName="id")
+     * })
      */
     private $equipe;
 

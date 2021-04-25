@@ -102,11 +102,11 @@ class UtilisateurAuthenticator extends AbstractFormLoginAuthenticator implements
         if (in_array('ROLE_USER', $rolesTab, true)){
             return new RedirectResponse($this->urlGenerator->generate('home'));
         }elseif (in_array('ROLE_ADMIN', $rolesTab, true)){
-                return new RedirectResponse($this->urlGenerator->generate('AfficheProp'));
+                return new RedirectResponse($this->urlGenerator->generate('admin'));
         }elseif (in_array('ROLE_ARBITRE', $rolesTab, true)){
             return new RedirectResponse($this->urlGenerator->generate('admin'));
         }elseif (in_array('ROLE_PROP', $rolesTab, true)){
-            return new RedirectResponse($this->urlGenerator->generate('AfficheArbitre'));
+            return new RedirectResponse($this->urlGenerator->generate('admin'));
         }
 
 

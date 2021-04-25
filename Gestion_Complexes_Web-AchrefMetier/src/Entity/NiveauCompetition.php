@@ -36,9 +36,12 @@ class NiveauCompetition
     private $dateDebut;
 
     /**
-     * @var int|null
+     * @var \Competition
      *
-     * @ORM\Column(name="competition", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Competition")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="competition", referencedColumnName="id")
+     * })
      */
     private $competition;
 

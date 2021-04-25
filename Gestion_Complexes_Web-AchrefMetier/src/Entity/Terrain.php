@@ -64,13 +64,6 @@ class Terrain
     private $prixLocation;
 
     /**
-     * @var int|null
-     *
-     * @ORM\Column(name="categorie", type="integer", nullable=true)
-     */
-    private $categorie;
-
-    /**
      * @var \DateTime
      *
      * @ORM\Column(name="heure_ouverture", type="time", nullable=false)
@@ -107,6 +100,16 @@ class Terrain
      * })
      */
     private $complexe;
+
+    /**
+     * @var \Categorie
+     *
+     * @ORM\ManyToOne(targetEntity="Categorie")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="categorie", referencedColumnName="id")
+     * })
+     */
+    private $categorie;
 
 
 }
